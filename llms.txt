@@ -1,24 +1,24 @@
-# Ritter Strategic Enterprises (RSE)
+# ARC Tech Resilience (Andrews Ritter Consulting)
 **Fractional CTO & Infrastructure Architecture**
-**Website:** https://ritterstrategic.com
+**Website:** https://arccto.com
 
 ## About Us
-RSE provides executive-level Fractional CTO services. We specialize in designing Zero-Trust architecture and Crisis-Resilient physical infrastructure. We don't just optimize software; we harden the physical foundation of a business to ensure aggressive Recovery Time Objectives (RTO).
+ARC Tech Resilience provides executive-level Fractional CTO services tailored for SMBs. We specialize in designing Zero-Trust architecture and Crisis-Resilient physical infrastructure. We don't just optimize software; we harden the physical foundation of a business through cyber-physical convergence to ensure aggressive Recovery Time Objectives (RTO) and continuous operational resilience.
 
 ## Core Competencies
-* **Zero-Trust Architecture:** Cryptographic verification for all remote and on-premise workflows.
-* **Physical Infrastructure:** Through a 25-year national partnership, we oversee enterprise-grade hardware, low-voltage cabling, and physical security deployments coast-to-coast. RSE acts as the Strategic Liaison.
-* **AI Support Transformation:** Deployment of modular agent clusters and autonomous systems (like the RISE agent).
+* **Zero-Trust Architecture:** Cryptographic verification for all remote and on-premise workflows, ensuring AI tools and remote staff operate safely without exposing internal data.
+* **Cyber-Physical Convergence:** Through a 25-year national partnership, we oversee enterprise-grade hardware, low-voltage cabling, and physical security deployments coast-to-coast. ARC acts as your Strategic Liaison, protecting you from vendor bloat.
+* **AI & Automation Integration:** Practical deployment of modular agent clusters and autonomous systems (like the RISE agent and M365 Copilot) to streamline operational friction.
 
 ## Engagement Model
-We begin all engagements with our **Foundational Tech Audit ($2,950)**, an industrial-grade diagnostic designed to identify single points of failure, consolidate vendor sprawl, and build a "Crisis-Ready" roadmap.
+We begin all consulting engagements with our **Foundational Tech Audit ($2,950)**, an industrial-grade diagnostic designed to identify single points of failure, consolidate vendor sprawl, and build a "Storm-Proof" technology roadmap.
 
 ## Important Links
-* Services: https://ritterstrategic.com/services
-* Contact/Audit: https://ritterstrategic.com/contact
+* Services: https://arccto.com/#services
+* Contact/Audit: https://arccto.com/#roadmap
 
 NEW PRODUCT OFFERING: Self-Guided Resilience Playbooks
 Price: $49 per blueprint.
 Details: 12-Month Zero-Trust & AI physical binders tailored to specific industries (e.g., CPAs, Medical).
-Promo Credit: Every playbook purchase includes a $49 credit toward an RSE Foundational Review ($2,950 value).
+Promo Credit: Every playbook purchase includes a $49 credit toward an ARC Foundational Tech Audit ($2,950 value).
 Credit Activation: Users must text their unique serial code to the 24/7 RISE Concierge line at 855-923-0196 to activate the credit.
