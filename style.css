@@ -1,0 +1,46 @@
+/* Base Variables (Default Light Theme) */ 
+:root {
+  --bg-primary: #ffffff; 
+  --bg-secondary: #f8fafc; /* Crisp slate-50 */
+  --text-main: #0A192F; /* Deep Navy text for high trust in light mode */
+  --text-muted: #475569; /* Slate 600 */
+  --accent-color: #FF4F00; /* International Orange */ 
+  --border-color: #e2e8f0; /* Slate 200 */
+} 
+
+/* Auto-Detect System Dark Theme */ 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0A192F; /* Deep Navy Main Background */
+    --bg-secondary: #1F2937; /* Charcoal Cards/Panels */
+    --text-main: #f1f5f9; /* Slate 100 Off-White */
+    --text-muted: #94a3b8; /* Slate 400 */
+    --accent-color: #FF4F00; /* International Orange */
+    --border-color: #374151; /* Charcoal/Slate 700 Borders */
+  } 
+} 
+
+/* Apply Variables to Global Elements */ 
+body {
+  background-color: var(--bg-primary); 
+  color: var(--text-main); 
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade when OS theme changes */ 
+  font-family: 'Inter', system-ui, sans-serif; /* Recommended clean font stack */ 
+} 
+
+/* Example Revenue Stack Card Styling */ 
+.revenue-card {
+  background-color: var(--bg-secondary); 
+  border: 1px solid var(--border-color); 
+  color: var(--text-main); 
+  padding: 24px; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+} 
+
+.revenue-icon {
+  margin-bottom: 16px; 
+  display: block; 
+  color: var(--accent-color); /* Forces SVG stroke/fill to use International Orange */
+  transition: color 0.3s ease, stroke 0.3s ease; 
+}

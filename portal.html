@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Executive Portal | Ritter Strategic Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#1F2937',
+                        darkerCharcoal: '#111827',
+                        navy: '#0A192F',
+                        safety: '#FF4F00'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-darkerCharcoal text-gray-300">
+
+    <nav class="border-b border-gray-800 bg-navy/50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="font-black tracking-tighter text-2xl text-white">RSE<span class="text-safety">.</span> <span class="text-sm font-normal text-gray-500 tracking-wide ml-2 uppercase">Client Vault</span></a>
+            <button class="text-xs font-bold text-gray-400 hover:text-white uppercase tracking-widest transition">Sign Out</button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="md:col-span-2 space-y-8">
+            
+            <header>
+                <h1 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-2">Welcome back.</h1>
+                <p class="text-gray-400">Your secure strategic overview and active playbooks.</p>
+            </header>
+
+            <div class="bg-charcoal rounded-2xl border border-gray-700 overflow-hidden shadow-2xl relative">
+                <div class="absolute top-0 left-0 w-1 h-full bg-safety"></div>
+                <div class="p-8">
+                    <h2 class="text-xl font-bold text-white mb-6 flex items-center">
+                        <span class="mr-3">📚</span> Digital Assets & Forms
+                    </h2>
+                    
+                    <div class="flex items-center justify-between p-4 bg-darkerCharcoal rounded-lg border border-gray-800">
+                        <div>
+                            <p class="text-white font-bold text-sm">12-Month Resilience Workbook</p>
+                            <p class="text-xs text-gray-500 mt-1">Contains Q1-Q4 Audit Matrices</p>
+                        </div>
+                        <button class="text-safety font-bold text-sm hover:text-white transition">Download PDF ↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-8">
+            
+            <div class="bg-navy rounded-2xl border border-gray-700 p-8 shadow-2xl text-center">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Active Balance</p>
+                <p class="text-5xl font-black text-white mb-2">$49<span class="text-xl text-gray-500">.00</span></p>
+                <p class="text-sm text-safety font-medium mb-6">Foundational Review Credit</p>
+                
+                <a href="#book" class="block w-full bg-safety hover:bg-[#e64700] text-navy font-bold py-3 rounded-lg transition shadow-lg">
+                    Schedule Audit & Apply Credit
+                </a>
+            </div>
+
+            <div class="bg-charcoal rounded-2xl border border-gray-700 p-6">
+                <h3 class="text-sm font-bold text-white mb-4 uppercase tracking-widest">Financials</h3>
+                <p class="text-xs text-gray-400 mb-4">Manage your payment methods and download past playbook receipts securely via Lemon Squeezy.</p>
+                <a href="https://ritterstrategic.lemonsqueezy.com/billing" target="_blank" class="text-xs font-bold text-white border border-gray-600 px-4 py-2 rounded hover:bg-gray-700 transition block text-center">
+                    Open Billing Portal ↗
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

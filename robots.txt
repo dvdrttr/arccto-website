@@ -1,0 +1,22 @@
+# Disallow scraping from aggressive data harvesters
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: CCBot
+Disallow: /
+
+# Allow friendly AI Search Agents (like Perplexity or ChatGPT Search)
+User-agent: PerplexityBot
+Allow: /llms.txt
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /llms.txt
+Allow: /
+
+# Standard Search Engines
+User-agent: *
+Allow: /
+
+# Direct bots to the master index
+Sitemap: https://www.ritterstrategic.com/sitemap.xml
