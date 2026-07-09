@@ -19,4 +19,4 @@ User-agent: *
 Allow: /
 
 # Direct bots to the master index
-Sitemap: https://www.ritterstrategic.com/sitemap.xml
+Sitemap: https://www.arccto.com/sitemap.xml
