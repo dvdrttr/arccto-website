@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Offset shadow (Muted Olive) -->
-  <rect x="15" y="15" width="85" height="85" fill="#556b2f" />
-  <!-- Main box (Deep Burgundy) with Vintage Blue dashed wireframe border -->
-  <rect x="0" y="0" width="85" height="85" fill="#4a0404" stroke="#4682b4" stroke-width="4" stroke-dasharray="8 4" />
-  <!-- Monospace 'A' (Creamy Off-White) -->
-  <text x="42.5" y="65" font-family="monospace, sans-serif" font-size="65" font-weight="bold" fill="#f4f4f0" text-anchor="middle">A</text>
+  <!-- Offset shadow (Deep Charcoal) -->
+  <rect x="10" y="10" width="80" height="80" fill="#1C1C1C" />
+  <!-- Main box (Paper Off-White) -->
+  <rect x="5" y="5" width="80" height="80" fill="#F4F1EA" stroke="#1C1C1C" stroke-width="4" />
+  <!-- Monospace 'A' (Rust Red) -->
+  <text x="45" y="65" font-family="monospace, sans-serif" font-size="60" font-weight="bold" fill="#C84B31" text-anchor="middle">A</text>
 </svg>
