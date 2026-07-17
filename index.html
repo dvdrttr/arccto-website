@@ -14,12 +14,12 @@
         theme: {
             extend: {
                 colors: {
-                    // 90s Gothic / Industrial Rebrand
-                    charcoal: '#0a0a0a', // Industrial Grunge
-                    darkerCharcoal: '#000000', // Pitch Black
-                    navy: '#111111', // Deep Shadow (Replaces Blue)
-                    safety: '#991b1b', // Blood Crimson (Replaces Cyan/Orange)
-                    pureWhite: '#e4e4e7', // Tarnished Silver
+                    // Gen X Grunge / Zine Rebrand
+                    charcoal: '#27272a', // Washed Asphalt
+                    darkerCharcoal: '#18181b', // Deep Grunge
+                    navy: '#292524', // Muddy Slate
+                    safety: '#ea580c', // Rusted Flannel Orange
+                    pureWhite: '#e5e5e5', // Newspaper Off-White
                 }
             }
         }
@@ -60,29 +60,29 @@
     }
     </script>
     <style>
-        /* Gothic Serif & 90s Terminal Mono Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+        /* 90s Alt Poster & Terminal Mono Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
         
         body { font-family: 'Space Mono', monospace; transition: background-color 0.3s ease; scroll-behavior: smooth; letter-spacing: -0.02em; }
         
-        /* Force Gothic font on all headings and bold elements */
-        h1, h2, h3, h4, .font-black { font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700; }
+        /* Anti-corporate, heavy poster font for headings */
+        h1, h2, h3, h4, .font-black { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; font-weight: 400; }
         
-        /* 90s Brutalist Hack: Kill all rounded corners to make the site sharp and aggressive */
+        /* 90s Brutalist Hack: Sharp corners for that raw zine feel */
         .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg, .rounded-md { border-radius: 0px !important; }
         
-        /* ...But keep the RISE widget and UI dots circular so we don't break functionality */
+        /* Keep RISE widget circular, but add a 90s brutalist offset shadow */
         #rise-toggle-btn, .rounded-full, .status-dot { border-radius: 50% !important; }
-        #rise-chat-window, #rise-teaser { border-radius: 4px !important; }
-
-        .glass-header { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #333; }
+        #rise-chat-window, #rise-teaser { border-radius: 0px !important; border: 2px solid #ea580c; }
         
-        /* Fixed Widget Container (Untouched) */
+        .glass-header { background: rgba(24, 24, 27, 0.95); border-bottom: 2px solid #27272a; }
+        
+        /* Fixed Widget Container */
         #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; align-items: flex-end; }
-        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); box-shadow: 0 24px 48px rgba(0,0,0,0.8); overflow: hidden; margin-bottom: 20px; background: #fff; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; border: 1px solid #991b1b; }
+        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); box-shadow: 8px 8px 0px rgba(234,88,12,0.2); overflow: hidden; margin-bottom: 20px; background: #fff; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; }
         #rise-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
-        #rise-toggle-btn { background-color: #991b1b; color: #000000; border: 1px solid #500000; width: 56px; height: 56px; cursor: pointer; box-shadow: 0 4px 12px rgba(153, 27, 27, 0.4); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; }
-        #rise-toggle-btn:hover { transform: scale(1.05); background-color: #b91c1c; }
+        #rise-toggle-btn { background-color: #ea580c; color: #18181b; border: 2px solid #18181b; width: 56px; height: 56px; cursor: pointer; box-shadow: 4px 4px 0px rgba(24, 24, 27, 1); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; }
+        #rise-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px rgba(24, 24, 27, 1); }
         #rise-toggle-btn svg { width: 28px; height: 28px; fill: currentColor; transition: transform 0.3s ease; }
         #rise-toggle-btn.active svg { transform: rotate(90deg); }
         
@@ -90,8 +90,8 @@
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
         
-        /* Muted, dark vignette gradient for the hero */
-        .hero-gradient { background: radial-gradient(circle at center, #111111, #000000); border-bottom: 1px solid #333; }
+        /* Grungy vignette gradient for the hero */
+        .hero-gradient { background: radial-gradient(circle at center, #27272a, #18181b); border-bottom: 2px solid #3f3f46; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col text-charcoal dark:bg-darkerCharcoal dark:text-gray-50 transition-colors duration-300">
