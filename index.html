@@ -1,34 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="color-scheme" content="dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://www.arccto.com/" />
-    <title>ARC Tech Resilience | Cyber-Grunge Advisory</title>
+    <title>ARC Tech Resilience | Plain-English Tech Consulting</title>
+    
+    <!-- Tailwind for layout grids and spacing -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    // Force Tailwind's dark palette to maintain the gritty analog aesthetic
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                colors: {
-                    charcoal: '#121212', // Charcoal black
-                    darkerCharcoal: '#121212', 
-                    navy: '#2a2a2a', // Dark concrete
-                    safety: '#4a0404', // Deep Burgundy
-                    pureWhite: '#f4f4f0', // Creamy off-white
-                }
-            }
-        }
-    }
-    </script>
-    <script>
-        // Instantly lock the browser into dark mode
-        document.documentElement.classList.add('dark');
-    </script>
+    
+    <!-- SEO JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,501 +18,218 @@
       "name": "ARC Tech Resilience",
       "alternateName": "Andrews Ritter Consulting",
       "url": "https://www.arccto.com",
-      "description": "Fractional CTO services acting as your dedicated executive technology partner. We help SMBs navigate the AI landscape, providing zero-trust infrastructure planning, cyber-physical convergence, and intelligent automation.",
+      "description": "Plain-English tech consulting for businesses and individuals who want clarity, not corporate jargon.",
       "priceRange": "$$$$",
       "telephone": "8559230196",
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "PA",
         "addressCountry": "US"
-      },
-      "areaServed": [
-        {"@type": "AdministrativeArea", "name": "Pennsylvania"},
-        {"@type": "AdministrativeArea", "name": "East Coast of the United States"},
-        {"@type": "AdministrativeArea", "name": "United States"}
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/david-ritter"
-      ],
-      "knowsAbout": [
-        "Fractional CTO",
-        "Tech Resilience Audits",
-        "AI Integration",
-        "Microsoft 365 Copilot",
-        "Google Gemini",
-        "Zero-Trust Architecture",
-        "Cyber-Physical Convergence"
-      ]
+      }
     }
     </script>
+
     <style>
-        /* Cyber-Grunge Typography */
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+        /* Typography: Grunge Headers + Ultra-Clean Body */
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
+
+        /* Core structure for arccto.com theme switching */
+        :root {
+            /* Light Theme: Analog Zine / Raw Paper */
+            --bg-color: #F4F1EA;         
+            --surface-color: #EAE5DA;    
+            --text-primary: #1C1C1C;     
+            --text-secondary: #595650;   
+            --accent-color: #C84B31;     
+            --border-style: 2px solid var(--text-primary);
+            --noise-opacity: 0.04;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme: Industrial Terminal */
+            --bg-color: #121316;         
+            --surface-color: #1C1D22;    
+            --text-primary: #ECEFF1;     
+            --text-secondary: #90A4AE;   
+            --accent-color: #FF6B4A;     
+            --noise-opacity: 0.07;
+        }
 
         body {
-            font-family: 'Space Mono', monospace;
-            /* Analog Film Grain / Photocopy static injected via raw SVG filter */
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
-            background-color: #121212 !important;
-            color: #f4f4f0 !important;
-            transition: background-color 0.3s ease;
-            scroll-behavior: smooth;
-            letter-spacing: -0.02em;
-            cursor: crosshair; /* Urban grit hand-drawn UI feel */
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
         }
 
-        /* Overriding tailwind text colors to enforce the analog palette */
-        p, span:not(.status-dot):not(.text-safety), li { color: #f4f4f0 !important; }
-        .text-safety { color: #4682b4 !important; } /* Vintage Blue replaces the old accent */
-        .text-gray-400, .text-gray-500, .text-gray-600 { color: #a0a095 !important; } /* Faded Cream */
+        /* Fixed SVG Noise Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--noise-opacity);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-        /* Distressed Stencil / Gig Poster Headings */
-        h1, h2, h3, h4, .font-black {
-            font-family: Impact, 'Arial Black', sans-serif;
-            letter-spacing: 0.05em;
-            font-weight: 400;
+        /* Typography overrides */
+        h1, h2, h3, h4, .grunge-font {
+            font-family: 'Courier Prime', monospace;
             text-transform: uppercase;
-            color: #f4f4f0 !important;
+            font-weight: 700;
+            letter-spacing: -0.05em;
         }
 
-        /* Asymmetrical Grid & Torn Edge Simulator */
-        .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg, .rounded-md {
-            border-radius: 0px !important;
-            border: 2px dashed #556b2f !important; /* Muted olive retro wireframe borders */
-            background-color: #2a2a2a !important; /* Concrete block */
-            box-shadow: 6px 6px 0px rgba(74, 4, 4, 1) !important; /* Deep burgundy solid drop shadow */
-            transform: rotate(-0.5deg); /* Break the sterile grid */
+        /* Tactile UI Elements */
+        .brutalist-border {
+            border: var(--border-style);
+        }
+
+        .grunge-card {
+            background-color: var(--surface-color);
+            border: var(--border-style);
+            box-shadow: 4px 4px 0px var(--text-primary);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: var(--border-style);
+            box-shadow: 4px 4px 0px var(--text-primary);
             transition: all 0.2s ease;
-        }
-
-        /* Hover state to amplify the chaos */
-        .rounded-xl:hover, .rounded-2xl:hover, .rounded-3xl:hover {
-            transform: rotate(0.5deg) scale(1.02);
-            border-color: #4682b4 !important; /* Vintage blue hover */
-            box-shadow: -4px 6px 0px rgba(74, 4, 4, 1) !important;
-        }
-
-        /* Fix header/nav to prevent rotation */
-        .glass-header, .hero-gradient, #rise-teaser, #rise-chat-window {
-            transform: none !important;
-        }
-
-        .glass-header {
-            background: rgba(18, 18, 18, 0.95) !important;
-            border-bottom: 2px solid #556b2f !important;
-        }
-
-        /* Grungy vignette gradient for the hero */
-        .hero-gradient {
-            background: radial-gradient(circle at center, #2a2a2a, #121212);
-            border-bottom: 4px dotted #4a0404 !important;
-        }
-
-        /* Fixed Widget Container (Agent Tracking remains fully intact) */
-        #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; align-items: flex-end; }
-        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; }
-        #rise-chat-window.active { display: block; transform: translateY(0) !important; opacity: 1; }
-        
-        #rise-chat-window, #rise-teaser {
-            border-radius: 0px !important;
-            border: 2px solid #4682b4 !important; /* Vintage blue border */
-            box-shadow: 8px 8px 0px #4a0404 !important; /* Burgundy shadow */
-            background-color: #121212 !important;
-        }
-
-        /* Retro Button overrides */
-        button, .bg-safety {
-            background-color: #4a0404 !important; /* Burgundy */
-            color: #f4f4f0 !important; /* Cream */
-            border: 2px dashed #4682b4 !important; /* Vintage Blue */
-            border-radius: 0px !important;
-            cursor: crosshair !important;
+            cursor: pointer;
         }
         
-        /* Agent Toggle Button (Keep it circular so the icon doesn't break) */
-        #rise-toggle-btn {
-            background-color: #4a0404 !important; 
-            color: #f4f4f0 !important; 
-            border: 2px solid #4682b4 !important;
-            border-radius: 50% !important; 
-            width: 56px; height: 56px;
-            box-shadow: 4px 4px 0px #556b2f !important;
-            display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0;
-            cursor: crosshair !important;
+        .cta-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--text-primary);
         }
-        #rise-toggle-btn:hover { transform: translate(-2px, -2px) !important; box-shadow: 6px 6px 0px #556b2f !important; }
+
+        /* Mobile-First Layout Rules */
+        @media (min-width: 768px) {
+            .grunge-card:nth-child(odd) { transform: rotate(-1deg); }
+            .grunge-card:nth-child(even) { transform: rotate(1deg); }
+            .grunge-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 8px 8px 0px var(--text-primary); z-index: 10; relative; }
+        }
+
+        /* Agent Widget Overrides for Analog Theme */
+        #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99998; display: flex; flex-direction: column; align-items: flex-end; }
+        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
+        #rise-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
+        #rise-toggle-btn { background-color: var(--accent-color); color: var(--bg-color); border: var(--border-style); width: 56px; height: 56px; cursor: pointer; box-shadow: 4px 4px 0px var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; }
+        #rise-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--text-primary); }
         #rise-toggle-btn svg { width: 28px; height: 28px; fill: currentColor; transition: transform 0.3s ease; }
         #rise-toggle-btn.active svg { transform: rotate(90deg); }
-        .status-dot { border-radius: 50% !important; border-style: solid !important; }
-
-        /* Teaser Bubble Animations */
+        #rise-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--text-primary); background: var(--surface-color); color: var(--text-primary); }
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col text-charcoal dark:bg-darkerCharcoal dark:text-gray-50 transition-colors duration-300">
+<body class="antialiased min-h-screen flex flex-col">
 
-    <nav class="fixed w-full z-50 glass-header border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-black tracking-tighter text-2xl text-white">ARC</div>
-            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <a href="#strategy" class="hover:text-safety transition">Partnership</a>
-                <a href="#services" class="hover:text-safety transition">Capabilities</a>
-                <a href="#roadmap" class="hover:text-safety transition">Roadmap</a>
-            </div>
-        </div>
+    <!-- Mobile-Optimized Semantic Navigation -->
+    <nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b brutalist-border px-6 py-4 flex justify-between items-center">
+        <div class="grunge-font text-2xl font-bold tracking-tighter">ARC<span style="color: var(--accent-color);">.</span></div>
+        <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
+            [ DARK ]
+        </button>
     </nav>
 
-    <header class="hero-gradient pt-40 pb-20 px-6 text-white overflow-hidden relative">
-        <div class="max-w-6xl mx-auto text-center md:text-left">
-            <div class="z-10">
-                <h1 class="text-[10vw] sm:text-6xl md:text-7xl font-black leading-[1] tracking-tighter mb-6 uppercase">
-                    Technology works for you, <br><span class="text-safety">not the other way around.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-3xl mx-auto md:mx-0 leading-relaxed">
-       You don't have to be a tech company to have great technology. We help local service businesses, brick-and-mortar shops, and growing agencies secure their infrastructure and deploy practical AI automation.
-     </p>
-                <div class="flex flex-col items-center md:items-start gap-4">
-                    <a href="#services" class="text-sm font-large text-gray-400 hover:text-white transition mt-2 flex items-center gap-2 group">
-                        Explore how we help you scale
-                        <svg class="w-4 h-4 group-hover:translate-y-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                    </a>
-                </div>
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+            <h1 class="text-5xl md:text-7xl leading-[0.95] mb-6">
+                AI IS MOVING FAST.<br>
+                <span style="color: var(--accent-color);">WE KEEP YOU AHEAD.</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl" style="color: var(--text-secondary);">
+                Plain-English tech consulting for successful service businesses and individuals who want clarity, not corporate jargon.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="toggleRiseChat('audit')" class="cta-button grunge-font px-8 py-4 text-lg text-center">
+                    Get Started
+                </button>
+                <a href="#services" class="px-8 py-4 text-lg font-medium text-center brutalist-border bg-[var(--surface-color)] shadow-[4px_4px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--text-primary)] transition-all">
+                    See How We Help
+                </a>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <div id="strategy" class="bg-gray-200 dark:bg-charcoal py-4 border-b border-gray-300 dark:border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-center md:justify-between items-center gap-4 opacity-70">
-            <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-400">Collaborative Partnership</span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-400">Zero-Trust Security</span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-400">Omnichannel AI Agent Live</span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-400">Cyber-Physical Convergence</span>
-        </div>
-    </div>
-
-    <section class="bg-white dark:bg-darkerCharcoal py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 dark:text-white">IT keeps your business running. We help it scale.</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400">Traditional IT teams are vital for day-to-day stability, maintaining hardware, and resolving immediate user issues. However, reaching your growth targets requires a different lens. We bridge that gap, translating technical capability into strategic business advantages.</p>
+        <!-- Services Grid -->
+        <section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t brutalist-border border-dashed">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl mb-4">No-Nonsense Capabilities</h2>
+                <p class="text-lg max-w-2xl" style="color: var(--text-secondary);">We act as your dedicated executive partner. We look at your current setup and explain exactly what tools will save you time, completely skipping the confusing tech speak.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 relative overflow-hidden flex flex-col">
-                    <div class="mb-6 w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
-                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+                <!-- Card 1 -->
+                <div class="grunge-card p-8 flex flex-col h-full">
+                    <h3 class="text-2xl mb-2">No-Jargon Audits</h3>
+                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">We review your daily operations and tell you exactly where you are losing time and money. We map out a clear path forward without making you feel overwhelmed.</p>
+                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
+                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Foundational</span>
+                        <button onclick="toggleRiseChat('audit')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Standard IT Support</h3>
-                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
-                        <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 opacity-40 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Essential for break-fix support and daily maintenance.</li>
-                        <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 opacity-40 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Focuses on maintaining current infrastructure stability.</li>
-                        <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 opacity-40 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Ensures your team stays online and functional.</li>
-                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="grunge-card p-8 flex flex-col h-full">
+                    <h3 class="text-2xl mb-2">Practical AI Setup</h3>
+                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">We configure tools like Microsoft 365 Copilot or Google Gemini directly into the software you already use, automating boring tasks so you can get back to actual work.</p>
+                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
+                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Automation</span>
+                        <button onclick="toggleRiseChat('ai')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+                    </div>
                 </div>
                 
-                <div class="bg-navy rounded-3xl border-2 border-safety shadow-2xl relative group flex flex-col">
-                    <div class="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
-                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-safety/10 rounded-full blur-2xl group-hover:bg-safety/20 transition-all"></div>
+                <!-- Card 3 -->
+                <div class="grunge-card p-8 flex flex-col h-full">
+                    <h3 class="text-2xl mb-2">Vendor Translation</h3>
+                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">Tired of software salespeople confusing you? We handle the technical calls for you, ensuring you only buy what you actually need to grow.</p>
+                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
+                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Advisory</span>
+                        <button onclick="toggleRiseChat('vendor')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
                     </div>
-                    <div class="absolute -top-3 right-6 bg-safety text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest z-20 shadow-sm">Your Trusted Guide</div>
-                    
-                    <div class="p-8 relative z-10 flex flex-col h-full">
-                        <div class="mb-6 w-12 h-12 bg-safety/10 rounded-xl flex items-center justify-center border border-safety/20 group-hover:border-safety transition-colors">
-                            <svg class="w-6 h-6 text-safety" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold mb-4 text-white">ARC Fractional CTO</h3>
-                        <ul class="space-y-4 text-gray-300 text-sm">
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 text-safety shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Collaborative planning tailored to non-technical owners.</li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 text-safety shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Intelligent AI automation to streamline your team's workflow.</li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 text-safety shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> A forward-looking roadmap to protect and grow your revenue.</li>
-                        </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="grunge-card p-8 flex flex-col h-full bg-[var(--accent-color)] text-[var(--bg-color)]" style="color: var(--bg-color);">
+                    <h3 class="text-2xl mb-2" style="color: var(--bg-color);">Self-Guided Playbooks</h3>
+                    <p class="mb-6 flex-grow font-medium">Not ready to hire us? Download our $49 industry-specific blueprints. Print them out and secure your business step-by-step on your own time.</p>
+                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4" style="border-color: var(--bg-color);">
+                        <span class="grunge-font font-bold text-xl">$49.00</span>
+                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="grunge-font text-sm underline hover:opacity-80">Browse Store</a>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="border-t brutalist-border bg-[var(--surface-color)] py-12 px-6 text-center">
+        <p class="grunge-font text-xl mb-6">ARC TECH RESILIENCE</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 text-sm font-medium" style="color: var(--text-secondary);">
+            <a href="/privacy-policy.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Terms of Service</a>
         </div>
-    </section>
-
-    <section class="bg-gray-50 dark:bg-gray-800/30 py-20 px-6 border-y border-gray-200 dark:border-gray-800/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 dark:text-white uppercase tracking-tight">
-                    Making Sense of the Digital Era
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    We bridge the gap for successful business owners who know they need to modernize, but don't want to get lost in technical jargon or hire a full-time executive.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-charcoal p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col h-full hover:border-safety hover:shadow-md transition-all group">
-                    <div class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-safety/10 transition-colors">
-                        <svg class="w-5 h-5 text-charcoal dark:text-gray-300 group-hover:text-safety transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-black text-charcoal dark:text-white mb-1">Overwhelmed by AI Options</h3>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-safety mb-6">Strategic Direction</p>
-                    <div class="space-y-4 flex-grow">
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Challenge:</strong> You run a successful non-tech business, but you hear about AI and automation daily. Figuring out what actually applies to your specific operation feels like guesswork.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">How We Help:</strong> We act as your translator. We cut through the hype to map out exactly which tools will genuinely save you time and money.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Result:</strong> Total confidence in your technology investments and an edge over competitors still doing things the hard way.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-charcoal p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col h-full hover:border-safety hover:shadow-md transition-all group">
-                    <div class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-safety/10 transition-colors">
-                        <svg class="w-5 h-5 text-charcoal dark:text-gray-300 group-hover:text-safety transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-black text-charcoal dark:text-white mb-1">Stuck in Reactive Mode</h3>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-safety mb-6">Relief for Teams</p>
-                    <div class="space-y-4 flex-grow">
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Challenge:</strong> Your team is drowning in day-to-day workarounds. Critical security updates and growth projects keep getting pushed back.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">How We Help:</strong> We partner with your existing staff or vendors, providing the executive leadership needed to stabilize the environment.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Result:</strong> A shift from constant fire-fighting to proactive innovation, faster project completion, and peace of mind.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-charcoal p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col h-full hover:border-safety hover:shadow-md transition-all group">
-                    <div class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-6 group-hover:bg-safety/10 transition-colors">
-                        <svg class="w-5 h-5 text-charcoal dark:text-gray-300 group-hover:text-safety transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-black text-charcoal dark:text-white mb-1">Scaling Friction</h3>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-safety mb-6">Operational Reliability</p>
-                    <div class="space-y-4 flex-grow">
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Challenge:</strong> You're growing, but manual processes, paperwork, and disconnected software tools are causing errors and wasting labor hours.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">How We Help:</strong> We integrate modern automation and secure zero-trust architecture tailored specifically to your operational footprint.</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-charcoal dark:text-white font-bold">The Result:</strong> Predictable, audit-ready workflows that reclaim dozens of hours every week, allowing you to focus on the big picture.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="bg-white dark:bg-darkerCharcoal py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 dark:text-white">Core Capabilities & Services</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    We architect your digital ecosystem side-by-side with you. See how our executive guidance and intelligent automation drive measurable growth, zero tech-speak required. We also respect your time—whether you prefer a quick text, a detailed email, or a chat message, we skip the exhausting video calls and communicate exactly how you prefer.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-12">
-                
-                <div class="flex flex-col gap-6 h-full">
-                    <div class="bg-white dark:bg-charcoal rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-xl flex flex-col flex-1 hover:border-safety transition-all group relative">
-                        <svg class="w-10 h-10 text-safety mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <h2 class="text-2xl font-black mb-2 tracking-tight dark:text-white relative z-10">Fractional CTO Partner</h2>
-                        <h3 class="text-sm text-safety font-bold mb-4 uppercase tracking-wider relative z-10">Dedicated Executive Guidance</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-grow relative z-10">
-                            Digital infrastructure shouldn't be a source of stress. We act as your trusted technology partner—translating complex decisions into plain language. We provide the dedicated oversight of a seasoned executive, helping you build a resilient foundation without the financial burden of a full-time hire.
-                        </p>
-                        <div class="pt-4 border-t border-gray-100 dark:border-gray-700 relative z-10 flex items-end justify-between">
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Foundational Review</p>
-                                <p class="text-2xl font-black text-safety">$2,950</p>
-                            </div>
-                            <button onclick="toggleRiseChat('audit')" class="bg-charcoal dark:bg-white text-white dark:text-charcoal px-6 py-3 rounded-lg font-bold text-sm hover:bg-safety hover:text-white transition">Secure Session</button>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-safety transition-colors group">
-                            <div class="w-8 h-8 bg-safety/10 rounded-md flex items-center justify-center mb-4 group-hover:bg-safety transition-colors">
-                                <svg class="w-4 h-4 text-safety group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-                            </div>
-                            <h3 class="text-base font-bold mb-2 dark:text-white">Strategic Roadmapping</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
-                                We work together to map out a technology plan aligned directly with your business goals, replacing guesswork with a clear, step-by-step path forward.
-                            </p>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-safety transition-colors group">
-                            <div class="w-8 h-8 bg-safety/10 rounded-md flex items-center justify-center mb-4 group-hover:bg-safety transition-colors">
-                                <svg class="w-4 h-4 text-safety group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                            </div>
-                            <h3 class="text-base font-bold mb-2 dark:text-white">Vendor Translation</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
-                                We handle the technical conversations with software vendors and IT teams for you, ensuring you get exactly what you pay for without the confusion.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-6 h-full">
-                    <div class="bg-charcoal dark:bg-charcoal rounded-2xl p-8 border-t-[4px] border-safety border-x border-gray-200 dark:border-gray-700 shadow-xl flex flex-col flex-1 hover:border-safety transition-all group relative">
-                        <svg class="w-10 h-10 text-safety mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        <h2 class="text-2xl font-black mb-2 tracking-tight text-white relative z-10">AI & Automation</h2>
-                        <h3 class="text-sm text-safety font-bold mb-4 uppercase tracking-wider relative z-10">Practical Optimization</h3>
-                        <p class="text-gray-300 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-grow relative z-10">
-                            We bring the power of AI down to earth. By deploying practical tools like Microsoft 365 Copilot and integrating Google Gemini directly into your workflows, we help your team automate repetitive tasks. Our goal is simple: reclaim valuable hours so your people can focus on what they do best.
-                        </p>
-                        <div class="pt-4 border-t border-gray-700 relative z-10 flex items-end justify-between">
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Custom Architecture</p>
-                                <p class="text-2xl font-black text-safety">$4,900+</p>
-                            </div>
-                            <button onclick="toggleRiseChat('ai')" class="bg-white text-charcoal px-6 py-3 rounded-lg font-bold text-sm hover:bg-safety hover:text-white transition">Explore AI Solutions</button>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-safety transition-colors group">
-                            <div class="w-8 h-8 bg-safety/10 rounded-md flex items-center justify-center mb-4 group-hover:bg-safety transition-colors">
-                                <svg class="w-4 h-4 text-safety group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                            </div>
-                            <h3 class="text-base font-bold mb-2 dark:text-white">Resilient Architecture</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
-                                We build secure, zero-trust digital environments that protect your company data, ensuring you are safe from disruptions while operating seamlessly.
-                            </p>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700/50 hover:border-safety transition-colors group">
-                            <div class="w-8 h-8 bg-safety/10 rounded-md flex items-center justify-center mb-4 group-hover:bg-safety transition-colors">
-                                <svg class="w-4 h-4 text-safety group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            </div>
-                            <h3 class="text-base font-bold mb-2 dark:text-white">Software Optimization</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
-                                We evaluate and configure the exact tools you need—like Microsoft and Google workspaces—saving you from paying for complicated subscriptions you don't use.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-<section class="bg-gray-50 dark:bg-gray-800/30 py-20 px-6 border-y border-gray-200 dark:border-gray-800/50 text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-navy rounded-2xl p-8 lg:p-12 border border-gray-700 shadow-2xl relative overflow-hidden">
-      
-      <div class="absolute top-0 left-0 w-2 h-full bg-safety"></div>
-
-      <div>
-        <h3 class="text-3xl font-bold mb-2">Self-Guided Resilience Playbooks</h3>
-        <p class="text-safety font-bold text-xl mb-4">$49 per Industry Blueprint</p>
-        <p class="text-gray-300 mb-8 leading-relaxed">
-          Not ready for a full executive engagement? Start with our Zero-Trust &amp; AI Playbooks. These dense, comprehensive digital playbooks are tailored to your specific industry and give you the exact step-by-step configurations to secure your business. Download, print, and deploy immediately, then reprint the forms for quarterly reviews as long as you wish.
-        </p>
-        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-safety hover:bg-[#e64700] text-navy font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 duration-300 shadow-lg">
-  Browse the Playbook Store
-</a>
-      </div>
-
-      <div class="bg-darkerCharcoal rounded-xl p-8 border border-gray-600 shadow-inner flex flex-col justify-center items-center text-center">
-          <div class="w-16 h-16 bg-safety/10 rounded-full flex items-center justify-center mb-6 border border-safety/30">
-              <svg class="w-8 h-8 text-safety" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
-          </div>
-          <h4 class="text-2xl font-bold mb-3">Instant $49 Audit Credit</h4>
-          <p class="text-gray-300 mb-6 text-sm leading-relaxed">
-              Every ARC Tech Resilience Blueprint includes a $49 credit code toward an ARC Foundational Review. 
-              <br><br>
-              When you purchase your playbook, your credit code will be automatically delivered to your email alongside your PDF download. No account creation required, never any sales pressure along your journey.
-          </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-    
-    <section id="roadmap" class="bg-gray-50 dark:bg-gray-800/30 py-20 px-6 border-y border-gray-200 dark:border-gray-800/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 dark:text-white">Our Partnership Roadmap</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    A clear, collaborative process designed to bring you stability, secure your systems, and introduce AI automation at a pace that makes sense for your business.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-gray-800/80 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:border-safety transition-colors shadow-sm">
-                    <span class="text-[80px] font-black text-gray-100 dark:text-gray-700/50 absolute -top-4 -right-2 pointer-events-none group-hover:text-safety/10 transition-colors">01</span>
-                    <h3 class="text-xl font-bold mt-4 mb-3 dark:text-white relative z-10">Introductory Chat <span class="text-safety text-sm font-black uppercase tracking-widest ml-1">(Free)</span></h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed relative z-10">
-                        We start with a straightforward conversation about your business headaches and goals. We do this entirely on your terms—via text, email, or chat—with absolutely no forced video meetings or confusing jargon.
-                    </p>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800/80 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:border-safety transition-colors shadow-sm">
-                    <span class="text-[80px] font-black text-gray-100 dark:text-gray-700/50 absolute -top-4 -right-2 pointer-events-none group-hover:text-safety/10 transition-colors">02</span>
-                    <h3 class="text-xl font-bold mt-4 mb-3 dark:text-white relative z-10">Discovery Phase</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed relative z-10">
-                        We look under the hood of your current setup to see where you are losing time and money, crafting an actionable blueprint tailored to your needs.
-                    </p>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800/80 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:border-safety transition-colors shadow-sm">
-                    <span class="text-[80px] font-black text-gray-100 dark:text-gray-700/50 absolute -top-4 -right-2 pointer-events-none group-hover:text-safety/10 transition-colors">03</span>
-                    <h3 class="text-xl font-bold mt-4 mb-3 dark:text-white relative z-10">Framework Setup</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed relative z-10">
-                        We roll out your new strategy step-by-step—implementing secure foundations and practical AI tools without disrupting your daily operations.
-                    </p>
-                </div>
-
-                <div class="bg-navy p-8 rounded-2xl border-2 border-safety shadow-xl relative group">
-                    <div class="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                        <span class="text-[80px] font-black text-white/5 absolute -top-4 -right-2">04</span>
-                    </div>
-                    <div class="absolute -top-3 left-6 bg-safety text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest z-20 shadow-sm">Execution</div>
-                    <h3 class="text-xl font-bold mt-4 mb-3 text-white relative z-10">Ongoing Partnership</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed relative z-10">
-                        We stay by your side to manage vendors, monitor security, and continuously improve your technology. You gain a dedicated advisor committed to your growth via predictable retainer without long term contract.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="convergence" class="bg-gray-50 dark:bg-gray-800/30 py-20 pb-32 px-6 border-t border-gray-200 dark:border-gray-800/50">
-        <div class="max-w-6xl mx-auto">
-            <div class="bg-charcoal rounded-3xl p-8 md:p-12 border border-gray-700 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-safety/5 rounded-full -mr-32 -mt-32 pointer-events-none"></div>
-                
-                <div class="flex-1 text-left z-10">
-                    <div class="flex items-center mb-4">
-                        <div class="w-8 h-8 bg-safety rounded flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
-                        </div>
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-safety">Infrastructure Oversight</h3>
-                    </div>
-                    <h2 class="text-3xl font-black mb-4 text-white tracking-tight">Cyber-Physical Convergence</h2>
-                    <p class="text-gray-300 leading-relaxed max-w-xl text-sm">
-                        The line between physical security and cybersecurity has disappeared. We audit your low-voltage systems—access control panels, IP cameras, and smart office IoT—mapping them against zero-trust network policies. As your Fractional CTO, we protect you from vendor bloat and ensure your physical build-outs meet enterprise security standards from day one.
-                    </p>
-                </div>
-                
-                <div class="bg-[#111827]/50 backdrop-blur border border-gray-700 p-6 rounded-2xl text-center z-10 min-w-[200px]">
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Convergence Audit</p>
-                    <p class="text-4xl font-black text-safety mb-2">$1,500</p>
-                    <p class="text-[10px] text-gray-500 mb-6">Physical & Digital Assessment</p>
-                    <button onclick="toggleRiseChat('convergence')" class="w-full bg-safety text-white px-6 py-3 rounded-lg font-black text-sm hover:bg-white hover:text-charcoal transition shadow-lg">Schedule Audit</button>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-   <footer class="bg-charcoal py-12 text-center text-gray-400 text-xs border-t border-white/5">
-        <p class="mb-6 text-white font-black text-sm tracking-widest uppercase">ARC Tech Resilience</p>
-        
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            <a href="/privacy-policy.html" class="hover:text-safety transition">Privacy Policy</a>
-            <a href="/terms-of-service.html" class="hover:text-safety transition">Terms of Service & Refund Policy</a>
-        </div>
-
-        <p class="mb-2 tracking-wide">Western PA Headquarters <span class="mx-2 text-safety">|</span> Serving Businesses Nationwide</p>
-        <!-- <p class="mb-2">855-923-0196 <span class="mx-2 text-safety">|</span> david@arccto.com</p> -->
-        <p class="mt-4 text-gray-600">© 2026 Ritter Strategic Enterprises LLC d/b/a ARC Tech Resilience.</p>
+        <p class="text-xs" style="color: var(--text-secondary);">© 2026 Ritter Strategic Enterprises LLC. Western PA Headquarters.</p>
     </footer>
 
+    <!-- RISE Agent & Tracking Base (Untouched Functionality) -->
     <div id="rise-widget-container">
-        <div id="rise-teaser" class="teaser-exit bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-2xl rounded-2xl p-4 w-72 mb-4 relative transition-all duration-500 hidden">
-            <button onclick="dismissTeaser()" class="absolute top-2 right-2 text-gray-400 hover:text-safety transition">
+        <div id="rise-teaser" class="teaser-exit p-4 w-72 mb-4 relative transition-all duration-500 hidden">
+            <button onclick="dismissTeaser()" class="absolute top-2 right-2 hover:text-[var(--accent-color)] transition cursor-pointer">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div class="flex items-center gap-2 mb-2">
-                <div class="w-2 h-2 bg-safety rounded-full animate-pulse"></div>
-                <span class="text-[10px] font-black uppercase tracking-widest text-charcoal dark:text-white">RISE Concierge</span>
+                <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent-color);"></div>
+                <span class="grunge-font text-sm">RISE CONCIERGE</span>
             </div>
-            <p class="text-xs text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">Hi there, I'm RISE. Thanks for visiting. If you have 60 seconds, I can run a preliminary audit on your operational systems to identify potential optimizations. Shall we begin?</p>
-            <button onclick="toggleRiseChat('assessment'); dismissTeaser();" class="w-full bg-charcoal dark:bg-safety text-white dark:text-white text-xs font-bold py-2 rounded-lg hover:opacity-90 transition">Proceed to Audit</button>
+            <p class="text-sm mb-4 font-medium">Hi there. If you have 60 seconds, I can help identify where you're losing time in your business. Shall we begin?</p>
+            <button onclick="toggleRiseChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm">Start Audit</button>
         </div>
 
         <div id="rise-chat-window">
@@ -542,6 +241,38 @@
         </button>
     </div>
 
+    <!-- Theme Toggle Engine -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // 1. Check LocalStorage or System OS preference on page load
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            themeToggleBtn.innerText = "[ LIGHT ]";
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            themeToggleBtn.innerText = "[ DARK ]";
+        }
+
+        // 2. Listen for clicks to manually override
+        themeToggleBtn.addEventListener("click", function() {
+            let theme = "light";
+            if (document.documentElement.getAttribute("data-theme") !== "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                themeToggleBtn.innerText = "[ LIGHT ]";
+                theme = "dark";
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+                themeToggleBtn.innerText = "[ DARK ]";
+            }
+            // Save preference
+            localStorage.setItem("theme", theme);
+        });
+    </script>
+
+    <!-- RISE Agent Engine -->
     <script>
         const chatWindow = document.getElementById('rise-chat-window');
         const btn = document.getElementById('rise-toggle-btn');
@@ -583,45 +314,17 @@
                     teaser.classList.add('teaser-enter');
                 }, 50);
             }
-        }, 30000);
-
-        // AUTO-OPEN CHAT FROM EMAIL LINKS & PDFS
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlIntent = urlParams.get('intent');
-            const urlAction = urlParams.get('action');
-
-            if (urlIntent || urlAction) {
-                // 1. Pass the parameters cleanly into the iframe while keeping your secure ?key= intact
-                const botFrame = document.getElementById('rise-iframe'); 
-                if (botFrame) {
-                    botFrame.src = baseUrl + (urlIntent ? "&intent=" + urlIntent : "") + (urlAction ? "&action=" + urlAction : "");
-                }
-
-                // 2. Pop the window open visually, but DO NOT pass a parameter to toggleRiseChat!
-                // This prevents the iframe from reloading a second time and wiping the greeting.
-                setTimeout(() => {
-                    toggleRiseChat(); 
-                }, 500); 
-            }
-        });
+        }, 15000); // Trigger teaser earlier for engagement
     </script>
+
+    <!-- Default Statcounter code for ARC http://www.arccto.com -->
+    <script type="text/javascript">
+    var sc_project=13336855; 
+    var sc_invisible=1; 
+    var sc_security="73022e84"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13336855/0/73022e84/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
 </body>
-    <!-- Default Statcounter code for ARC http://www.arccto.com
--->
-<script type="text/javascript">
-var sc_project=13336855; 
-var sc_invisible=1; 
-var sc_security="73022e84"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics
-Made Easy - Statcounter" href="https://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13336855/0/73022e84/1/"
-alt="Web Analytics Made Easy - Statcounter"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </html>
