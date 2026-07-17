@@ -77,14 +77,13 @@
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
         .hero-gradient { background: radial-gradient(circle at top right, #374151, #111827); }
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col text-charcoal dark:bg-darkerCharcoal dark:text-gray-50 transition-colors duration-300">
 
     <nav class="fixed w-full z-50 glass-header border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-black tracking-tighter text-2xl text-white">ARC<span class="text-safety">.</span></div>
+            <div class="font-black tracking-tighter text-2xl text-white">ARC</div>
             <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
                 <a href="#strategy" class="hover:text-safety transition">Partnership</a>
                 <a href="#services" class="hover:text-safety transition">Capabilities</a>
@@ -92,19 +91,6 @@
             </div>
         </div>
     </nav>
-
-    <div class="fixed w-full top-16 z-40 bg-charcoal/95 border-b border-white/5 py-2 px-6 flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-6">
-        <div class="flex items-center gap-2">
-            <div class="status-dot bg-red-600 opacity-20"></div>
-            <div class="status-dot bg-yellow-500 opacity-20"></div>
-            <div class="status-dot bg-green-500 animate-pulse shadow-[0_0_8px_#22c55e]"></div>
-            <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">System Status: <span class="text-green-500">Operational</span></span>
-        </div>
-        <div class="hidden sm:block h-3 w-px bg-white/10"></div>
-        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Western PA Headquarters <span class="mx-1 text-safety">|</span> National Remote Support</span>
-        <div class="hidden sm:block h-3 w-px bg-white/10"></div>
-        <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">⚡ 24/7 AI Assistant Live via Voice & Chat <span class="mx-1 text-safety">|</span> (855) 923-0196</span>
-    </div>
 
     <header class="hero-gradient pt-40 pb-20 px-6 text-white overflow-hidden relative">
         <div class="max-w-6xl mx-auto text-center md:text-left">
@@ -116,12 +102,8 @@
        You don't have to be a tech company to have great technology. We help local service businesses, brick-and-mortar shops, and growing agencies secure their infrastructure and deploy practical AI automation.
      </p>
                 <div class="flex flex-col items-center md:items-start gap-4">
-                    <button onclick="toggleRiseChat('assessment')" class="bg-safety text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white hover:text-charcoal hover:scale-105 transition shadow-[0_0_24px_rgba(255,79,0,0.4)] flex items-center gap-3">
-                        Self Guided Audit
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
                     <a href="#services" class="text-sm font-large text-gray-400 hover:text-white transition mt-2 flex items-center gap-2 group">
-                        Or explore how we help you scale
+                        Explore how we help you scale
                         <svg class="w-4 h-4 group-hover:translate-y-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                     </a>
                 </div>
@@ -408,25 +390,6 @@
         </div>
     </section>
 
-    <section class="bg-white dark:bg-darkerCharcoal py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="bg-gray-50 dark:bg-charcoal/30 rounded-2xl p-8 md:p-10 border border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 shadow-sm relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-safety/5 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="flex-shrink-0">
-                    <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center relative z-10">
-                        <svg class="w-8 h-8 text-safety" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                </div>
-                <div class="flex-1 text-left relative z-10">
-                    <h2 class="text-2xl font-bold mb-3 text-charcoal dark:text-white tracking-tight">Securing Your Physical Footprint.</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl">
-                        True business resilience extends beyond software. When it comes to upgrading your physical spaces—including structured cabling, unified communications, and smart surveillance—we rely on a strategic alliance with a national infrastructure firm boasting over two decades of experience.  To ensure the highest quality of service, ARC completely turns over all physical deployment projects to this trusted partner. You will contract directly with their expert team, who will independently execute, manage, and deliver the physical buildout.
-                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="convergence" class="bg-gray-50 dark:bg-gray-800/30 py-20 pb-32 px-6 border-t border-gray-200 dark:border-gray-800/50">
         <div class="max-w-6xl mx-auto">
             <div class="bg-charcoal rounded-3xl p-8 md:p-12 border border-gray-700 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden">
@@ -456,7 +419,7 @@
     </section>
  
    <footer class="bg-charcoal py-12 text-center text-gray-400 text-xs border-t border-white/5">
-        <p class="mb-6 text-white font-black text-sm tracking-widest uppercase">ARC Tech Resilience<span class="text-safety">.</span></p>
+        <p class="mb-6 text-white font-black text-sm tracking-widest uppercase">ARC Tech Resilience</p>
         
         <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
             <a href="/privacy-policy.html" class="hover:text-safety transition">Privacy Policy</a>
@@ -464,7 +427,7 @@
         </div>
 
         <p class="mb-2 tracking-wide">Western PA Headquarters <span class="mx-2 text-safety">|</span> Serving Businesses Nationwide</p>
-        <p class="mb-2">855-923-0196 <span class="mx-2 text-safety">|</span> david@arccto.com</p>
+        <!-- <p class="mb-2">855-923-0196 <span class="mx-2 text-safety">|</span> david@arccto.com</p> -->
         <p class="mt-4 text-gray-600">© 2026 Ritter Strategic Enterprises LLC d/b/a ARC Tech Resilience.</p>
     </footer>
 
