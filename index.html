@@ -2,29 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://www.arccto.com/" />
-    <title>ARC Tech Resilience | Fractional CTO & AI Automation</title>
+    <title>ARC Tech Resilience | Cyber-Grunge Advisory</title>
     <script src="https://cdn.tailwindcss.com"></script>
-   <script>
+    <script>
+    // Force Tailwind's dark palette to maintain the gritty analog aesthetic
     tailwind.config = {
-        darkMode: 'media',
+        darkMode: 'class',
         theme: {
             extend: {
                 colors: {
-                    // Gen X Grunge / Zine Rebrand
-                    charcoal: '#27272a', // Washed Asphalt
-                    darkerCharcoal: '#18181b', // Deep Grunge
-                    navy: '#292524', // Muddy Slate
-                    safety: '#ea580c', // Rusted Flannel Orange
-                    pureWhite: '#e5e5e5', // Newspaper Off-White
+                    charcoal: '#121212', // Charcoal black
+                    darkerCharcoal: '#121212', 
+                    navy: '#2a2a2a', // Dark concrete
+                    safety: '#4a0404', // Deep Burgundy
+                    pureWhite: '#f4f4f0', // Creamy off-white
                 }
             }
         }
     }
-</script>
+    </script>
+    <script>
+        // Instantly lock the browser into dark mode
+        document.documentElement.classList.add('dark');
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,38 +64,108 @@
     }
     </script>
     <style>
-        /* 90s Alt Poster & Terminal Mono Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-        
-        body { font-family: 'Space Mono', monospace; transition: background-color 0.3s ease; scroll-behavior: smooth; letter-spacing: -0.02em; }
-        
-        /* Anti-corporate, heavy poster font for headings */
-        h1, h2, h3, h4, .font-black { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; font-weight: 400; }
-        
-        /* 90s Brutalist Hack: Sharp corners for that raw zine feel */
-        .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg, .rounded-md { border-radius: 0px !important; }
-        
-        /* Keep RISE widget circular, but add a 90s brutalist offset shadow */
-        #rise-toggle-btn, .rounded-full, .status-dot { border-radius: 50% !important; }
-        #rise-chat-window, #rise-teaser { border-radius: 0px !important; border: 2px solid #ea580c; }
-        
-        .glass-header { background: rgba(24, 24, 27, 0.95); border-bottom: 2px solid #27272a; }
-        
-        /* Fixed Widget Container */
+        /* Cyber-Grunge Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Space Mono', monospace;
+            /* Analog Film Grain / Photocopy static injected via raw SVG filter */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            background-color: #121212 !important;
+            color: #f4f4f0 !important;
+            transition: background-color 0.3s ease;
+            scroll-behavior: smooth;
+            letter-spacing: -0.02em;
+            cursor: crosshair; /* Urban grit hand-drawn UI feel */
+        }
+
+        /* Overriding tailwind text colors to enforce the analog palette */
+        p, span:not(.status-dot):not(.text-safety), li { color: #f4f4f0 !important; }
+        .text-safety { color: #4682b4 !important; } /* Vintage Blue replaces the old accent */
+        .text-gray-400, .text-gray-500, .text-gray-600 { color: #a0a095 !important; } /* Faded Cream */
+
+        /* Distressed Stencil / Gig Poster Headings */
+        h1, h2, h3, h4, .font-black {
+            font-family: Impact, 'Arial Black', sans-serif;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #f4f4f0 !important;
+        }
+
+        /* Asymmetrical Grid & Torn Edge Simulator */
+        .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg, .rounded-md {
+            border-radius: 0px !important;
+            border: 2px dashed #556b2f !important; /* Muted olive retro wireframe borders */
+            background-color: #2a2a2a !important; /* Concrete block */
+            box-shadow: 6px 6px 0px rgba(74, 4, 4, 1) !important; /* Deep burgundy solid drop shadow */
+            transform: rotate(-0.5deg); /* Break the sterile grid */
+            transition: all 0.2s ease;
+        }
+
+        /* Hover state to amplify the chaos */
+        .rounded-xl:hover, .rounded-2xl:hover, .rounded-3xl:hover {
+            transform: rotate(0.5deg) scale(1.02);
+            border-color: #4682b4 !important; /* Vintage blue hover */
+            box-shadow: -4px 6px 0px rgba(74, 4, 4, 1) !important;
+        }
+
+        /* Fix header/nav to prevent rotation */
+        .glass-header, .hero-gradient, #rise-teaser, #rise-chat-window {
+            transform: none !important;
+        }
+
+        .glass-header {
+            background: rgba(18, 18, 18, 0.95) !important;
+            border-bottom: 2px solid #556b2f !important;
+        }
+
+        /* Grungy vignette gradient for the hero */
+        .hero-gradient {
+            background: radial-gradient(circle at center, #2a2a2a, #121212);
+            border-bottom: 4px dotted #4a0404 !important;
+        }
+
+        /* Fixed Widget Container (Agent Tracking remains fully intact) */
         #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; align-items: flex-end; }
-        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); box-shadow: 8px 8px 0px rgba(234,88,12,0.2); overflow: hidden; margin-bottom: 20px; background: #fff; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; }
-        #rise-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
-        #rise-toggle-btn { background-color: #ea580c; color: #18181b; border: 2px solid #18181b; width: 56px; height: 56px; cursor: pointer; box-shadow: 4px 4px 0px rgba(24, 24, 27, 1); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; }
-        #rise-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px rgba(24, 24, 27, 1); }
+        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; }
+        #rise-chat-window.active { display: block; transform: translateY(0) !important; opacity: 1; }
+        
+        #rise-chat-window, #rise-teaser {
+            border-radius: 0px !important;
+            border: 2px solid #4682b4 !important; /* Vintage blue border */
+            box-shadow: 8px 8px 0px #4a0404 !important; /* Burgundy shadow */
+            background-color: #121212 !important;
+        }
+
+        /* Retro Button overrides */
+        button, .bg-safety {
+            background-color: #4a0404 !important; /* Burgundy */
+            color: #f4f4f0 !important; /* Cream */
+            border: 2px dashed #4682b4 !important; /* Vintage Blue */
+            border-radius: 0px !important;
+            cursor: crosshair !important;
+        }
+        
+        /* Agent Toggle Button (Keep it circular so the icon doesn't break) */
+        #rise-toggle-btn {
+            background-color: #4a0404 !important; 
+            color: #f4f4f0 !important; 
+            border: 2px solid #4682b4 !important;
+            border-radius: 50% !important; 
+            width: 56px; height: 56px;
+            box-shadow: 4px 4px 0px #556b2f !important;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0;
+            cursor: crosshair !important;
+        }
+        #rise-toggle-btn:hover { transform: translate(-2px, -2px) !important; box-shadow: 6px 6px 0px #556b2f !important; }
         #rise-toggle-btn svg { width: 28px; height: 28px; fill: currentColor; transition: transform 0.3s ease; }
         #rise-toggle-btn.active svg { transform: rotate(90deg); }
-        
+        .status-dot { border-radius: 50% !important; border-style: solid !important; }
+
         /* Teaser Bubble Animations */
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
-        
-        /* Grungy vignette gradient for the hero */
-        .hero-gradient { background: radial-gradient(circle at center, #27272a, #18181b); border-bottom: 2px solid #3f3f46; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col text-charcoal dark:bg-darkerCharcoal dark:text-gray-50 transition-colors duration-300">
