@@ -87,29 +87,18 @@
         
         <a href="/" class="block hover:scale-105 transition-transform origin-left">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" class="h-12 w-auto md:h-14">
-                <defs>
-                    <filter id="torn-paper" x="-20%" y="-20%" width="140%" height="140%">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
-                    </filter>
-                    <filter id="ink-grit" x="-10%" y="-10%" width="120%" height="120%">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise" />
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="distressed" />
-                        <feColorMatrix in="noise" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 2.5 -0.8" result="speckles" />
-                        <feComposite operator="out" in="distressed" in2="speckles" />
-                    </filter>
-                </defs>
-
-                <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start" filter="url(#ink-grit)">ARC</text>
-                <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="2" text-anchor="start" filter="url(#ink-grit)">ARC</text>
+                <!-- ARC text with Crimson shadow -->
+                <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
+                <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="3" text-anchor="start">ARC</text>
                 
+                <!-- CTO in a Teal Brutalist Pill -->
                 <g transform="rotate(3 240 65)">
-                    <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" filter="url(#torn-paper)" />
-                    <rect x="185" y="45" width="95" height="40" fill="none" stroke="var(--text-primary)" stroke-width="2" filter="url(#torn-paper)" />
-                    <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle" filter="url(#ink-grit)">CTO</text>
+                    <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="2" />
+                    <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">CTO</text>
                 </g>
                 
-                <path d="M 15 95 Q 160 125 310 85" fill="none" stroke="var(--accent-yellow)" stroke-width="6" stroke-linecap="square" filter="url(#torn-paper)" />
+                <!-- Mustard Yellow swooping underline -->
+                <path d="M 20 100 Q 160 120 300 90" fill="none" stroke="var(--accent-yellow)" stroke-width="5" stroke-linecap="round" />
             </svg>
         </a>
 
