@@ -154,14 +154,59 @@
             .grunge-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 8px 8px 0px var(--text-primary); z-index: 10; relative; }
         }
 
-        /* Agent Widget Overrides for Analog Theme */
+       /* Agent Widget Overrides for Analog Theme */
         #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99998; display: flex; flex-direction: column; align-items: flex-end; }
         #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
         #rise-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
-        #rise-toggle-btn { background-color: var(--accent-color); color: var(--bg-color); border: var(--border-style); width: 56px; height: 56px; cursor: pointer; box-shadow: 4px 4px 0px var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; }
-        #rise-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--text-primary); }
-        #rise-toggle-btn svg { width: 28px; height: 28px; fill: currentColor; transition: transform 0.3s ease; }
-        #rise-toggle-btn.active svg { transform: rotate(90deg); }
+        
+        /* The Guitar Pick Agent Toggle */
+        #rise-toggle-btn { 
+            background-color: var(--accent-yellow); /* High contrast Mustard Yellow */
+            color: var(--text-primary); /* Deep charcoal icon */
+            border: var(--border-style); 
+            width: 60px; 
+            height: 60px; 
+            cursor: pointer; 
+            box-shadow: 4px 4px 0px var(--text-primary); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.2s ease; 
+            flex-shrink: 0; 
+            
+            /* The CSS Pick Hack: Round 3 corners, leave 1 sharp, then rotate */
+            border-radius: 50% 50% 50% 5%; 
+            transform: rotate(45deg);
+            margin-right: 8px; /* Adjust for the rotation offset */
+            margin-bottom: 8px;
+        }
+        
+        #rise-toggle-btn:hover { 
+            /* Maintain the 45deg rotation during hover movement */
+            transform: rotate(45deg) translate(-2px, -2px); 
+            box-shadow: 6px 6px 0px var(--text-primary); 
+        }
+
+        /* Snap to Teal when the chat is active */
+        #rise-toggle-btn.active {
+            background-color: var(--accent-teal);
+            color: var(--bg-color);
+        }
+        
+        #rise-toggle-btn svg { 
+            width: 30px; 
+            height: 30px; 
+            fill: currentColor; 
+            transition: transform 0.3s ease; 
+            /* Counter-rotate the icon so it sits straight inside the angled pick */
+            transform: rotate(-45deg); 
+        }
+        
+        #rise-toggle-btn.active svg { 
+            /* Spin to an 'X' when open */
+            transform: rotate(45deg); 
+        }
+        
         #rise-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--text-primary); background: var(--surface-color); color: var(--text-primary); }
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
