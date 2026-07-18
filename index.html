@@ -396,9 +396,12 @@
             }
             dismissTeaser();
             
-            // NEW: Sync the theme the exact moment the chat window opens
+            // Sync the theme 
             const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
             iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: currentTheme }, '*');
+            
+            // DIRECT THE CURSOR:
+            iframe.contentWindow.postMessage({ type: 'FOCUS_INPUT' }, '*');
             
             if (!chatWindow.classList.contains('active')) {
                 chatWindow.classList.add('active');
