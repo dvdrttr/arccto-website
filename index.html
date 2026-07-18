@@ -33,26 +33,65 @@
         /* Typography: Grunge Headers + Ultra-Clean Body */
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
 
-        /* Core structure for arccto.com theme switching */
+        /* Core structure for arccto.com theme switching - 90s Rock Gen X Edition */
         :root {
-            /* Light Theme: Analog Zine / Raw Paper */
-            --bg-color: #F4F1EA;         
-            --surface-color: #EAE5DA;    
-            --text-primary: #1C1C1C;     
-            --text-secondary: #595650;   
-            --accent-color: #C84B31;     
+            /* Light Theme: Bleached Zine / Tour Poster */
+            --bg-color: #EFECE4;         /* Bleached paper */
+            --surface-color: #E2DFD3;    /* Slightly darker paper */
+            --text-primary: #1E1E1E;     /* Deep slate */
+            --text-secondary: #6B6B6B;   /* Faded ink */
+            
+            /* The 90s Tri-Color Palette from 1784337151474.jpg */
+            --accent-red: #B82525;       
+            --accent-yellow: #C2963A;    
+            --accent-teal: #427878;      
+            
+            /* Main interactive accent */
+            --accent-color: var(--accent-red);     
+            
             --border-style: 2px solid var(--text-primary);
-            --noise-opacity: 0.04;
+            --noise-opacity: 0.06;
         }
 
         [data-theme="dark"] {
-            /* Dark Theme: Industrial Terminal */
-            --bg-color: #121316;         
-            --surface-color: #1C1D22;    
-            --text-primary: #ECEFF1;     
-            --text-secondary: #90A4AE;   
-            --accent-color: #FF6B4A;     
-            --noise-opacity: 0.07;
+            /* Dark Theme: Mapped exactly to 1784337151474.jpg */
+            --bg-color: #1F1F1F;         /* Deep matte charcoal */
+            --surface-color: #2A2A2A;    /* Elevated slate */
+            --text-primary: #F4F4F4;     /* Crisp off-white */
+            --text-secondary: #A0A0A0;   /* Muted grey */
+            
+            /* Brightened Tri-Color Palette for contrast on dark */
+            --accent-red: #D62D2D;       
+            --accent-yellow: #E5B345;    
+            --accent-teal: #4F9999;      
+            
+            --accent-color: var(--accent-red);     
+            --border-style: 2px solid var(--text-primary);
+            --noise-opacity: 0.09; /* Slightly heavier grit on dark */
+        }
+
+        /* 
+         * Optional: Apply the tri-color palette to the service cards 
+         * to mimic the 3 stripes from the reference image 
+         */
+        .grunge-card:nth-child(1) {
+            border-color: var(--accent-red);
+            box-shadow: 4px 4px 0px var(--accent-red);
+        }
+        .grunge-card:nth-child(2) {
+            border-color: var(--accent-yellow);
+            box-shadow: 4px 4px 0px var(--accent-yellow);
+        }
+        .grunge-card:nth-child(3) {
+            border-color: var(--accent-teal);
+            box-shadow: 4px 4px 0px var(--accent-teal);
+        }
+        
+        /* Update hover states to match the colored shadows */
+        @media (min-width: 768px) {
+            .grunge-card:nth-child(1):hover { box-shadow: 8px 8px 0px var(--accent-red); }
+            .grunge-card:nth-child(2):hover { box-shadow: 8px 8px 0px var(--accent-yellow); }
+            .grunge-card:nth-child(3):hover { box-shadow: 8px 8px 0px var(--accent-teal); }
         }
 
         body {
@@ -131,12 +170,31 @@
 <body class="antialiased min-h-screen flex flex-col">
 
     <!-- Mobile-Optimized Semantic Navigation -->
-    <nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b brutalist-border px-6 py-4 flex justify-between items-center">
-        <div class="grunge-font text-2xl font-bold tracking-tighter">ARC<span style="color: var(--accent-color);"></span></div>
-        <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
-            [ DARK ]
-        </button>
-    </nav>
+<nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b brutalist-border px-6 py-4 flex justify-between items-center">
+    
+    <!-- Concept 2: The "Backstage Pass" Logo -->
+    <a href="/" class="block hover:scale-105 transition-transform origin-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" class="h-12 w-auto md:h-14">
+            <!-- ARC text with Crimson shadow -->
+            <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
+            <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="3" text-anchor="start">ARC</text>
+            
+            <!-- CTO in a Teal Brutalist Pill -->
+            <g transform="rotate(3 240 65)">
+                <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="2" />
+                <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">CTO</text>
+            </g>
+            
+            <!-- Mustard Yellow swooping underline -->
+            <path d="M 20 100 Q 160 120 300 90" fill="none" stroke="var(--accent-yellow)" stroke-width="5" stroke-linecap="round" />
+        </svg>
+    </a>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
+        [ DARK ]
+    </button>
+</nav>
 
     <main class="flex-grow">
         <!-- Hero Section -->
