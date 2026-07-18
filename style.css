@@ -1,22 +1,22 @@
-/* Base Variables (Default Light Theme) */ 
+/* Base Variables (Default Light Theme - Bleached Zine) */ 
 :root {
-  --bg-primary: #ffffff; 
-  --bg-secondary: #f8fafc; /* Crisp slate-50 */
-  --text-main: #0A192F; /* Deep Navy text for high trust in light mode */
-  --text-muted: #475569; /* Slate 600 */
-  --accent-color: #FF4F00; /* International Orange */ 
-  --border-color: #e2e8f0; /* Slate 200 */
+  --bg-primary: #EFECE4; /* Bleached paper background */
+  --bg-secondary: #E2DFD3; /* Slightly darker surface for panels */
+  --text-main: #1E1E1E; /* Deep slate ink */
+  --text-muted: #6B6B6B; /* Faded ink */
+  --accent-color: #B82525; /* ARC Rust Red */ 
+  --border-color: #1E1E1E; /* Harsh solid border */
 } 
 
-/* Auto-Detect System Dark Theme */ 
+/* Auto-Detect System Dark Theme (Pitch/Concrete) */ 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #0A192F; /* Deep Navy Main Background */
-    --bg-secondary: #1F2937; /* Charcoal Cards/Panels */
-    --text-main: #f1f5f9; /* Slate 100 Off-White */
-    --text-muted: #94a3b8; /* Slate 400 */
-    --accent-color: #FF4F00; /* International Orange */
-    --border-color: #374151; /* Charcoal/Slate 700 Borders */
+    --bg-primary: #1F1F1F; /* Deep matte charcoal */
+    --bg-secondary: #2A2A2A; /* Elevated concrete surface */
+    --text-main: #F4F4F4; /* Crisp off-white */
+    --text-muted: #A0A0A0; /* Muted ghost text */
+    --accent-color: #D62D2D; /* Brightened Rust Red for contrast */
+    --border-color: #F4F4F4; /* High contrast borders */
   } 
 } 
 
@@ -24,23 +24,29 @@
 body {
   background-color: var(--bg-primary); 
   color: var(--text-main); 
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade when OS theme changes */ 
-  font-family: 'Inter', system-ui, sans-serif; /* Recommended clean font stack */ 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  font-family: 'Inter', system-ui, sans-serif; 
 } 
 
-/* Example Revenue Stack Card Styling */ 
+/* Brutalist Silo/Revenue Card Styling */ 
 .revenue-card {
   background-color: var(--bg-secondary); 
-  border: 1px solid var(--border-color); 
+  border: 2px solid var(--border-color); /* Thicker, harsher borders */
   color: var(--text-main); 
   padding: 24px; 
-  border-radius: 8px; 
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-radius: 0px; /* Sharp corners, no corporate curves */
+  box-shadow: 4px 4px 0px var(--text-main); /* Hard, offset retro shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 } 
+
+.revenue-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--text-main); /* Shadow expands on hover */
+}
 
 .revenue-icon {
   margin-bottom: 16px; 
   display: block; 
-  color: var(--accent-color); /* Forces SVG stroke/fill to use International Orange */
+  color: var(--accent-color); /* Forces SVG stroke/fill to use ARC Red */
   transition: color 0.3s ease, stroke 0.3s ease; 
 }
