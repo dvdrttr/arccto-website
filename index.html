@@ -41,7 +41,7 @@
             --text-primary: #1E1E1E;     /* Deep slate */
             --text-secondary: #6B6B6B;   /* Faded ink */
             
-            /* The 90s Tri-Color Palette from 1784337151474.jpg */
+            /* The 90s Tri-Color Palette */
             --accent-red: #B82525;       
             --accent-yellow: #C2963A;    
             --accent-teal: #427878;      
@@ -54,7 +54,7 @@
         }
 
         [data-theme="dark"] {
-            /* Dark Theme: Mapped exactly to 1784337151474.jpg */
+            /* Dark Theme */
             --bg-color: #1F1F1F;         /* Deep matte charcoal */
             --surface-color: #2A2A2A;    /* Elevated slate */
             --text-primary: #F4F4F4;     /* Crisp off-white */
@@ -70,10 +70,7 @@
             --noise-opacity: 0.09; /* Slightly heavier grit on dark */
         }
 
-        /* 
-         * Optional: Apply the tri-color palette to the service cards 
-         * to mimic the 3 stripes from the reference image 
-         */
+        /* Colored shadows mapping the tri-color theme stripes */
         .grunge-card:nth-child(1) {
             border-color: var(--accent-red);
             box-shadow: 4px 4px 0px var(--accent-red);
@@ -151,18 +148,18 @@
         @media (min-width: 768px) {
             .grunge-card:nth-child(odd) { transform: rotate(-1deg); }
             .grunge-card:nth-child(even) { transform: rotate(1deg); }
-            .grunge-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 8px 8px 0px var(--text-primary); z-index: 10; relative; }
+            .grunge-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 8px 8px 0px var(--text-primary); z-index: 10; position: relative; }
         }
 
-       /* Agent Widget Overrides for Analog Theme */
-        #rise-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99998; display: flex; flex-direction: column; align-items: flex-end; }
-        #rise-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
-        #rise-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
+       /* Agent Widget Layout Rules */
+        #mca-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99998; display: flex; flex-direction: column; align-items: flex-end; }
+        #mca-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
+        #mca-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
         
         /* The Guitar Pick Agent Toggle */
-        #rise-toggle-btn { 
-            background-color: var(--accent-yellow); /* High contrast Mustard Yellow */
-            color: var(--text-primary); /* Deep charcoal icon */
+        #mca-toggle-btn { 
+            background-color: var(--accent-yellow); /* Mustard Yellow */
+            color: var(--text-primary); 
             border: var(--border-style); 
             width: 60px; 
             height: 60px; 
@@ -173,41 +170,35 @@
             justify-content: center; 
             transition: all 0.2s ease; 
             flex-shrink: 0; 
-            
-            /* The CSS Pick Hack: Round 3 corners, leave 1 sharp, then rotate */
             border-radius: 50% 50% 50% 5%; 
             transform: rotate(45deg);
-            margin-right: 8px; /* Adjust for the rotation offset */
+            margin-right: 8px; 
             margin-bottom: 8px;
         }
         
-        #rise-toggle-btn:hover { 
-            /* Maintain the 45deg rotation during hover movement */
+        #mca-toggle-btn:hover { 
             transform: rotate(45deg) translate(-2px, -2px); 
             box-shadow: 6px 6px 0px var(--text-primary); 
         }
 
-        /* Snap to Teal when the chat is active */
-        #rise-toggle-btn.active {
+        #mca-toggle-btn.active {
             background-color: var(--accent-teal);
             color: var(--bg-color);
         }
         
-        #rise-toggle-btn svg { 
+        #mca-toggle-btn svg { 
             width: 30px; 
             height: 30px; 
             fill: currentColor; 
             transition: transform 0.3s ease; 
-            /* Counter-rotate the icon so it sits straight inside the angled pick */
             transform: rotate(-45deg); 
         }
         
-        #rise-toggle-btn.active svg { 
-            /* Spin to an 'X' when open */
+        #mca-toggle-btn.active svg { 
             transform: rotate(45deg); 
         }
         
-        #rise-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--text-primary); background: var(--surface-color); color: var(--text-primary); }
+        #mca-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--text-primary); background: var(--surface-color); color: var(--text-primary); }
         .teaser-enter { transform: translateY(0); opacity: 1; }
         .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
     </style>
@@ -215,31 +206,30 @@
 <body class="antialiased min-h-screen flex flex-col">
 
     <!-- Mobile-Optimized Semantic Navigation -->
-<nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b brutalist-border px-6 py-4 flex justify-between items-center">
-    
-    <!-- Concept 2: The "Backstage Pass" Logo -->
-    <a href="/" class="block hover:scale-105 transition-transform origin-left">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" class="h-12 w-auto md:h-14">
-            <!-- ARC text with Crimson shadow -->
-            <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
-            <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="3" text-anchor="start">ARC</text>
-            
-            <!-- CTO in a Teal Brutalist Pill -->
-            <g transform="rotate(3 240 65)">
-                <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="2" />
-                <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">CTO</text>
-            </g>
-            
-            <!-- Mustard Yellow swooping underline -->
-            <path d="M 20 100 Q 160 120 300 90" fill="none" stroke="var(--accent-yellow)" stroke-width="5" stroke-linecap="round" />
-        </svg>
-    </a>
+    <nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b px-6 py-4 flex justify-between items-center brutalist-border">
+        <!-- The "Backstage Pass" Logo -->
+        <a href="/" class="block hover:scale-105 transition-transform origin-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" class="h-12 w-auto md:h-14">
+                <!-- ARC text with Crimson shadow -->
+                <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
+                <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="3" text-anchor="start">ARC</text>
+                
+                <!-- CTO in a Teal Brutalist Pill -->
+                <g transform="rotate(3 240 65)">
+                    <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="2" />
+                    <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">CTO</text>
+                </g>
+                
+                <!-- Mustard Yellow swooping underline -->
+                <path d="M 20 100 Q 160 120 300 90" fill="none" stroke="var(--accent-yellow)" stroke-width="5" stroke-linecap="round" />
+            </svg>
+        </a>
 
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
-        [ DARK ]
-    </button>
-</nav>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
+            [ DARK ]
+        </button>
+    </nav>
 
     <main class="flex-grow">
         <!-- Hero Section -->
@@ -252,7 +242,7 @@
                 Plain-English tech consulting for the two-bay tire shops, the corner bakeries, and Main Street businesses. Get the same tools the big guys use, without the corporate BS.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="toggleRiseChat('audit')" class="cta-button grunge-font px-8 py-4 text-lg text-center">
+                <button onclick="toggleMcaChat('audit')" class="cta-button grunge-font px-8 py-4 text-lg text-center">
                     Get Started
                 </button>
                 <a href="#services" class="px-8 py-4 text-lg font-medium text-center brutalist-border bg-[var(--surface-color)] shadow-[4px_4px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--text-primary)] transition-all">
@@ -279,7 +269,7 @@
                     </p>
                     <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
                         <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Foundational</span>
-                        <button onclick="toggleRiseChat('audit')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+                        <button onclick="toggleMcaChat('audit')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
                     </div>
                 </div>
 
@@ -291,7 +281,7 @@
                     </p>
                     <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
                         <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Automation</span>
-                        <button onclick="toggleRiseChat('ai')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+                        <button onclick="toggleMcaChat('ai')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
                     </div>
                 </div>
 
@@ -303,7 +293,7 @@
                     </p>
                     <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
                         <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Advisory</span>
-                        <button onclick="toggleRiseChat('vendor')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+                        <button onclick="toggleMcaChat('vendor')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
                     </div>
                 </div>
 
@@ -330,9 +320,9 @@
         <p class="text-xs" style="color: var(--text-secondary);">© 2026 RSE LLC.</p>
     </footer>
 
-    <!-- ARC MCA Agent & Tracking Base (Untouched Functionality) -->
-    <div id="rise-widget-container">
-        <div id="rise-teaser" class="teaser-exit p-4 w-72 mb-4 relative transition-all duration-500 hidden">
+    <!-- ARC MCA Agent & Tracking Base -->
+    <div id="mca-widget-container">
+        <div id="mca-teaser" class="teaser-exit p-4 w-72 mb-4 relative transition-all duration-500 hidden">
             <button onclick="dismissTeaser()" class="absolute top-2 right-2 hover:text-[var(--accent-color)] transition cursor-pointer">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
@@ -341,14 +331,14 @@
                 <span class="grunge-font text-sm tracking-widest">MCA // SYSTEM ACTIVE</span>
             </div>
             <p class="text-sm mb-4 font-medium" style="color: var(--text-secondary);">System ready. Run a 60-second diagnostic to identify operational bottlenecks and time sinks in your current setup.</p>
-            <button onclick="toggleRiseChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest">INITIATE AUDIT</button>
+            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest">INITIATE AUDIT</button>
         </div>
 
-        <div id="rise-chat-window">
-            <iframe id="rise-iframe" src="https://genai-app-rise-rsestrategicconcierg-1-17770347360-187939143875.us-central1.run.app/?key=8oDrNk54Bv4DdYII97nQZyawmmN5L4qe" class="w-full h-full border-none"></iframe>
+        <div id="mca-chat-window">
+            <iframe id="mca-iframe" src="https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc" class="w-full h-full border-none"></iframe>
         </div>
 
-        <button id="rise-toggle-btn" onclick="toggleRiseChat()">
+        <button id="mca-toggle-btn" onclick="toggleMcaChat()">
             <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         </button>
     </div>
@@ -386,15 +376,15 @@
 
     <!-- ARC MCA Agent Engine -->
     <script>
-        const chatWindow = document.getElementById('rise-chat-window');
-        const btn = document.getElementById('rise-toggle-btn');
-        const iframe = document.getElementById('rise-iframe');
-        const teaser = document.getElementById('rise-teaser');
-        const baseUrl = "https://genai-app-rise-rsestrategicconcierg-1-17770347360-187939143875.us-central1.run.app/?key=8oDrNk54Bv4DdYII97nQZyawmmN5L4qe";
+        const chatWindow = document.getElementById('mca-chat-window');
+        const btn = document.getElementById('mca-toggle-btn');
+        const iframe = document.getElementById('mca-iframe');
+        const teaser = document.getElementById('mca-teaser');
+        const baseUrl = "https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc";
         
         let teaserDismissed = false;
 
-        function toggleRiseChat(intent) {
+        function toggleMcaChat(intent) {
             if (intent) {
                 iframe.src = baseUrl + "&intent=" + intent;
             }
