@@ -371,6 +371,12 @@
             }
             // Save preference
             localStorage.setItem("theme", theme);
+            
+            // NEW: Tell the MCA iframe to update its theme
+            const iframe = document.getElementById('mca-iframe');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: theme }, '*');
+            }
         });
     </script>
 
