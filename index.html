@@ -35,8 +35,8 @@
 
         /* Core structure for arccto.com - Stark High-Contrast Splatter Edition */
         :root {
-            /* Light Theme: Matches the Magnific "Modern Grunge Frame" */
-            --bg-color: #F3A712;         /* Vibrant Grunge Yellow/Orange Background */
+            /* Light Theme: Vibrant Grunge Splatter */
+            --bg-color: #F3A712;         /* Vibrant Grunge Yellow/Orange */
             --surface-color: #080808;    /* Pitch Black Splatter Frame (The Cards) */
             
             /* Text directly on the yellow/orange background */
@@ -47,18 +47,15 @@
             --card-text: #FFFFFF;        /* Crisp White */
             --card-text-muted: #BBBBBB;  /* Light Grey */
             
-            /* High-Contrast Splatter Palette */
-            --accent-orange: #E85D04;    /* Deep Orange */
-            --accent-yellow: #FFBA08;    /* Bright Yellow */
+            /* Semantic Mapping & Button Contrast */
+            --color-investor: #FFFFFF;       
+            --btn-text-investor: #000000;    
             
-            /* Complementary Highlights */
-            --highlight-blue: #005F73;   
-            --highlight-green: #0A9396;  
+            --color-integrator: #005F73;     
+            --btn-text-integrator: #FFFFFF;  
             
-            /* Semantic Mapping */
-            --color-investor: #000000;   /* Black accents pop best on the yellow BG */
-            --color-integrator: var(--highlight-blue);
-            --color-mainstreet: var(--text-primary);
+            --color-mainstreet: #000000;     
+            --btn-text-mainstreet: #F3A712;  
 
             /* Main interactive accent */
             --accent-color: var(--text-primary);     
@@ -69,41 +66,42 @@
         }
 
         [data-theme="dark"] {
-            /* Dark Theme: Void Black */
-            --bg-color: #0A0A0A;         /* Pitch Black */
-            --surface-color: #161616;    /* Raised Matte Black */
+            /* Dark Theme: Deep Sunset Abstract */
+            --bg-color: linear-gradient(135deg, #1A0000 0%, #660000 50%, #B32400 100%);
+            --surface-color: #080808;    /* Pitch Black Splatter Frame (The Cards) */
             
-            /* Text on the black background */
+            /* Text on the deep red background */
             --text-primary: #FFFFFF;     /* Pure White */
-            --text-secondary: #AAAAAA;   /* Crisp Light Gray */
+            --text-secondary: #FFD1BA;   /* Soft Sunset Peach */
             
-            /* Text inside the cards (Matches primary in dark mode) */
+            /* Text inside the black cards */
             --card-text: #FFFFFF;
             --card-text-muted: #AAAAAA;
             
-            /* Dark Mode Splatter Colors (Black, Orange, Red) */
-            --accent-orange: #FF5722;    /* Piercing Orange */
-            --accent-red: #D90429;       /* Razor Red */
+            /* Semantic Mapping & Button Contrast */
+            --color-investor: #000000;       /* Black accents pop best on the sunset BG */
+            --btn-text-investor: #FFFFFF;    
             
-            /* Complementary Highlights */
-            --highlight-blue: #00A8E8;
-            --highlight-green: #00FF00;  
+            --color-integrator: #00E5FF;     /* Neon Cyan for stark contrast */
+            --btn-text-integrator: #000000;  
+            
+            --color-mainstreet: #FFFFFF;     /* White accents */
+            --btn-text-mainstreet: #000000;  
 
-            /* Semantic Mapping */
-            --color-investor: var(--accent-red);
-            --color-integrator: var(--highlight-blue);
-            --color-mainstreet: var(--accent-orange);
-
-            --accent-color: var(--accent-orange);     
-            --border-style: 3px solid var(--text-primary);
-            --noise-opacity: 0.12; 
+            /* Main interactive accent */
+            --accent-color: var(--text-primary);     
+            
+            /* Thicker, heavier borders */
+            --border-style: 3px solid #000000;
+            --noise-opacity: 0.10; 
         }
 
         body {
-            background-color: var(--bg-color);
+            background: var(--bg-color);
+            background-attachment: fixed; /* Keeps the gradient pinned during scroll */
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: color 0.3s ease; /* Gradients snap instantly on toggle for a sharp effect */
             line-height: 1.6;
         }
 
@@ -140,7 +138,7 @@
 
         .cta-button {
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: var(--surface-color);
             border: var(--border-style);
             box-shadow: 4px 4px 0px var(--text-primary);
             transition: all 0.2s ease;
@@ -161,9 +159,9 @@
         #mca-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
         #mca-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
         
-        #mca-toggle-btn { background-color: var(--color-mainstreet); color: var(--text-primary); border: var(--border-style); width: 60px; height: 60px; cursor: pointer; box-shadow: 4px 4px 0px var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; border-radius: 50% 50% 50% 5%; transform: rotate(45deg); margin-right: 8px; margin-bottom: 8px; }
+        #mca-toggle-btn { background-color: var(--color-mainstreet); color: var(--btn-text-mainstreet); border: var(--border-style); width: 60px; height: 60px; cursor: pointer; box-shadow: 4px 4px 0px var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; border-radius: 50% 50% 50% 5%; transform: rotate(45deg); margin-right: 8px; margin-bottom: 8px; }
         #mca-toggle-btn:hover { transform: rotate(45deg) translate(-2px, -2px); box-shadow: 6px 6px 0px var(--text-primary); }
-        #mca-toggle-btn.active { background-color: var(--color-integrator); color: var(--bg-color); }
+        #mca-toggle-btn.active { background-color: var(--color-integrator); color: var(--btn-text-integrator); }
         #mca-toggle-btn svg { width: 30px; height: 30px; fill: currentColor; transition: transform 0.3s ease; transform: rotate(-45deg); }
         #mca-toggle-btn.active svg { transform: rotate(45deg); }
         
@@ -174,7 +172,7 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b-4 px-6 py-4 flex justify-between items-center brutalist-border">
+    <nav class="sticky top-0 z-50 bg-transparent backdrop-blur-sm border-b-4 px-6 py-4 flex justify-between items-center brutalist-border">
         <!-- Re-tooled OPS Logo -->
         <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-12 w-auto md:h-14">
@@ -191,7 +189,7 @@
                 <g transform="rotate(-12 240 60)">
                     <rect x="180" y="40" width="100" height="44" fill="var(--color-integrator)" stroke="var(--text-primary)" stroke-width="3" />
                     <rect x="176" y="36" width="100" height="44" fill="transparent" stroke="var(--color-investor)" stroke-width="3" />
-                    <text x="230" y="72" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle" letter-spacing="2">CTO</text>
+                    <text x="230" y="72" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--btn-text-integrator)" text-anchor="middle" letter-spacing="2">CTO</text>
                 </g>
                 
                 <!-- Jagged Strike -->
@@ -209,7 +207,7 @@
         <!-- Refactored Executive Hero Section -->
         <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
             <div class="inline-block mb-6 px-4 py-2 bg-[var(--surface-color)] text-[var(--card-text)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)]">
-                <span class="grunge-font text-sm font-bold tracking-widest text-[var(--bg-color)]">CONSULTING, TRAINING, & OPERATIONS</span>
+                <span class="grunge-font text-sm font-bold tracking-widest text-[var(--text-secondary)]">CONSULTING, TRAINING, & OPERATIONS</span>
             </div>
             
             <h1 class="text-5xl md:text-7xl leading-[0.95] mb-8 uppercase">
@@ -229,7 +227,7 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#advisory" class="cta-button grunge-font px-8 py-4 text-lg text-center flex-1 sm:flex-none">
+                <a href="#advisory" class="cta-button grunge-font px-8 py-4 text-lg text-center flex-1 sm:flex-none" style="background-color: var(--text-primary); color: var(--surface-color);">
                     Book Advisory Session
                 </a>
                 <a href="#store" class="px-8 py-4 text-lg font-medium text-center brutalist-border bg-[var(--surface-color)] text-[var(--card-text)] shadow-[4px_4px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--text-primary)] transition-all flex-1 sm:flex-none">
@@ -239,10 +237,10 @@
         </section>
 
         <!-- The Dual Funnel Matrix -->
-        <section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t-4 border-solid brutalist-border">
+        <section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t-4 border-solid brutalist-border bg-[var(--surface-color)] shadow-xl">
             <div class="mb-16 max-w-3xl">
-                <h2 class="text-3xl md:text-5xl mb-4">The Operations Matrix</h2>
-                <p class="text-lg" style="color: var(--text-secondary);">
+                <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">The Operations Matrix</h2>
+                <p class="text-lg" style="color: var(--card-text-muted);">
                     We separate high-level physical infrastructure investment advisory from the tactical day-to-day tools needed by field operators. Choose your sector.
                 </p>
             </div>
@@ -251,7 +249,7 @@
                 <!-- Funnel A: Investors & Developers -->
                 <div id="advisory" class="grunge-card p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="border-color: var(--color-investor); box-shadow: 6px 6px 0px var(--color-investor);">
                     <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--color-investor)] text-[var(--bg-color)] uppercase">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--color-investor); color: var(--btn-text-investor);">
                             Audience A // Investors & Developers
                         </div>
                         <h3 class="text-3xl md:text-4xl mb-4">Strategic Advisory</h3>
@@ -263,7 +261,7 @@
                             <li>+ Pre-Acquisition Tech Due Diligence</li>
                             <li>+ Low-Voltage / Security / AV Audits</li>
                         </ul>
-                        <a href="https://calendly.com/" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--color-investor);">
+                        <a href="https://calendly.com/" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--color-investor); color: var(--btn-text-investor);">
                             Schedule 1-Hour Session ($$$)
                         </a>
                     </div>
@@ -272,7 +270,7 @@
                 <!-- Funnel B: Main Street Integrators -->
                 <div id="store" class="grunge-card p-8 md:p-12 flex flex-col md:flex-row-reverse gap-8 items-center" style="border-color: var(--color-integrator); box-shadow: 6px 6px 0px var(--color-integrator);">
                     <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--color-integrator)] text-[var(--bg-color)] uppercase">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--color-integrator); color: var(--btn-text-integrator);">
                             Audience B // Main Street Integrators
                         </div>
                         <h3 class="text-3xl md:text-4xl mb-4">Digital Asset Store</h3>
@@ -284,7 +282,7 @@
                             <li>+ Field-to-Office Handoff SOPs</li>
                             <li>+ Project Management Playbooks</li>
                         </ul>
-                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--color-integrator);">
+                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--color-integrator); color: var(--btn-text-integrator);">
                             Browse Integrator Tools
                         </a>
                     </div>
@@ -293,7 +291,7 @@
                 <!-- Funnel C: Main Street & Local Business -->
                 <div id="main-street" class="grunge-card p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="border-color: var(--color-mainstreet); box-shadow: 6px 6px 0px var(--color-mainstreet);">
                     <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--color-mainstreet)] text-[var(--bg-color)] uppercase">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--color-mainstreet); color: var(--btn-text-mainstreet);">
                             Audience C // Main Street Business
                         </div>
                         <h3 class="text-3xl md:text-4xl mb-4">Practical AI & Automation</h3>
@@ -306,7 +304,7 @@
                             <li>+ $49 Self-Guided Industry Playbooks</li>
                         </ul>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="toggleMcaChat('ai')" class="cta-button inline-block grunge-font px-8 py-4 text-center" style="background-color: var(--color-mainstreet); color: var(--bg-color);">
+                            <button onclick="toggleMcaChat('ai')" class="cta-button inline-block grunge-font px-8 py-4 text-center" style="background-color: var(--color-mainstreet); color: var(--btn-text-mainstreet);">
                                 Start AI Review
                             </button>
                             <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="px-8 py-4 font-medium text-center brutalist-border bg-[var(--surface-color)] text-[var(--card-text)] shadow-[4px_4px_0px_var(--color-mainstreet)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--color-mainstreet)] transition-all">
@@ -319,14 +317,14 @@
                 <!-- Future LMS Placeholder -->
                 <div id="training" class="grunge-card p-8 flex flex-col md:flex-row gap-8 items-center bg-[var(--surface-color)]" style="border-color: var(--text-primary); box-shadow: 6px 6px 0px var(--text-primary);">
                     <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--text-primary)] text-[var(--bg-color)] uppercase">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--text-primary)] text-[var(--surface-color)] uppercase">
                             In Development
                         </div>
                         <h3 class="text-2xl md:text-3xl mb-4" style="color: var(--card-text);">ARC Training Academy</h3>
                         <p class="mb-4 text-lg" style="color: var(--card-text-muted);">
                             Comprehensive Field-to-PM video courses designed specifically for Low-Voltage and AV technicians stepping into management. 
                         </p>
-                        <a href="https://academy.arccto.com" class="font-mono text-sm underline hover:text-[var(--color-mainstreet)] text-[var(--card-text)]">
+                        <a href="https://academy.arccto.com" class="font-mono text-sm underline text-[var(--card-text)] hover:opacity-75">
                             academy.arccto.com // Coming Soon
                         </a>
                     </div>
@@ -338,8 +336,8 @@
     <footer class="border-t-4 border-solid brutalist-border bg-[var(--surface-color)] py-12 px-6 text-center">
         <p class="grunge-font text-xl mb-6 text-[var(--card-text)]">ARC | CONSULTING, TRAINING, & OPERATIONS</p>
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 text-sm font-medium" style="color: var(--card-text-muted);">
-            <a href="/privacy-policy.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Privacy Policy</a>
-            <a href="/terms-of-service.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Terms of Service</a>
+            <a href="/privacy-policy.html" class="hover:opacity-75 underline decoration-[var(--border-style)]">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="hover:opacity-75 underline decoration-[var(--border-style)]">Terms of Service</a>
         </div>
         <p class="text-xs font-mono" style="color: var(--card-text-muted);">© 2026 ARC OPS & RSE LLC.</p>
     </footer>
@@ -351,11 +349,11 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div class="flex items-center gap-2 mb-2">
-                <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--color-investor);"></div>
+                <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--color-integrator);"></div>
                 <span class="grunge-font text-sm tracking-widest text-[var(--card-text)]">MCA // System Active</span>
             </div>
             <p class="text-sm mb-4 font-medium" style="color: var(--card-text-muted);">Let's cut the noise. What operation is bleeding margin today?</p>
-            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest">Initiate Briefing</button>
+            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest" style="background-color: var(--text-primary); color: var(--surface-color);">Initiate Briefing</button>
         </div>
 
         <div id="mca-chat-window">
