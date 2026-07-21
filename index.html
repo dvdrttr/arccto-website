@@ -35,77 +35,86 @@
 
         /* Core structure for arccto.com - Stark High-Contrast Splatter Edition */
         :root {
-            /* Light Theme: Vibrant Grunge Splatter */
-            --bg-color: #F3A712;         /* Vibrant Grunge Yellow/Orange */
+            /* Light Theme: Vibrant Grunge Splatter with Halftone Dots */
+            /* We use layered radial gradients to create abstract color variations (blobs) */
+            --bg-base: linear-gradient(135deg, #F3A712 0%, #E85D04 100%);
+            --bg-blobs: radial-gradient(circle at 20% 30%, #FFBA08 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, #D00000 0%, transparent 50%);
+            --bg-color: var(--bg-blobs), var(--bg-base);
+            
+            /* Halftone dot pattern */
+            --dot-color: rgba(8, 8, 8, 0.15); 
+            
             --surface-color: #080808;    /* Pitch Black Splatter Frame (The Cards) */
             
-            /* Text directly on the yellow/orange background */
-            --text-primary: #000000;     /* Pure Black */
-            --text-secondary: #222222;   /* Heavy Charcoal */
-            
-            /* Text specifically inside the pitch black cards */
-            --card-text: #FFFFFF;        /* Crisp White */
-            --card-text-muted: #BBBBBB;  /* Light Grey */
+            /* Text colors */
+            --text-primary: #000000;     
+            --text-secondary: #222222;   
+            --card-text: #FFFFFF;        
+            --card-text-muted: #BBBBBB;  
             
             /* Semantic Mapping & Button Contrast */
             --color-investor: #FFFFFF;       
             --btn-text-investor: #000000;    
-            
             --color-integrator: #005F73;     
             --btn-text-integrator: #FFFFFF;  
-            
             --color-mainstreet: #000000;     
             --btn-text-mainstreet: #F3A712;  
 
-            /* Main interactive accent */
             --accent-color: var(--text-primary);     
-            
-            /* Thicker, heavier borders */
             --border-style: 3px solid #000000;
             --noise-opacity: 0.08; 
         }
 
         [data-theme="dark"] {
-            /* Dark Theme: Deep Sunset Abstract */
-            --bg-color: linear-gradient(135deg, #1A0000 0%, #660000 50%, #B32400 100%);
-            --surface-color: #080808;    /* Pitch Black Splatter Frame (The Cards) */
+            /* Dark Theme: Deep Sunset Abstract with Halftone Dots */
+            --bg-base: linear-gradient(135deg, #1A0000 0%, #660000 60%, #B32400 100%);
+            --bg-blobs: radial-gradient(circle at 15% 20%, #FF4500 0%, transparent 40%),
+                        radial-gradient(circle at 85% 90%, #FF0000 0%, transparent 50%);
+            --bg-color: var(--bg-blobs), var(--bg-base);
             
-            /* Text on the deep red background */
-            --text-primary: #FFFFFF;     /* Pure White */
-            --text-secondary: #FFD1BA;   /* Soft Sunset Peach */
+            /* Halftone dot pattern - flipped to dark mode */
+            --dot-color: rgba(0, 0, 0, 0.4); 
             
-            /* Text inside the black cards */
+            --surface-color: #080808;    
+            
+            /* Text colors */
+            --text-primary: #FFFFFF;     
+            --text-secondary: #FFD1BA;   
             --card-text: #FFFFFF;
             --card-text-muted: #AAAAAA;
             
             /* Semantic Mapping & Button Contrast */
-            --color-investor: #000000;       /* Black accents pop best on the sunset BG */
+            --color-investor: #000000;       
             --btn-text-investor: #FFFFFF;    
-            
-            --color-integrator: #00E5FF;     /* Neon Cyan for stark contrast */
+            --color-integrator: #00E5FF;     
             --btn-text-integrator: #000000;  
-            
-            --color-mainstreet: #FFFFFF;     /* White accents */
+            --color-mainstreet: #FFFFFF;     
             --btn-text-mainstreet: #000000;  
 
-            /* Main interactive accent */
             --accent-color: var(--text-primary);     
-            
-            /* Thicker, heavier borders */
             --border-style: 3px solid #000000;
-            --noise-opacity: 0.10; 
+            --noise-opacity: 0.12; 
         }
 
         body {
-            background: var(--bg-color);
-            background-attachment: fixed; /* Keeps the gradient pinned during scroll */
+            /* We stack the halftone dots on top of the abstract color blobs */
+            background-color: transparent;
+            background-image: 
+                radial-gradient(var(--dot-color) 2px, transparent 2px), /* Layer 1: Halftone Dots */
+                var(--bg-color); /* Layers 2-4: Abstract Blobs + Linear Base */
+            
+            background-size: 14px 14px, 100% 100%, 100% 100%, 100% 100%;
+            background-position: 0 0, 0 0, 0 0, 0 0;
+            background-attachment: fixed; 
+            
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            transition: color 0.3s ease; /* Gradients snap instantly on toggle for a sharp effect */
+            transition: color 0.3s ease; 
             line-height: 1.6;
         }
 
-        /* Fixed SVG Noise Overlay */
+        /* Fixed SVG Noise Overlay (The gritty texture) */
         body::after {
             content: "";
             position: fixed;
