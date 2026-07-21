@@ -430,5 +430,28 @@
             }
         }, 15000); 
     </script>
+    setTimeout(() => {
+            if (!chatWindow.classList.contains('active') && !teaserDismissed) {
+                teaser.classList.remove('hidden');
+                setTimeout(() => {
+                    teaser.classList.remove('teaser-exit');
+                    teaser.classList.add('teaser-enter');
+                }, 50);
+            }
+        }, 15000); 
+    </script>
+
+    <!-- Default Statcounter code for ARC http://www.arccto.com -->
+    <script type="text/javascript">
+    var sc_project=13336855; 
+    var sc_invisible=1; 
+    var sc_security="73022e84"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13336855/0/73022e84/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
 </body>
 </html>
