@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://www.arccto.com/" />
-    <title>ARC CTO | Plain-English Tech Consulting</title>
+    <title>ARC | Consulting, Training, & Operations</title>
     
     <!-- Tailwind for layout grids and spacing -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,10 +15,10 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "ARC cto",
+      "name": "ARC | Consulting, Training, & Operations",
       "alternateName": "Andrews Ritter Consulting",
       "url": "https://www.arccto.com",
-      "description": "Plain-English tech consulting for businesses and individuals who want clarity, not corporate jargon.",
+      "description": "From the Trench to the Boardroom. Strategic infrastructure advisory for investors, and operational tools for Main Street integrators.",
       "priceRange": "$$$$",
       "telephone": "8559230196",
       "address": {
@@ -67,28 +67,7 @@
             
             --accent-color: var(--accent-red);     
             --border-style: 2px solid var(--text-primary);
-            --noise-opacity: 0.09; /* Slightly heavier grit on dark */
-        }
-
-        /* Colored shadows mapping the tri-color theme stripes */
-        .grunge-card:nth-child(1) {
-            border-color: var(--accent-red);
-            box-shadow: 4px 4px 0px var(--accent-red);
-        }
-        .grunge-card:nth-child(2) {
-            border-color: var(--accent-yellow);
-            box-shadow: 4px 4px 0px var(--accent-yellow);
-        }
-        .grunge-card:nth-child(3) {
-            border-color: var(--accent-teal);
-            box-shadow: 4px 4px 0px var(--accent-teal);
-        }
-        
-        /* Update hover states to match the colored shadows */
-        @media (min-width: 768px) {
-            .grunge-card:nth-child(1):hover { box-shadow: 8px 8px 0px var(--accent-red); }
-            .grunge-card:nth-child(2):hover { box-shadow: 8px 8px 0px var(--accent-yellow); }
-            .grunge-card:nth-child(3):hover { box-shadow: 8px 8px 0px var(--accent-teal); }
+            --noise-opacity: 0.09; 
         }
 
         body {
@@ -126,7 +105,6 @@
         .grunge-card {
             background-color: var(--surface-color);
             border: var(--border-style);
-            box-shadow: 4px 4px 0px var(--text-primary);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -144,11 +122,8 @@
             box-shadow: 6px 6px 0px var(--text-primary);
         }
 
-        /* Mobile-First Layout Rules */
         @media (min-width: 768px) {
-            .grunge-card:nth-child(odd) { transform: rotate(-1deg); }
-            .grunge-card:nth-child(even) { transform: rotate(1deg); }
-            .grunge-card:hover { transform: rotate(0deg) scale(1.02); box-shadow: 8px 8px 0px var(--text-primary); z-index: 10; position: relative; }
+            .grunge-card:hover { transform: translate(-4px, -4px); z-index: 10; position: relative; }
         }
 
        /* Agent Widget Layout Rules */
@@ -156,47 +131,11 @@
         #mca-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); border: var(--border-style); box-shadow: 6px 6px 0px var(--text-primary); }
         #mca-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
         
-        /* The Guitar Pick Agent Toggle */
-        #mca-toggle-btn { 
-            background-color: var(--accent-yellow); /* Mustard Yellow */
-            color: var(--text-primary); 
-            border: var(--border-style); 
-            width: 60px; 
-            height: 60px; 
-            cursor: pointer; 
-            box-shadow: 4px 4px 0px var(--text-primary); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: all 0.2s ease; 
-            flex-shrink: 0; 
-            border-radius: 50% 50% 50% 5%; 
-            transform: rotate(45deg);
-            margin-right: 8px; 
-            margin-bottom: 8px;
-        }
-        
-        #mca-toggle-btn:hover { 
-            transform: rotate(45deg) translate(-2px, -2px); 
-            box-shadow: 6px 6px 0px var(--text-primary); 
-        }
-
-        #mca-toggle-btn.active {
-            background-color: var(--accent-teal);
-            color: var(--bg-color);
-        }
-        
-        #mca-toggle-btn svg { 
-            width: 30px; 
-            height: 30px; 
-            fill: currentColor; 
-            transition: transform 0.3s ease; 
-            transform: rotate(-45deg); 
-        }
-        
-        #mca-toggle-btn.active svg { 
-            transform: rotate(45deg); 
-        }
+        #mca-toggle-btn { background-color: var(--accent-yellow); color: var(--text-primary); border: var(--border-style); width: 60px; height: 60px; cursor: pointer; box-shadow: 4px 4px 0px var(--text-primary); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; border-radius: 50% 50% 50% 5%; transform: rotate(45deg); margin-right: 8px; margin-bottom: 8px; }
+        #mca-toggle-btn:hover { transform: rotate(45deg) translate(-2px, -2px); box-shadow: 6px 6px 0px var(--text-primary); }
+        #mca-toggle-btn.active { background-color: var(--accent-teal); color: var(--bg-color); }
+        #mca-toggle-btn svg { width: 30px; height: 30px; fill: currentColor; transition: transform 0.3s ease; transform: rotate(-45deg); }
+        #mca-toggle-btn.active svg { transform: rotate(45deg); }
         
         #mca-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--text-primary); background: var(--surface-color); color: var(--text-primary); }
         .teaser-enter { transform: translateY(0); opacity: 1; }
@@ -205,122 +144,153 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Mobile-Optimized Semantic Navigation -->
     <nav class="sticky top-0 z-50 bg-[var(--bg-color)] border-b px-6 py-4 flex justify-between items-center brutalist-border">
-        <!-- The "Backstage Pass" Logo -->
-        <a href="/" class="block hover:scale-105 transition-transform origin-left">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" class="h-12 w-auto md:h-14">
-                <!-- ARC text with Crimson shadow -->
-                <text x="25" y="85" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
-                <text x="20" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="80" font-weight="bold" fill="var(--text-primary)" stroke="var(--bg-color)" stroke-width="3" text-anchor="start">ARC</text>
+        <!-- Re-tooled OPS Logo -->
+        <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-12 w-auto md:h-14">
+                <!-- Structural Crosshairs -->
+                <path d="M 10 20 L 10 100 M 5 50 L 15 50 M 5 70 L 15 70" stroke="var(--text-secondary)" stroke-width="2" opacity="0.5" />
+                <path d="M 320 20 L 320 100 M 315 50 L 325 50 M 315 70 L 325 70" stroke="var(--text-secondary)" stroke-width="2" opacity="0.5" />
                 
-                <!-- CTO in a Teal Brutalist Pill -->
-                <g transform="rotate(3 240 65)">
-                    <rect x="185" y="45" width="95" height="40" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="2" />
-                    <text x="232" y="75" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle">CTO</text>
+                <!-- ARC Glitch Text -->
+                <text x="32" y="86" font-family="'Courier Prime', monospace, sans-serif" font-size="82" font-weight="bold" fill="var(--accent-red)" text-anchor="start">ARC</text>
+                <text x="27" y="82" font-family="'Courier Prime', monospace, sans-serif" font-size="82" font-weight="bold" fill="var(--accent-yellow)" text-anchor="start">ARC</text>
+                <text x="24" y="80" font-family="'Courier Prime', monospace, sans-serif" font-size="82" font-weight="bold" fill="var(--text-primary)" text-anchor="start">ARC</text>
+                
+                <!-- OPS Stamped Pill -->
+                <g transform="rotate(-12 240 60)">
+                    <rect x="180" y="40" width="100" height="44" fill="var(--accent-teal)" stroke="var(--text-primary)" stroke-width="3" />
+                    <rect x="176" y="36" width="100" height="44" fill="transparent" stroke="var(--accent-red)" stroke-width="1.5" />
+                    <text x="230" y="72" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="var(--bg-color)" text-anchor="middle" letter-spacing="2">OPS</text>
                 </g>
                 
-                <!-- Mustard Yellow swooping underline -->
-                <path d="M 20 100 Q 160 120 300 90" fill="none" stroke="var(--accent-yellow)" stroke-width="5" stroke-linecap="round" />
+                <!-- Jagged Strike -->
+                <path d="M 24 102 L 120 102 L 130 92 L 180 106 L 220 98 L 310 102" fill="none" stroke="var(--text-primary)" stroke-width="4" stroke-linejoin="miter" />
+                <path d="M 26 106 L 118 106 L 128 96 L 178 110 L 218 102 L 308 106" fill="none" stroke="var(--accent-yellow)" stroke-width="2" stroke-linejoin="miter" />
             </svg>
         </a>
 
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer" aria-label="Toggle theme">
+        <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--text-primary)] transition-all cursor-pointer">
             [ DARK ]
         </button>
     </nav>
 
     <main class="flex-grow">
-        <!-- Hero Section -->
-        <section class="max-w-4xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
-            <h1 class="text-5xl md:text-7xl leading-[0.95] mb-6">
-                BIG TECH MOVES FAST.<br>
-                <span style="color: var(--accent-color);">WE LEVEL THE PLAYING FIELD.</span>
+        <!-- Refactored Executive Hero Section -->
+        <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+            <div class="inline-block mb-6 px-4 py-2 bg-[var(--surface-color)] brutalist-border shadow-[2px_2px_0px_var(--text-primary)]">
+                <span class="grunge-font text-sm font-bold tracking-widest text-[var(--accent-color)]">CONSULTING, TRAINING, & OPERATIONS</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl leading-[0.95] mb-8 uppercase">
+                From the Trench <br>
+                <span style="color: var(--accent-color);">To the Boardroom.</span>
             </h1>
-            <p class="text-lg md:text-xl mb-10 max-w-2xl" style="color: var(--text-secondary);">
-                Plain-English tech consulting for the local service garage, the corner bakeries, and Main Street businesses. Get the same tools the big guys use, without the corporate BS.
+            
+            <p class="text-lg md:text-xl mb-10 max-w-3xl font-medium" style="color: var(--text-secondary);">
+                Built on 22 years of hard-earned field experience. We provide high-leverage physical infrastructure strategy for investors, and tactical blueprints for Main Street integrators. No corporate BS.
             </p>
+
+            <!-- Trust Data Row -->
+            <div class="flex flex-wrap gap-4 md:gap-8 mb-12 pb-8 border-b-2 brutalist-border border-dashed font-mono font-bold text-sm md:text-base">
+                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--accent-red)] block"></span> 22 YEARS IN THE TRENCHES</div>
+                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--accent-yellow)] block"></span> $15M+ P&L MANAGED</div>
+                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--accent-teal)] block"></span> 2 LV COMPANIES BUILT</div>
+            </div>
+
             <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="toggleMcaChat('audit')" class="cta-button grunge-font px-8 py-4 text-lg text-center">
-                    Get Started
-                </button>
-                <a href="#services" class="px-8 py-4 text-lg font-medium text-center brutalist-border bg-[var(--surface-color)] shadow-[4px_4px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--text-primary)] transition-all">
-                    See How We Help
+                <a href="#advisory" class="cta-button grunge-font px-8 py-4 text-lg text-center flex-1 sm:flex-none">
+                    Book Strategic Advisory
+                </a>
+                <a href="#store" class="px-8 py-4 text-lg font-medium text-center brutalist-border bg-[var(--surface-color)] shadow-[4px_4px_0px_var(--text-primary)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--text-primary)] transition-all flex-1 sm:flex-none">
+                    Shop Integrator Tools
                 </a>
             </div>
         </section>
 
-        <!-- Services Grid -->
+        <!-- The Dual Funnel Matrix -->
         <section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t brutalist-border border-dashed">
-            <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl mb-4">No-Nonsense Capabilities</h2>
-                <p class="text-lg max-w-2xl" style="color: var(--text-secondary);">
-                    We aren't here to reset your passwords or fix your office printers—let the IT kids handle that. We are here to cut through the noise, level the playing field, and provide ongoing guidance that fits your exact needs and budget.
+            <div class="mb-16 max-w-3xl">
+                <h2 class="text-3xl md:text-5xl mb-4">The Operations Matrix</h2>
+                <p class="text-lg" style="color: var(--text-secondary);">
+                    We separate high-level physical infrastructure investment advisory from the tactical day-to-day tools needed by field operators. Choose your sector.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
-                <!-- Card 1 -->
-                <div class="grunge-card p-8 flex flex-col h-full">
-                    <h3 class="text-2xl mb-2">Remote Systems Reviews</h3>
-                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">
-                        We work directly with you or your staff to find out where your software is failing you. No hard-set costs—just a plain-English report with clear steps to take.
-                    </p>
-                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
-                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Foundational</span>
-                        <button onclick="toggleMcaChat('audit')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+            <div class="space-y-12 relative z-10">
+                <!-- Funnel A: Investors & Developers -->
+                <div id="advisory" class="grunge-card p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="border-color: var(--accent-red); box-shadow: 6px 6px 0px var(--accent-red);">
+                    <div class="flex-1">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--accent-red)] text-[var(--bg-color)] uppercase">
+                            Audience A // Investors & Developers
+                        </div>
+                        <h3 class="text-3xl md:text-4xl mb-4">Strategic Advisory</h3>
+                        <p class="mb-6 text-lg" style="color: var(--text-secondary);">
+                            Micro-consulting and rigorous physical infrastructure due diligence for Private Equity firms, hedge funds, and developers. Get a 22-year veteran's eyes on your technical architecture before you sign the check.
+                        </p>
+                        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--text-primary);">
+                            <li>+ CAPEX / OPEX Infrastructure Modeling</li>
+                            <li>+ Pre-Acquisition Tech Due Diligence</li>
+                            <li>+ Low-Voltage / Security / AV Audits</li>
+                        </ul>
+                        <!-- SavvyCal / Calendly Routing -->
+                        <a href="https://calendly.com/" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--accent-red);">
+                            Schedule 1-Hour Session ($$$)
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="grunge-card p-8 flex flex-col h-full">
-                    <h3 class="text-2xl mb-2">Practical AI Setup</h3>
-                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">
-                        We wire up tools like Microsoft 365 Copilot or Google Gemini to the software you already use. We automate the busywork so you can get back to running your actual business.
-                    </p>
-                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
-                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Automation</span>
-                        <button onclick="toggleMcaChat('ai')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
+                <!-- Funnel B: Main Street Integrators -->
+                <div id="store" class="grunge-card p-8 md:p-12 flex flex-col md:flex-row-reverse gap-8 items-center" style="border-color: var(--accent-teal); box-shadow: 6px 6px 0px var(--accent-teal);">
+                    <div class="flex-1">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--accent-teal)] text-[var(--bg-color)] uppercase">
+                            Audience B // Main Street Integrators
+                        </div>
+                        <h3 class="text-3xl md:text-4xl mb-4">Digital Asset Store</h3>
+                        <p class="mb-6 text-lg" style="color: var(--text-secondary);">
+                            You are running a $1M–$5M integration firm. You don't need a consultant—you need better processes. Instantly download the exact Excel calculators and field SOPs we used to scale operations and protect margins.
+                        </p>
+                        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--text-primary);">
+                            <li>+ Estimating & Margin Calculators (Excel)</li>
+                            <li>+ Field-to-Office Handoff SOPs</li>
+                            <li>+ Project Management Playbooks</li>
+                        </ul>
+                        <!-- Gumroad / Shopify Lite Routing -->
+                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="cta-button inline-block grunge-font px-8 py-4" style="background-color: var(--accent-teal);">
+                            Browse Integrator Tools
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="grunge-card p-8 flex flex-col h-full">
-                    <h3 class="text-2xl mb-2">Vendor Translation</h3>
-                    <p class="mb-6 flex-grow" style="color: var(--text-secondary);">
-                        Software salespeople love to use buzzwords. We can sit in on those calls with you or review orders before you place them, cut through the noise, and make sure you only buy what you actually need.
-                    </p>
-                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4">
-                        <span class="grunge-font font-bold text-xl" style="color: var(--accent-color);">Advisory</span>
-                        <button onclick="toggleMcaChat('vendor')" class="grunge-font text-sm underline hover:text-[var(--accent-color)] cursor-pointer">Learn More</button>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="grunge-card p-8 flex flex-col h-full bg-[var(--accent-color)] text-[var(--bg-color)]" style="color: var(--bg-color);">
-                    <h3 class="text-2xl mb-2" style="color: var(--bg-color);">Self-Guided Playbooks</h3>
-                    <p class="mb-6 flex-grow font-medium">
-                        Not ready for a consultant? Grab our $49 industry blueprints. Print them out, follow the steps, and lock down your business on your own time.
-                    </p>
-                    <div class="border-t brutalist-border pt-4 flex justify-between items-end mt-4" style="border-color: var(--bg-color);">
-                        <span class="grunge-font font-bold text-xl">$49.00</span>
-                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="grunge-font text-sm underline hover:opacity-80">Browse Store</a>
+                <!-- Future LMS Placeholder -->
+                <div id="training" class="grunge-card p-8 flex flex-col md:flex-row gap-8 items-center bg-[var(--text-primary)] text-[var(--bg-color)]" style="border-color: var(--text-primary); box-shadow: 6px 6px 0px var(--text-secondary);">
+                    <div class="flex-1">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest bg-[var(--accent-yellow)] text-[var(--text-primary)] uppercase">
+                            In Development
+                        </div>
+                        <h3 class="text-2xl md:text-3xl mb-4" style="color: var(--bg-color);">ARC Training Academy</h3>
+                        <p class="mb-4 text-lg" style="color: var(--bg-color); opacity: 0.8;">
+                            Comprehensive Field-to-PM video courses designed specifically for Low-Voltage and AV technicians stepping into management. 
+                        </p>
+                        <a href="https://academy.arccto.com" class="font-mono text-sm underline hover:text-[var(--accent-yellow)]">
+                            academy.arccto.com // Coming Soon
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer class="border-t brutalist-border bg-[var(--surface-color)] py-12 px-6 text-center">
-        <p class="grunge-font text-xl mb-6">ARC cto | Plain-English Tech Consulting</p>
+        <p class="grunge-font text-xl mb-6">ARC | CONSULTING, TRAINING, & OPERATIONS</p>
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 text-sm font-medium" style="color: var(--text-secondary);">
             <a href="/privacy-policy.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Privacy Policy</a>
             <a href="/terms-of-service.html" class="hover:text-[var(--accent-color)] underline decoration-[var(--border-style)]">Terms of Service</a>
         </div>
-        <p class="text-xs" style="color: var(--text-secondary);">© 2026 ARC CTO & RSE LLC.</p>
+        <p class="text-xs font-mono" style="color: var(--text-secondary);">© 2026 ARC OPS & RSE LLC.</p>
     </footer>
 
-    <!-- ARC MCA Agent & Tracking Base -->
+    <!-- ARC MCA Agent -->
     <div id="mca-widget-container">
         <div id="mca-teaser" class="teaser-exit p-4 w-72 mb-4 relative transition-all duration-500 hidden">
             <button onclick="dismissTeaser()" class="absolute top-2 right-2 hover:text-[var(--accent-color)] transition cursor-pointer">
@@ -328,10 +298,10 @@
             </button>
             <div class="flex items-center gap-2 mb-2">
                 <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent-red);"></div>
-                <span class="grunge-font text-sm tracking-widest">MCA // Systems Ready</span>
+                <span class="grunge-font text-sm tracking-widest">MCA // System Active</span>
             </div>
-            <p class="text-sm mb-4 font-medium" style="color: var(--text-secondary);">Systems ready. Let's cut the noise—tell us what's actively breaking down your operations today.</p>
-            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest">Start Review</button>
+            <p class="text-sm mb-4 font-medium" style="color: var(--text-secondary);">Let's cut the noise. What operation is bleeding margin today?</p>
+            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button w-full py-2 text-sm grunge-font tracking-widest">Initiate Briefing</button>
         </div>
 
         <div id="mca-chat-window">
@@ -343,12 +313,11 @@
         </button>
     </div>
 
-    <!-- Theme Toggle Engine -->
+    <!-- Engine Scripts -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-        // 1. Check LocalStorage or System OS preference on page load
         const currentTheme = localStorage.getItem("theme");
         if (currentTheme == "dark" || (!currentTheme && prefersDarkScheme.matches)) {
             document.documentElement.setAttribute("data-theme", "dark");
@@ -358,7 +327,6 @@
             themeToggleBtn.innerText = "[ DARK ]";
         }
 
-        // 2. Listen for clicks to manually override
         themeToggleBtn.addEventListener("click", function() {
             let theme = "light";
             if (document.documentElement.getAttribute("data-theme") !== "dark") {
@@ -369,38 +337,28 @@
                 document.documentElement.setAttribute("data-theme", "light");
                 themeToggleBtn.innerText = "[ DARK ]";
             }
-            // Save preference
             localStorage.setItem("theme", theme);
             
-            // NEW: Tell the MCA iframe to update its theme
             const iframe = document.getElementById('mca-iframe');
             if (iframe && iframe.contentWindow) {
                 iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: theme }, '*');
             }
         });
     </script>
-
-    <!-- ARC MCA Agent Engine -->
     <script>
         const chatWindow = document.getElementById('mca-chat-window');
         const btn = document.getElementById('mca-toggle-btn');
         const iframe = document.getElementById('mca-iframe');
         const teaser = document.getElementById('mca-teaser');
         const baseUrl = "https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc";
-        
         let teaserDismissed = false;
 
         function toggleMcaChat(intent) {
-            if (intent) {
-                iframe.src = baseUrl + "&intent=" + intent;
-            }
+            if (intent) { iframe.src = baseUrl + "&intent=" + intent; }
             dismissTeaser();
             
-            // Sync the theme 
             const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
             iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: currentTheme }, '*');
-            
-            // DIRECT THE CURSOR:
             iframe.contentWindow.postMessage({ type: 'FOCUS_INPUT' }, '*');
             
             if (!chatWindow.classList.contains('active')) {
@@ -429,17 +387,7 @@
                     teaser.classList.add('teaser-enter');
                 }, 50);
             }
-        }, 15000); // Trigger teaser earlier for engagement
+        }, 15000); 
     </script>
-
-    <!-- Default Statcounter code for ARC http://www.arccto.com -->
-    <script type="text/javascript">
-    var sc_project=13336855; 
-    var sc_invisible=1; 
-    var sc_security="73022e84"; 
-    </script>
-    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13336855/0/73022e84/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
 </body>
 </html>
