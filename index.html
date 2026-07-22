@@ -38,35 +38,49 @@
     <div id="nav-placeholder"></div>
 
     <main class="flex-grow">
-        <!-- Refactored Executive Hero Section -->
+<!-- Refactored Executive Hero Section -->
         <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
-            <div class="inline-block mb-6 px-4 py-2 frosted-glass text-[var(--card-text)] brutalist-border shadow-[2px_2px_0px_var(--btn-shadow)]">
-                <span class="grunge-font text-sm font-bold tracking-widest text-[var(--card-text-muted)]">CONSULTING, TRAINING, & OPERATIONS</span>
+            
+            <!-- High-Contrast Top Tag -->
+            <div class="inline-block mb-8 px-4 py-2 brutalist-border shadow-[4px_4px_0px_var(--btn-shadow)]" style="background-color: var(--text-primary); color: var(--inverse-text);">
+                <span class="grunge-font text-sm font-bold tracking-widest">ARC // CTO</span>
             </div>
             
-            <h1 class="text-5xl md:text-7xl leading-[0.95] mb-8 uppercase">
-                From Boots on the Ground <br>
+            <!-- Injected Glitch Red into the Headline -->
+            <h1 class="text-5xl md:text-7xl md:leading-[1.1] mb-8 uppercase">
+                From <span style="color: var(--glitch-2);">Boots on the Ground</span> <br>
                 <span style="color: var(--text-primary);">To the Boardroom.</span>
             </h1>
             
-            <p class="text-lg md:text-xl mb-10 max-w-3xl font-medium" style="color: var(--text-secondary);">
-                Built on 26 years of hard-wired technology experience. We don't just consult—we've been getting our boots dirty with tools in hand for over two decades, and we still test the gear ourselves today. Delivering real-world infrastructure audits for investors, field-tested playbooks for integrators, and practical AI setups for Main Street. Plain English & Professional without the buzzwords and jargon.
+            <p class="text-xl md:text-2xl mb-12 max-w-4xl font-medium leading-relaxed" style="color: var(--text-secondary);">
+                Built on 26 years of hard-wired technology experience. We don't just consult—we've been getting our boots dirty with tools in hand for over two decades, and we still test the gear ourselves today. Plain English & Professional without the buzzwords and jargon.
             </p>
 
-            <div class="flex flex-wrap gap-4 md:gap-8 mb-12 pb-8 border-b-4 border-solid brutalist-border font-mono font-bold text-sm md:text-base">
-                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--stat-1)] block border-[1px] border-[var(--text-primary)]"></span> 26 YEARS IN TECHNOLOGY</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--stat-2)] block border-[1px] border-[var(--text-primary)]"></span> $15M+ P&L MANAGED</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-[var(--stat-3)] block border-[1px] border-[var(--text-primary)]"></span> 2 LV COMPANIES BUILT</div>
+            <!-- Frosted Glass "Who We Serve" Preview Box -->
+            <div class="frosted-glass p-6 md:p-8 brutalist-border shadow-[6px_6px_0px_var(--btn-shadow)] mb-12 max-w-3xl relative z-10">
+                <p class="grunge-font text-lg mb-6 text-[var(--card-text)]">DELIVERING REAL-WORLD TECH INFRASTRUCTURE FOR:</p>
+                <ul class="space-y-5 font-mono font-bold uppercase tracking-wide text-sm md:text-base">
+                    <li class="flex items-center gap-4">
+                        <span class="w-5 h-5 block brutalist-border" style="background-color: var(--card-btn-investor);"></span>
+                        <span style="color: var(--card-text);">Private Equity, Hedge Funds, & Investors</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <span class="w-5 h-5 block brutalist-border" style="background-color: var(--card-btn-integrator);"></span>
+                        <span style="color: var(--card-text);">Main Street Integrators & Field Techs</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <span class="w-5 h-5 block brutalist-border" style="background-color: var(--card-btn-mainstreet);"></span>
+                        <span style="color: var(--card-text);">Local Business & Sole Owners</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#advisory" class="cta-button grunge-font px-8 py-4 text-lg text-center flex-1 sm:flex-none" style="background-color: var(--text-primary); color: var(--inverse-text);">
-                    Book Advisory Session
-                </a>
-                <a href="#store" class="px-8 py-4 text-lg font-medium text-center brutalist-border frosted-glass text-[var(--card-text)] shadow-[4px_4px_0px_var(--btn-shadow)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--btn-shadow)] transition-all flex-1 sm:flex-none">
-                    Shop Integrator Tools
-                </a>
-            </div>
+            <!-- Single Scroll Directing CTA -->
+            <a href="#services" class="cta-button inline-flex items-center gap-3 grunge-font px-8 py-4 text-lg" style="background-color: var(--text-primary); color: var(--inverse-text);">
+                Explore Channels
+                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+            
         </section>
 
         <!-- The Dual Funnel Matrix -->
