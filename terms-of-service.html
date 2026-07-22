@@ -9,76 +9,8 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        /* Typography: Grunge Headers + Ultra-Clean Body */
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
-
-        /* Core structure for arccto.com theme switching - 90s Rock Gen X Edition */
-        :root {
-            /* Light Theme: Bleached Zine / Tour Poster */
-            --bg-color: #EFECE4;         
-            --surface-color: #E2DFD3;    
-            --text-primary: #1E1E1E;     
-            --text-secondary: #6B6B6B;   
-            
-            /* The 90s Tri-Color Palette */
-            --accent-red: #B82525;       
-            --accent-yellow: #C2963A;    
-            --accent-teal: #427878;      
-            
-            --accent-color: var(--accent-red);     
-            --border-style: 2px solid var(--text-primary);
-            --noise-opacity: 0.06;
-        }
-
-        [data-theme="dark"] {
-            /* Dark Theme: Matte Charcoal */
-            --bg-color: #1F1F1F;         
-            --surface-color: #2A2A2A;    
-            --text-primary: #F4F4F4;     
-            --text-secondary: #A0A0A0;   
-            
-            /* Brightened Tri-Color Palette for contrast on dark */
-            --accent-red: #D62D2D;       
-            --accent-yellow: #E5B345;    
-            --accent-teal: #4F9999;      
-            
-            --accent-color: var(--accent-red);     
-            --border-style: 2px solid var(--text-primary);
-            --noise-opacity: 0.09; 
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            line-height: 1.6;
-        }
-
-        /* Fixed SVG Noise Overlay */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: var(--noise-opacity);
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        /* Typography overrides */
-        h1, h2, h3, h4, .grunge-font {
-            font-family: 'Courier Prime', monospace;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-        }
-
-        .brutalist-border {
-            border: var(--border-style);
-        }
-    </style>
+    <!-- Centralized Stylesheet -->
+<link rel="stylesheet" href="/style.css">
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
