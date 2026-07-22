@@ -92,7 +92,7 @@ if (btn && chatWindow && iframe) {
         setTimeout(() => teaser.classList.add('hidden'), 500);
     };
 
-    // Auto-trigger the teaser after 30 seconds
+    // Auto-trigger the teaser after 60 seconds
     setTimeout(() => {
         if (teaser && !chatWindow.classList.contains('active') && !teaserDismissed) {
             teaser.classList.remove('hidden');
@@ -101,5 +101,5 @@ if (btn && chatWindow && iframe) {
                 teaser.classList.add('teaser-enter');
             }, 50);
         }
-    }, 30000); 
+    }, 60000); 
 }
