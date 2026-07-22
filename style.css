@@ -1,230 +1,262 @@
-/* Base Variables (Default Light Theme - Bleached Zine) */ 
+/* Typography: Grunge Headers + Ultra-Clean Body */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
+
+/* =========================================
+   CORE VARIABLES (LIGHT THEME DEFAULT)
+   ========================================= */
 :root {
-  --bg-primary: #EFECE4; /* Bleached paper background */
-  --bg-secondary: #E2DFD3; /* Slightly darker surface for panels */
-  --text-main: #1E1E1E; /* Deep slate ink */
-  --text-muted: #6B6B6B; /* Faded ink */
-  --accent-color: #B82525; /* ARC Rust Red */ 
-  --border-color: #1E1E1E; /* Harsh solid border */
-} 
+    /* 1. Main Backgrounds */
+    --bg-base: linear-gradient(135deg, #F3A712 0%, #E85D04 100%);
+    --bg-blobs: radial-gradient(circle at 20% 30%, #FFBA08 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #D00000 0%, transparent 50%);
+    --bg-color: var(--bg-blobs), var(--bg-base);
+    
+    /* The Cards (Smoked/Frosted Glass) */
+    --surface-color: rgba(10, 10, 10, 0.85); 
+    
+    /* 2. Text on Main Background */
+    --text-primary: #000000;     
+    --text-secondary: #222222;   
+    --inverse-text: #FFFFFF; 
+    
+    /* 3. Text Inside Frosted Cards */
+    --card-text: #FFFFFF;        
+    --card-text-muted: #BBBBBB;  
+    
+    /* 4. Semantic CTA Colors */
+    --card-btn-investor: #FFFFFF;       
+    --card-btn-text-investor: #000000;    
+    --card-btn-integrator: #00A8E8;     
+    --card-btn-text-integrator: #000000;  
+    --card-btn-mainstreet: #F3A712;     
+    --card-btn-text-mainstreet: #000000;  
 
-/* Auto-Detect System Dark Theme (Pitch/Concrete) */ 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: #1F1F1F; /* Deep matte charcoal */
-    --bg-secondary: #2A2A2A; /* Elevated concrete surface */
-    --text-main: #F4F4F4; /* Crisp off-white */
-    --text-muted: #A0A0A0; /* Muted ghost text */
-    --accent-color: #D62D2D; /* Brightened Rust Red for contrast */
-    --border-color: #F4F4F4; /* High contrast borders */
-  } 
-} 
+    /* 5. Floating UI Elements & Shadows */
+    --agent-bg: #00A8E8; 
+    --agent-text: #FFFFFF;
+    --btn-shadow: #FFFFFF; 
+    
+    /* Brand & Accent Highlights */
+    --glitch-1: #FFFFFF;
+    --glitch-2: #D00000;
+    --stat-1: #000000;
+    --stat-2: #FFFFFF;
+    --stat-3: #00A8E8;
 
-/* Apply Variables to Global Elements */ 
+    --accent-color: var(--text-primary);     
+    --border-style: 3px solid #000000;
+    --noise-opacity: 0.08; 
+}
+
+/* =========================================
+   DARK THEME OVERRIDES
+   ========================================= */
+[data-theme="dark"] {
+    /* 1. Main Backgrounds */
+    --bg-base: linear-gradient(135deg, #1A0000 0%, #660000 60%, #B32400 100%);
+    --bg-blobs: radial-gradient(circle at 15% 20%, #FF4500 0%, transparent 40%),
+                radial-gradient(circle at 85% 90%, #FF0000 0%, transparent 50%);
+    --bg-color: var(--bg-blobs), var(--bg-base);
+    
+    /* The Cards (Smoked/Frosted Glass) */
+    --surface-color: rgba(10, 10, 10, 0.75); 
+    
+    /* 2. Text on Main Background */
+    --text-primary: #FFFFFF;     
+    --text-secondary: #FFD1BA;  
+    --inverse-text: #000000; 
+    
+    /* 3. Text Inside Frosted Cards */
+    --card-text: #FFFFFF;
+    --card-text-muted: #AAAAAA;
+    
+    /* 4. Semantic CTA Colors */
+    --card-btn-investor: #D90429;       
+    --card-btn-text-investor: #FFFFFF;    
+    --card-btn-integrator: #00E5FF;     
+    --card-btn-text-integrator: #000000;  
+    --card-btn-mainstreet: #FF5722;     
+    --card-btn-text-mainstreet: #000000;  
+
+    /* 5. Floating UI Elements & Shadows */
+    --agent-bg: #00E5FF; 
+    --agent-text: #FFFFFF;
+    --btn-shadow: #FFFFFF; 
+    
+    /* Brand & Accent Highlights */
+    --glitch-1: #FF5722;
+    --glitch-2: #000000;
+    --stat-1: #FFFFFF;
+    --stat-2: #FF5722;
+    --stat-3: #00E5FF;
+
+    --accent-color: var(--text-primary);     
+    --border-style: 3px solid #000000;
+    --noise-opacity: 0.12; 
+}
+
+/* =========================================
+   GLOBAL HTML ELEMENTS
+   ========================================= */
 body {
-  background-color: var(--bg-primary); 
-  color: var(--text-main); 
-  transition: background-color 0.3s ease, color 0.3s ease; 
-  font-family: 'Inter', system-ui, sans-serif; 
-} 
-
-/* Brutalist Silo/Revenue Card Styling */ 
-.revenue-card {
-  background-color: var(--bg-secondary); 
-  border: 2px solid var(--border-color); /* Thicker, harsher borders */
-  color: var(--text-main); 
-  padding: 24px; 
-  border-radius: 0px; /* Sharp corners, no corporate curves */
-  box-shadow: 4px 4px 0px var(--text-main); /* Hard, offset retro shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
-} 
-
-.revenue-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--text-main); /* Shadow expands on hover */
+    background-color: transparent;
+    background-image: var(--bg-color); 
+    background-size: 100% 100%;
+    background-position: 0 0;
+    background-attachment: fixed; 
+    
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: color 0.3s ease; 
+    line-height: 1.6;
 }
 
-.revenue-icon {
-  margin-bottom: 16px; 
-  display: block; 
-  color: var(--accent-color); /* Forces SVG stroke/fill to use ARC Red */
-  transition: color 0.3s ease, stroke 0.3s ease; 
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
+h1, h2, h3, h4, .grunge-font {
+    font-family: 'Courier Prime', monospace;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
 
-<style>
-        /* Typography: Grunge Headers + Ultra-Clean Body */
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;700&display=swap');
+/* =========================================
+   UI COMPONENTS & CONTAINERS
+   ========================================= */
+.brutalist-border {
+    border: var(--border-style);
+}
 
-        /* Core structure for arccto.com - Stark High-Contrast Splatter Edition */
-        :root {
-            /* 1. Main Backgrounds (Light Theme) */
-            --bg-base: linear-gradient(135deg, #F3A712 0%, #E85D04 100%);
-            --bg-blobs: radial-gradient(circle at 20% 30%, #FFBA08 0%, transparent 40%),
-                        radial-gradient(circle at 80% 80%, #D00000 0%, transparent 50%);
-            --bg-color: var(--bg-blobs), var(--bg-base);
-            
-            /* The Cards (Smoked/Frosted Glass) */
-            --surface-color: rgba(10, 10, 10, 0.85); 
-            
-            /* 2. Text on Main Background */
-            --text-primary: #000000;     
-            --text-secondary: #222222;   
-            --inverse-text: #FFFFFF; /* High contrast text for solid primary buttons */
-            
-            /* 3. Text Inside Frosted Cards */
-            --card-text: #FFFFFF;        
-            --card-text-muted: #BBBBBB;  
-            
-            /* 4. Semantic CTA Colors (Must pop against dark frosted cards) */
-            --card-btn-investor: #FFFFFF;       
-            --card-btn-text-investor: #000000;    
-            
-            --card-btn-integrator: #00A8E8;     
-            --card-btn-text-integrator: #000000;  
-            
-            --card-btn-mainstreet: #F3A712;     
-            --card-btn-text-mainstreet: #000000;  
+.grunge-card, .frosted-glass {
+    background-color: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-style);
+    color: var(--card-text); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-            /* 5. Floating UI Elements & Shadows */
-            --agent-bg: #00A8E8; /* Pulled from the CTO logo blue */
-            --agent-text: #FFFFFF;
-            
-            --btn-shadow: #FFFFFF; 
-            
-            --glitch-1: #FFFFFF;
-            --glitch-2: #D00000;
-            
-            --stat-1: #000000;
-            --stat-2: #FFFFFF;
-            --stat-3: #00A8E8;
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--inverse-text);
+    border: var(--border-style);
+    box-shadow: 4px 4px 0px var(--btn-shadow);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
 
-            --accent-color: var(--text-primary);     
-            --border-style: 3px solid #000000;
-            --noise-opacity: 0.08; 
-        }
+.cta-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--btn-shadow);
+}
 
-        [data-theme="dark"] {
-            /* 1. Main Backgrounds (Dark Theme) */
-            --bg-base: linear-gradient(135deg, #1A0000 0%, #660000 60%, #B32400 100%);
-            --bg-blobs: radial-gradient(circle at 15% 20%, #FF4500 0%, transparent 40%),
-                        radial-gradient(circle at 85% 90%, #FF0000 0%, transparent 50%);
-            --bg-color: var(--bg-blobs), var(--bg-base);
-            
-            /* The Cards (Smoked/Frosted Glass) */
-            --surface-color: rgba(10, 10, 10, 0.75); 
-            
-            /* 2. Text on Main Background */
-            --text-primary: #FFFFFF;     
-            --text-secondary: #FFD1BA;  
-            --inverse-text: #000000; 
-            
-            /* 3. Text Inside Frosted Cards */
-            --card-text: #FFFFFF;
-            --card-text-muted: #AAAAAA;
-            
-            /* 4. Semantic CTA Colors (Must pop against dark frosted cards) */
-            --card-btn-investor: #D90429;       
-            --card-btn-text-investor: #FFFFFF;    
-            
-            --card-btn-integrator: #00E5FF;     
-            --card-btn-text-integrator: #000000;  
-            
-            --card-btn-mainstreet: #FF5722;     
-            --card-btn-text-mainstreet: #000000;  
+@media (min-width: 768px) {
+    .grunge-card:hover { 
+        transform: translate(-4px, -4px); 
+        z-index: 10; 
+        position: relative; 
+    }
+}
 
-            /* 5. Floating UI Elements & Shadows */
-            --agent-bg: #00E5FF; /* Bright Neon Cyan */
-            --agent-text: #FFFFFF;
-            
-            --btn-shadow: #FFFFFF; 
-            
-            --glitch-1: #FF5722;
-            --glitch-2: #000000;
-            
-            --stat-1: #FFFFFF;
-            --stat-2: #FF5722;
-            --stat-3: #00E5FF;
+/* =========================================
+   AGENT WIDGET (MCA)
+   ========================================= */
+#mca-widget-container { 
+    position: fixed; 
+    bottom: 24px; 
+    right: 24px; 
+    z-index: 99998; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+}
 
-            --accent-color: var(--text-primary);     
-            --border-style: 3px solid #000000;
-            --noise-opacity: 0.12; 
-        }
+#mca-chat-window { 
+    display: none; 
+    width: 360px; 
+    height: 600px; 
+    max-height: calc(100vh - 120px); 
+    overflow: hidden; 
+    margin-bottom: 20px; 
+    transition: all 0.3s ease; 
+    transform: translateY(10px); 
+    opacity: 0; 
+    background: var(--surface-color); 
+    backdrop-filter: blur(12px); 
+    border: var(--border-style); 
+    box-shadow: 6px 6px 0px var(--btn-shadow); 
+}
 
-        body {
-            background-color: transparent;
-            background-image: var(--bg-color); 
-            background-size: 100% 100%;
-            background-position: 0 0;
-            background-attachment: fixed; 
-            
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            transition: color 0.3s ease; 
-            line-height: 1.6;
-        }
+#mca-chat-window.active { 
+    display: block; 
+    transform: translateY(0); 
+    opacity: 1; 
+}
 
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: var(--noise-opacity);
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
+#mca-toggle-btn { 
+    background-color: var(--agent-bg); 
+    color: var(--agent-text); 
+    border: var(--border-style); 
+    width: 60px; 
+    height: 60px; 
+    cursor: pointer; 
+    box-shadow: 4px 4px 0px var(--btn-shadow); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: all 0.2s ease; 
+    flex-shrink: 0; 
+    border-radius: 50% 50% 50% 5%; 
+    transform: rotate(45deg); 
+    margin-right: 8px; 
+    margin-bottom: 8px; 
+}
 
-        h1, h2, h3, h4, .grunge-font {
-            font-family: 'Courier Prime', monospace;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-        }
+#mca-toggle-btn:hover { 
+    transform: rotate(45deg) translate(-2px, -2px); 
+    box-shadow: 6px 6px 0px var(--btn-shadow); 
+}
 
-        .brutalist-border {
-            border: var(--border-style);
-        }
+#mca-toggle-btn.active { 
+    background-color: var(--card-btn-integrator); 
+    color: var(--card-btn-text-integrator); 
+}
 
-        /* The Frosted Glass Effect */
-        .grunge-card, .frosted-glass {
-            background-color: var(--surface-color);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: var(--border-style);
-            color: var(--card-text); 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+#mca-toggle-btn svg { 
+    width: 30px; 
+    height: 30px; 
+    fill: currentColor; 
+    transition: transform 0.3s ease; 
+    transform: rotate(-45deg); 
+}
 
-        .cta-button {
-            background-color: var(--accent-color);
-            color: var(--inverse-text);
-            border: var(--border-style);
-            box-shadow: 4px 4px 0px var(--btn-shadow);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px var(--btn-shadow);
-        }
+#mca-toggle-btn.active svg { 
+    transform: rotate(45deg); 
+}
 
-        @media (min-width: 768px) {
-            .grunge-card:hover { transform: translate(-4px, -4px); z-index: 10; position: relative; }
-        }
+#mca-teaser { 
+    border: var(--border-style); 
+    box-shadow: 4px 4px 0px var(--btn-shadow); 
+    background: var(--surface-color); 
+    backdrop-filter: blur(12px); 
+    color: var(--card-text); 
+}
 
-        #mca-widget-container { position: fixed; bottom: 24px; right: 24px; z-index: 99998; display: flex; flex-direction: column; align-items: flex-end; }
-        
-        #mca-chat-window { display: none; width: 360px; height: 600px; max-height: calc(100vh - 120px); overflow: hidden; margin-bottom: 20px; transition: all 0.3s ease; transform: translateY(10px); opacity: 0; background: var(--surface-color); backdrop-filter: blur(12px); border: var(--border-style); box-shadow: 6px 6px 0px var(--btn-shadow); }
-        #mca-chat-window.active { display: block; transform: translateY(0); opacity: 1; }
-        
-        #mca-toggle-btn { background-color: var(--agent-bg); color: var(--agent-text); border: var(--border-style); width: 60px; height: 60px; cursor: pointer; box-shadow: 4px 4px 0px var(--btn-shadow); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0; border-radius: 50% 50% 50% 5%; transform: rotate(45deg); margin-right: 8px; margin-bottom: 8px; }
-        #mca-toggle-btn:hover { transform: rotate(45deg) translate(-2px, -2px); box-shadow: 6px 6px 0px var(--btn-shadow); }
-        #mca-toggle-btn.active { background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator); }
-        #mca-toggle-btn svg { width: 30px; height: 30px; fill: currentColor; transition: transform 0.3s ease; transform: rotate(-45deg); }
-        #mca-toggle-btn.active svg { transform: rotate(45deg); }
-        
-        #mca-teaser { border: var(--border-style); box-shadow: 4px 4px 0px var(--btn-shadow); background: var(--surface-color); backdrop-filter: blur(12px); color: var(--card-text); }
-        .teaser-enter { transform: translateY(0); opacity: 1; }
-        .teaser-exit { transform: translateY(10px); opacity: 0; pointer-events: none; }
-    </style>
+.teaser-enter { 
+    transform: translateY(0); 
+    opacity: 1; 
+}
+
+.teaser-exit { 
+    transform: translateY(10px); 
+    opacity: 0; 
+    pointer-events: none; 
+}
