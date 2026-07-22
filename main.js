@@ -24,9 +24,22 @@ prefersDarkScheme.addEventListener("change", (e) => {
 
 
 // ==========================================
-// DYNAMIC HTML INJECTION (FOOTER)
+// DYNAMIC HTML INJECTION (NAV & FOOTER)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Inject Navigation
+    const navPlaceholder = document.getElementById('nav-placeholder');
+    if (navPlaceholder) {
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                navPlaceholder.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading nav:', error));
+    }
+
+    // 2. Inject Footer
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         fetch('/footer.html')
