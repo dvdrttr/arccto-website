@@ -1,4 +1,29 @@
 // ==========================================
+// OS AUTO-DETECT THEME LOGIC
+// ==========================================
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Core function to apply the theme across the page and agent
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    
+    // Ping the iframe to update its theme (if the agent widget exists on this page)
+    const iframe = document.getElementById('mca-iframe');
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: theme }, '*');
+    }
+}
+
+// 1. Initial Load: Set based on OS System Preference
+applyTheme(prefersDarkScheme.matches ? "dark" : "light");
+
+// 2. Real-Time OS Listener: Auto-switch if the user changes their device settings
+prefersDarkScheme.addEventListener("change", (e) => {
+    applyTheme(e.matches ? "dark" : "light");
+});
+
+
+// ==========================================
 // DYNAMIC HTML INJECTION (FOOTER)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,56 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error loading footer:', error));
     }
 });
-// ==========================================
-// THEME TOGGLE & OS AUTO-DETECT LOGIC
-// ==========================================
-const themeToggleBtn = document.getElementById('theme-toggle');
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-// Core function to apply the theme across the page and agent
-function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    
-    // Update the button text if the button exists on this page
-    if (themeToggleBtn) {
-        themeToggleBtn.innerText = theme === "dark" ? "[ LIGHT ]" : "[ DARK ]";
-    }
-    
-    // Ping the iframe to update its theme (if the agent widget exists on this page)
-    const iframe = document.getElementById('mca-iframe');
-    if (iframe && iframe.contentWindow) {
-        iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: theme }, '*');
-    }
-}
-
-// 1. Initial Load: Check Local Storage first, fallback to OS System Preference
-const currentStoredTheme = localStorage.getItem("theme");
-if (currentStoredTheme) {
-    applyTheme(currentStoredTheme);
-} else {
-    applyTheme(prefersDarkScheme.matches ? "dark" : "light");
-}
-
-// 2. Real-Time OS Listener: Auto-switch if the user changes their device settings
-prefersDarkScheme.addEventListener("change", (e) => {
-    // Only auto-switch if the user hasn't manually clicked the toggle button
-    if (!localStorage.getItem("theme")) {
-        applyTheme(e.matches ? "dark" : "light");
-    }
-});
-
-// 3. Manual Override: When the user clicks the toggle button
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", function() {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        
-        applyTheme(newTheme);
-        
-        // Save their manual choice so the OS doesn't override it later
-        localStorage.setItem("theme", newTheme); 
-    });
-}
 
 
 // ==========================================
@@ -104,7 +79,7 @@ if (btn && chatWindow && iframe) {
         setTimeout(() => teaser.classList.add('hidden'), 500);
     };
 
-    // Auto-trigger the teaser after 15 seconds
+    // Auto-trigger the teaser after 30 seconds
     setTimeout(() => {
         if (teaser && !chatWindow.classList.contains('active') && !teaserDismissed) {
             teaser.classList.remove('hidden');
@@ -113,5 +88,5 @@ if (btn && chatWindow && iframe) {
                 teaser.classList.add('teaser-enter');
             }, 50);
         }
-    }, 15000); 
+    }, 30000); 
 }
