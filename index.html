@@ -210,15 +210,8 @@
 
     <!-- Header applies the frosted-glass class to blur the scroll -->
     <nav class="sticky top-0 z-50 frosted-glass border-b-4 px-6 py-4 flex justify-between items-center brutalist-border">
-        <!-- Industrial Rock / Roadcase Logo -->
-        <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-12 w-auto md:h-14">
-                <rect x="10" y="20" width="200" height="80" fill="none" stroke="var(--text-primary)" stroke-width="12" />
-                <rect x="16" y="26" width="188" height="68" fill="none" stroke="var(--glitch-1)" stroke-width="2" opacity="0.8" />
-                
-                <text x="110" y="84" font-family="'Inter', 'Arial Black', sans-serif" font-size="72" font-weight="900" fill="var(--text-primary)" text-anchor="middle" letter-spacing="2">ARC</text>
-                
-               <!-- Industrial Rock / Roadcase Logo -->
+        
+        <!-- Corrected Industrial Rock / Roadcase Logo -->
         <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-12 w-auto md:h-14">
                 <rect x="10" y="20" width="200" height="80" fill="none" stroke="var(--card-text)" stroke-width="12" />
@@ -236,6 +229,7 @@
             </svg>
         </a>
 
+        <!-- Fixed Drop Shadow here using btn-shadow -->
         <button id="theme-toggle" class="grunge-font text-sm px-4 py-2 frosted-glass text-[var(--card-text)] brutalist-border shadow-[2px_2px_0px_var(--btn-shadow)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_var(--btn-shadow)] transition-all cursor-pointer">
             [ DARK ]
         </button>
@@ -244,6 +238,7 @@
     <main class="flex-grow">
         <!-- Refactored Executive Hero Section -->
         <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+            <!-- Fixed Drop Shadow here -->
             <div class="inline-block mb-6 px-4 py-2 frosted-glass text-[var(--card-text)] brutalist-border shadow-[2px_2px_0px_var(--btn-shadow)]">
                 <span class="grunge-font text-sm font-bold tracking-widest text-[var(--card-text-muted)]">CONSULTING, TRAINING, & OPERATIONS</span>
             </div>
@@ -267,13 +262,14 @@
                 <a href="#advisory" class="cta-button grunge-font px-8 py-4 text-lg text-center flex-1 sm:flex-none" style="background-color: var(--text-primary); color: var(--inverse-text);">
                     Book Advisory Session
                 </a>
+                <!-- Fixed Drop Shadow here -->
                 <a href="#store" class="px-8 py-4 text-lg font-medium text-center brutalist-border frosted-glass text-[var(--card-text)] shadow-[4px_4px_0px_var(--btn-shadow)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--btn-shadow)] transition-all flex-1 sm:flex-none">
                     Shop Integrator Tools
                 </a>
             </div>
         </section>
 
-        <!-- The Dual Funnel Matrix - Container is now transparent so the cards float on the gradient -->
+        <!-- The Dual Funnel Matrix -->
         <section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t-4 border-solid brutalist-border">
             <div class="mb-16 max-w-3xl frosted-glass p-8 inline-block shadow-[4px_4px_0px_var(--btn-shadow)]">
                 <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">The Operations Matrix</h2>
