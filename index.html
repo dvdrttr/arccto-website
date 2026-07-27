@@ -107,9 +107,10 @@
                             <li>+ PRE-ACQUISITION TECH DUE DILIGENCE</li>
                             <li>+ LOW-VOLTAGE, SECURITY & AV AUDITS</li>
                         </ul>
-                        <a href="https://calendly.com/" target="_blank" class="cta-button border-none inline-block grunge-font px-8 py-4" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-                            Schedule Discovery Session
-                        </a>
+                        <!-- REPLACED CALENDLY LINK WITH MODAL TRIGGER -->
+                        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+                            Initiate Advisory Request
+                        </button>
                     </div>
                 </div>
 
@@ -204,6 +205,144 @@
             <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         </button>
     </div>
+
+    <!-- NEW: Premium Booking Modal Overlay -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none" style="background: var(--surface-color); box-shadow: 8px 8px 0px var(--card-btn-investor);">
+            
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+                ARC // EXECUTIVE ADVISORY
+            </div>
+            
+            <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2">Request Infrastructure Audit</h3>
+            <p class="text-[var(--card-text-muted)] mb-8 font-medium">Clear your bottlenecks. $300/hr Retainer. Fill out your project parameters below and our system will instantly secure your calendar block.</p>
+
+            <form id="booking-form" class="space-y-6" onsubmit="submitBooking(event)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Lead Executive</label>
+                        <input type="text" id="book-name" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors placeholder-gray-600" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
+                        <input type="email" id="book-email" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors placeholder-gray-600" placeholder="john@company.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Current Project Scope / AUM</label>
+                    <input type="text" id="book-scope" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors placeholder-gray-600" placeholder="e.g., Pre-acquisition due diligence for 3 locations">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
+                        <input type="date" id="book-date" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors [color-scheme:dark]">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
+                        <input type="time" id="book-time" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors [color-scheme:dark]">
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full mt-4 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 4px 4px 0px #000;">
+                    Secure Strategy Session
+                </button>
+                
+                <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('booking-modal');
+        const form = document.getElementById('booking-form');
+        const statusText = document.getElementById('booking-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // IMPORTANT: Paste your actual Google Apps Script Web App URL here
+        const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyubk9BgHGbQslYKwjNeUGfDGmdYxx9qziAhEiI1eRAhWyCmL3-IB2V6T08z_23ZU-8/exec';
+
+        function openBookingModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Slight delay to allow display:flex to apply before fading in
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }
+
+        function closeBookingModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                form.reset();
+                statusText.classList.add('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Secure Strategy Session';
+            }, 300);
+        }
+
+        async function submitBooking(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'INITIALIZING SYSTEM...';
+            statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
+            statusText.classList.add('text-gray-400');
+            statusText.innerText = "Transmitting payload...";
+
+            // Construct the Start and End ISO strings
+            const dateVal = document.getElementById('book-date').value;
+            const timeVal = document.getElementById('book-time').value;
+            const nameVal = document.getElementById('book-name').value;
+            
+            // Assume EST (America/New_York) - simple local construction for the payload
+            const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
+            const endDateTime = new Date(startDateTime.getTime() + (60 * 60 * 1000));
+
+            const payload = {
+                action: 'bookCalendar',
+                clientEmail: document.getElementById('book-email').value,
+                summary: `ARC Strategic Advisory: ${nameVal}`,
+                startTime: startDateTime.toISOString(),
+                endTime: endDateTime.toISOString()
+            };
+
+            try {
+                // We use text/plain to bypass complex CORS preflight issues with Google Apps Script
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'SUCCESS') {
+                    submitBtn.style.display = 'none';
+                    statusText.classList.replace('text-gray-400', 'text-[#00ff00]');
+                    statusText.innerText = "SESSION SECURED. CHECK YOUR INBOX.";
+                    setTimeout(closeBookingModal, 4000);
+                } else if (result.status === 'CONFLICT') {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Secure Strategy Session';
+                    statusText.classList.replace('text-gray-400', 'text-red-500');
+                    statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER.";
+                } else {
+                    throw new Error(result.message || 'Unknown error');
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Secure Strategy Session';
+                statusText.classList.replace('text-gray-400', 'text-red-500');
+                statusText.innerText = "TRANSMISSION FAILED. PLEASE TRY AGAIN.";
+            }
+        }
+    </script>
 
     <!-- Centralized Engine Scripts -->
     <script src="/main.js"></script>
