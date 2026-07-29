@@ -1,19 +1,33 @@
-<nav class="sticky top-0 z-50 frosted-glass border-b-4 px-6 py-4 flex justify-between items-center brutalist-border">
-    <!-- Industrial Rock / Roadcase Logo -->
-    <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-12 w-auto md:h-14">
-            <rect x="10" y="20" width="200" height="80" fill="none" stroke="var(--card-text)" stroke-width="12" />
-            <rect x="16" y="26" width="188" height="68" fill="none" stroke="var(--glitch-1)" stroke-width="2" opacity="0.8" />
-            
-            <text x="110" y="84" font-family="'Inter', 'Arial Black', sans-serif" font-size="72" font-weight="900" fill="var(--card-text)" text-anchor="middle" letter-spacing="2">ARC</text>
-            
-            <!-- "CTO" Parental Advisory / EP Sticker block -->
-            <rect x="185" y="55" width="95" height="45" fill="var(--card-btn-integrator)" stroke="var(--card-text)" stroke-width="4" />
-            <text x="232" y="90" font-family="'Courier Prime', monospace" font-size="34" font-weight="bold" fill="var(--card-btn-text-integrator)" text-anchor="middle" letter-spacing="1">CTO</text>
-            
-            <!-- Amp Grilles -->
-            <path d="M 230 30 L 330 30 M 230 42 L 310 42 M 295 54 L 330 54" fill="none" stroke="var(--card-text)" stroke-width="5" stroke-linecap="square" />
-            <path d="M 320 42 L 330 42" fill="none" stroke="var(--glitch-2)" stroke-width="5" stroke-linecap="square" />
-        </svg>
-    </a>
+<nav class="sticky top-0 z-50 frosted-glass border-b-4 px-6 py-3 flex justify-between items-center brutalist-border" style="background: var(--surface-color);">
+  
+  <!-- Industrial Rock / Roadcase Logo -->
+  <a href="/" class="block hover:scale-105 transition-transform origin-left relative group">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" class="h-10 w-auto md:h-12">
+      <rect x="10" y="20" width="200" height="80" fill="none" stroke="var(--card-text)" stroke-width="12" />
+      <rect x="16" y="26" width="188" height="68" fill="none" stroke="var(--glitch-1)" stroke-width="2" opacity="0.8" />
+      <text x="110" y="84" font-family="'Inter', 'Arial Black', sans-serif" font-size="72" font-weight="900" fill="var(--card-text)" text-anchor="middle" letter-spacing="2">ARC</text>
+      <!-- "CTO" Parental Advisory / EP Sticker block -->
+      <rect x="185" y="55" width="95" height="45" fill="var(--card-btn-integrator)" stroke="var(--card-text)" stroke-width="4" />
+      <text x="232" y="90" font-family="'Courier Prime', monospace" font-size="34" font-weight="bold" fill="var(--card-btn-text-integrator)" text-anchor="middle" letter-spacing="1">CTO</text>
+      <!-- Amp Grilles -->
+      <path d="M 230 30 L 330 30 M 230 42 L 310 42 M 295 54 L 330 54" fill="none" stroke="var(--card-text)" stroke-width="5" stroke-linecap="square" />
+      <path d="M 320 42 L 330 42" fill="none" stroke="var(--glitch-2)" stroke-width="5" stroke-linecap="square" />
+    </svg>
+  </a>
+
+  <!-- Modern Top-Level Navigation Links (Hidden on Mobile, Visible on Medium+ screens) -->
+  <div class="hidden md:flex items-center space-x-8 font-mono text-sm font-bold tracking-widest uppercase" style="color: var(--card-text);">
+    <a href="/consulting.html" class="hover:text-[var(--card-btn-investor)] transition-colors">Consulting</a>
+    <a href="/training.html" class="hover:text-[var(--card-btn-mainstreet)] transition-colors">Training & AI</a>
+    <a href="/operations.html" class="hover:text-[var(--card-btn-integrator)] transition-colors">Operations</a>
+    <a href="https://store.arccto.com" target="_blank" class="hover:opacity-80 transition-opacity">Store // Playbooks</a>
+  </div>
+
+  <!-- Header CTA Button -->
+  <div class="flex items-center gap-4">
+    <button onclick="openBookingModal()" class="cta-button btn-category px-5 py-2.5 text-xs md:text-sm font-mono font-bold tracking-wider uppercase cursor-pointer">
+      Book Discovery
+    </button>
+  </div>
+
 </nav>
