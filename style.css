@@ -5,30 +5,30 @@
    CORE VARIABLES (LIGHT THEME DEFAULT)
    ========================================= */
 :root {
-    /* 1. Main Backgrounds */
-    --bg-base: linear-gradient(135deg, #F3A712 0%, #E85D04 100%);
-    --bg-blobs: radial-gradient(circle at 20% 30%, #FFBA08 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, #D00000 0%, transparent 50%);
+    /* 1. Main Backgrounds (Rich Burnt Amber & Terracotta - Bold without glare) */
+    --bg-base: linear-gradient(135deg, #D97706 0%, #9A3412 100%);
+    --bg-blobs: radial-gradient(circle at 20% 30%, #F59E0B 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #7C2D12 0%, transparent 50%);
     --bg-color: var(--bg-blobs), var(--bg-base);
     
     /* The Cards (Smoked/Frosted Glass) */
-    --surface-color: rgba(10, 10, 10, 0.85); 
+    --surface-color: rgba(15, 15, 15, 0.88); 
     
     /* 2. Text on Main Background */
     --text-primary: #000000;     
-    --text-secondary: #222222;   
+    --text-secondary: #1F1F1F;   
     --inverse-text: #FFFFFF; 
     
     /* 3. Text Inside Frosted Cards */
     --card-text: #FFFFFF;        
-    --card-text-muted: #BBBBBB;  
+    --card-text-muted: #CCCCCC;  
     
     /* 4. Semantic CTA Colors */
     --card-btn-investor: #FFFFFF;       
     --card-btn-text-investor: #000000;    
     --card-btn-integrator: #00A8E8;     
     --card-btn-text-integrator: #000000;  
-    --card-btn-mainstreet: #F3A712;     
+    --card-btn-mainstreet: #F59E0B;     
     --card-btn-text-mainstreet: #000000;  
 
     /* 5. Floating UI Elements & Shadows */
@@ -38,7 +38,7 @@
     
     /* Brand & Accent Highlights */
     --glitch-1: #FFFFFF;
-    --glitch-2: #D00000;
+    --glitch-2: #991B1B;
     --stat-1: #000000;
     --stat-2: #FFFFFF;
     --stat-3: #00A8E8;
