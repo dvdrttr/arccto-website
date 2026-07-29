@@ -38,23 +38,56 @@
     <div id="nav-placeholder"></div>
 
     <main class="flex-grow">
-        <!-- Refactored Executive Hero Section -->
-        <section class="max-w-5xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+        <!-- Refactored Executive Hero Section (The "Main Event Poster" Block) -->
+        <section class="max-w-6xl mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24">
             
-            <!-- High-Contrast Top Tag (Outlines removed) -->
-            <div class="inline-block mb-8 px-4 py-2 shadow-[4px_4px_0px_var(--btn-shadow)]" style="background-color: var(--text-primary); color: var(--inverse-text);">
-                <span class="grunge-font text-sm font-bold tracking-widest">ARC // CTO</span>
+            <!-- Hero Poster Container (Industrial Album Sleeve Vibe) -->
+            <div class="grunge-card border-none p-8 md:p-16 relative overflow-hidden" 
+                 style="background: 
+                        radial-gradient(circle at 15% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+                        linear-gradient(135deg, rgba(20, 20, 20, 0.92) 0%, rgba(10, 10, 10, 0.96) 100%), 
+                        var(--surface-color); 
+                        box-shadow: 8px 8px 0px var(--text-primary);
+                        border-top: 8px solid var(--glitch-2);">
+                
+                <!-- Oversized Background Watermark (Tour Banner Aesthetic) -->
+                <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-[11rem] uppercase tracking-tighter select-none pointer-events-none leading-none" 
+                     style="color: rgba(255, 255, 255, 0.03); transform: rotate(-2deg);">
+                    ARC//2026
+                </div>
+
+                <div class="relative z-10 max-w-4xl">
+                    <!-- High-Contrast Top Tag -->
+                    <div class="inline-block mb-8 px-4 py-2 shadow-[4px_4px_0px_var(--btn-shadow)]" 
+                         style="background-color: var(--text-primary); color: var(--inverse-text);">
+                        <span class="grunge-font text-sm font-bold tracking-widest">ARC // CTO • RESILIENCE</span>
+                    </div>
+                    
+                    <!-- Injected Glitch Red into the Headline (Now 100% Crisp Inside Dark Sleeve) -->
+                    <h1 class="text-5xl md:text-7xl md:leading-[1.05] mb-8 uppercase font-black tracking-tight" 
+                        style="color: var(--card-text);">
+                        From <span style="color: var(--glitch-2);">Boots on the Ground</span> <br>
+                        To the Boardroom.
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl mb-10 font-medium leading-relaxed" 
+                       style="color: var(--card-text-muted);">
+                        Built on 26 years of hard-wired technology experience. We don't just consult—we've been getting our boots dirty with tools in hand for over two decades, and we still test the gear ourselves today. Plain English & Professional without the buzzwords and jargon.
+                    </p>
+
+                    <!-- Hero Quick-Action Bar -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-800">
+                        <button onclick="openBookingModal()" class="cta-button btn-category btn-consulting px-8 py-4 text-center grunge-font text-base">
+                            Request Executive Briefing
+                        </button>
+                        <a href="#services" class="inline-flex items-center justify-center px-6 py-4 font-mono font-bold uppercase tracking-wider text-sm hover:underline" style="color: var(--card-text-muted);">
+                            Explore Service Matrix ↓
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            
-            <!-- Injected Glitch Red into the Headline -->
-            <h1 class="text-5xl md:text-7xl md:leading-[1.1] mb-8 uppercase">
-                From <span style="color: var(--glitch-2);">Boots on the Ground</span> <br>
-                <span style="color: var(--text-primary);">To the Boardroom.</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl mb-12 max-w-4xl font-medium leading-relaxed" style="color: var(--text-secondary);">
-                Built on 26 years of hard-wired technology experience. We don't just consult—we've been getting our boots dirty with tools in hand for over two decades, and we still test the gear ourselves today. Plain English & Professional without the buzzwords and jargon.
-            </p>   
+               
         </section>
 
        <!-- The Operations Matrix -->
