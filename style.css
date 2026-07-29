@@ -159,41 +159,52 @@ h1, h2, h3, h4, .grunge-font {
 }
 
 /* =========================================
-   GLOBAL STANDARDIZED BUTTONS
+   GLOBAL STANDARDIZED & CATEGORY BUTTONS
    ========================================= */
 
-/* Solid Primary CTA Button (Always maintains high-contrast readable text) */
-.btn-primary {
+/* High-Contrast Button Base:
+   - Light Mode: Deep Black background (#000000) with Bright White Text (#FFFFFF)
+   - Dark Mode: Bright White background (#FFFFFF) with Bold Black Text (#000000)
+   - Always stands out from the semi-transparent frosted cards! */
+.btn-category {
   background-color: var(--text-primary) !important;
   color: var(--inverse-text) !important;
   border: 2px solid var(--text-primary) !important;
-  box-shadow: 4px 4px 0px var(--btn-shadow);
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--btn-shadow);
-  background-color: var(--text-primary) !important;
-  color: var(--inverse-text) !important;
-}
-
-/* Outline "Explore" Button (Automatically adapts border & text in Light/Dark mode) */
-.btn-outline {
-  background-color: transparent !important;
-  color: var(--text-primary) !important;
-  border: 2px solid var(--text-primary) !important;
-  box-shadow: 4px 4px 0px var(--btn-shadow);
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.btn-outline:hover {
+.btn-category:hover {
+  transform: translate(-2px, -2px);
   background-color: var(--text-primary) !important;
   color: var(--inverse-text) !important;
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--btn-shadow);
+}
+
+/* Category 1: CONSULTING (White/Silver Shadow Accent) */
+.btn-consulting {
+  box-shadow: 5px 5px 0px var(--card-btn-investor) !important;
+}
+.btn-consulting:hover {
+  box-shadow: 7px 7px 0px var(--card-btn-investor) !important;
+}
+
+/* Category 2: TRAINING & AI (Orange/Gold Shadow Accent) */
+.btn-training {
+  box-shadow: 5px 5px 0px var(--card-btn-mainstreet) !important;
+}
+.btn-training:hover {
+  box-shadow: 7px 7px 0px var(--card-btn-mainstreet) !important;
+}
+
+/* Category 3: OPERATIONS (Cyan/Blue Shadow Accent) */
+.btn-operations {
+  box-shadow: 5px 5px 0px var(--card-btn-integrator) !important;
+}
+.btn-operations:hover {
+  box-shadow: 7px 7px 0px var(--card-btn-integrator) !important;
 }
 
 @media (min-width: 768px) {
