@@ -5,10 +5,10 @@
    CORE VARIABLES (LIGHT THEME DEFAULT)
    ========================================= */
 :root {
-    /* 1. Main Backgrounds (Rich Burnt Amber & Terracotta - Bold without glare) */
-    --bg-base: linear-gradient(135deg, #D97706 0%, #9A3412 100%);
-    --bg-blobs: radial-gradient(circle at 20% 30%, #F59E0B 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, #7C2D12 0%, transparent 50%);
+    /* 1. Main Backgrounds (Warm Gold/Yellow -> Deep Crimson/Red) */
+    --bg-base: linear-gradient(135deg, #CA8A04 0%, #7F1D1D 100%);
+    --bg-blobs: radial-gradient(circle at 20% 30%, #EAB308 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, #991B1B 0%, transparent 55%);
     --bg-color: var(--bg-blobs), var(--bg-base);
     
     /* The Cards (Smoked/Frosted Glass) */
@@ -28,7 +28,7 @@
     --card-btn-text-investor: #000000;    
     --card-btn-integrator: #00A8E8;     
     --card-btn-text-integrator: #000000;  
-    --card-btn-mainstreet: #F59E0B;     
+    --card-btn-mainstreet: #EAB308;     
     --card-btn-text-mainstreet: #000000;  
 
     /* 5. Floating UI Elements & Shadows */
