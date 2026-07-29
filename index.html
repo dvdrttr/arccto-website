@@ -202,26 +202,61 @@
     <!-- The Footer will be injected here by main.js -->
     <div id="footer-placeholder"></div>
 
-    <!-- ARC MCA Agent -->
-    <div id="mca-widget-container">
-        <div id="mca-teaser" class="teaser-exit p-4 w-72 mb-4 relative transition-all duration-500 hidden border-none" style="box-shadow: 4px 4px 0px var(--btn-shadow);">
-            <button onclick="dismissTeaser()" class="absolute top-2 right-2 text-[var(--card-text-muted)] hover:text-[var(--card-text)] transition cursor-pointer">
+    <!-- ARC MCA Agent (Tactical Comms / Backstage HUD Vibe) -->
+    <div id="mca-widget-container" class="z-40">
+        
+        <!-- Teaser Popup Card -->
+        <div id="mca-teaser" 
+             class="teaser-exit p-5 w-80 mb-4 relative transition-all duration-500 hidden border-none overflow-hidden grunge-card" 
+             style="background: 
+                    radial-gradient(circle at 90% 10%, rgba(0, 168, 232, 0.15) 0%, transparent 60%),
+                    linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%), 
+                    var(--surface-color); 
+                    box-shadow: 8px 8px 0px #000000;
+                    border-top: 6px solid var(--glitch-2);">
+            
+            <!-- Faint Tactical Watermark -->
+            <div class="absolute -right-4 -bottom-4 font-mono font-black text-6xl uppercase tracking-tighter select-none pointer-events-none" 
+                 style="color: rgba(255, 255, 255, 0.03); transform: rotate(-3deg);">
+                MCA//01
+            </div>
+
+            <!-- Dismiss Button -->
+            <button onclick="dismissTeaser()" class="absolute top-3 right-3 text-gray-400 hover:text-white transition cursor-pointer z-10">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <div class="flex items-center gap-2 mb-2">
-                <div class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--card-btn-integrator);"></div>
-                <span class="grunge-font text-sm tracking-widest text-[var(--card-text)]">MCA // System Active</span>
+            
+            <!-- System Active Status Bar -->
+            <div class="flex items-center gap-2 mb-3 relative z-10">
+                <div class="w-2.5 h-2.5 rounded-full animate-pulse" style="background-color: var(--card-btn-integrator); box-shadow: 0 0 8px var(--card-btn-integrator);"></div>
+                <span class="font-mono text-xs font-bold tracking-widest uppercase" style="color: var(--card-btn-integrator);">
+                    MCA // SYSTEM ACTIVE
+                </span>
             </div>
-            <p class="text-sm mb-4 font-medium" style="color: var(--card-text-muted);">Let's cut the noise. What operation is bleeding margin today?</p>
-            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button border-none w-full py-2 text-sm grunge-font tracking-widest" style="background-color: var(--text-primary); color: var(--inverse-text);">Initiate Briefing</button>
+            
+            <p class="text-sm mb-5 font-medium leading-relaxed relative z-10" style="color: var(--card-text-muted);">
+                Let's cut the noise. What operation is bleeding margin today?
+            </p>
+            
+            <!-- Action CTA Button -->
+            <button onclick="toggleMcaChat('assessment'); dismissTeaser();" 
+                    class="cta-button border-none w-full py-2.5 text-xs font-mono font-black tracking-widest uppercase cursor-pointer transition-all hover:translate-x-0.5 hover:-translate-y-0.5 relative z-10" 
+                    style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 4px 4px 0px #000000;">
+                Initiate Briefing &rarr;
+            </button>
         </div>
 
-        <div id="mca-chat-window" class="border-none">
+        <!-- Chat Window Container -->
+        <div id="mca-chat-window" class="border-none grunge-card overflow-hidden" 
+             style="box-shadow: 10px 10px 0px #000000; border-top: 6px solid var(--glitch-2);">
             <iframe id="mca-iframe" src="https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc" class="w-full h-full border-none" allow="autofocus"></iframe>
         </div>
 
-        <button id="mca-toggle-btn" onclick="toggleMcaChat()" class="border-none">
-            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <!-- Toggle Button (Tactical Floating Icon) -->
+        <button id="mca-toggle-btn" onclick="toggleMcaChat()" 
+                class="border-none cursor-pointer transition-transform hover:scale-105" 
+                style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 4px 4px 0px #000000;">
+            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         </button>
     </div>
 
