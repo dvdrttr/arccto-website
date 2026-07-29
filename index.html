@@ -257,6 +257,7 @@
                     <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Current Project Scope / AUM</label>
                     <input type="text" id="book-scope" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-investor)] transition-colors placeholder-gray-600" placeholder="e.g., Pre-acquisition due diligence for 3 locations">
                 </div>
+
                 <!-- Preferred Briefing Channel Dropdown -->
                 <div>
                     <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Preferred Briefing Channel</label>
@@ -267,6 +268,7 @@
                         <option value="In-Person / On-Site Consultation">In-Person / On-Site Consultation (Subject to Scope)</option>
                     </select>
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
@@ -327,6 +329,7 @@
             const dateVal = document.getElementById('book-date').value;
             const timeVal = document.getElementById('book-time').value;
             const nameVal = document.getElementById('book-name').value;
+            const channelVal = document.getElementById('book-channel').value;
             
             // Assume EST (America/New_York) - simple local construction for the payload
             const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
@@ -335,7 +338,7 @@
             const payload = {
                 action: 'bookCalendar',
                 clientEmail: document.getElementById('book-email').value,
-                summary: `ARC Strategic Advisory: ${nameVal}`,
+                summary: `ARC Strategic Advisory: ${nameVal} [${channelVal}]`,
                 startTime: startDateTime.toISOString(),
                 endTime: endDateTime.toISOString()
             };
