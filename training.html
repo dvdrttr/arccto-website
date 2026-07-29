@@ -5,31 +5,26 @@
   <meta name="viewport" content="width=device-fit=cover, width=device-width, initial-scale=1.0">
   <title>ARC // Everyday AI & Workflow Automation (Training)</title>
   <meta name="description" content="Practical AI implementation, Microsoft 365 Copilot, Google Workspace Gemini, and field playbooks for growing businesses by ARC CTO.">
-  
   <!-- Favicon & Custom Styles -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
-
   <!-- Tailwind CSS CDN (Required for Layout & Typography) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Optional: Include Google Fonts if your style.css references them -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--inverse-text)]">
-
   <!-- Navigation -->
   <div id="nav-placeholder"></div>
 
   <!-- Main Content -->
   <main class="flex-grow pt-28 pb-20">
     <section class="max-w-4xl mx-auto px-6">
-      
       <!-- Breadcrumb / Header -->
       <div class="mb-12">
-        <a href="/#services" class="inline-block font-mono text-xs font-bold tracking-widest uppercase mb-4 hover:underline" style="color: var(--card-btn-mainstreet);">
+        <a href="/index.html#services" class="inline-block font-mono text-xs font-bold tracking-widest uppercase mb-4 hover:underline" style="color: var(--card-btn-mainstreet);">
           &larr; Back to All Services
         </a>
         <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase ml-2" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
@@ -80,29 +75,149 @@
         </a>
       </div>
 
-      <!-- Bottom CTA -->
+      <!-- Bottom CTA (Opens Modal Directly) -->
       <div class="text-center py-8">
         <h3 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--card-text)]">Ready to Eliminate Repetitive Admin Work?</h3>
         <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--card-text-muted);">
           Let our AI Voice Concierge run a rapid diagnostic on your workflow, or book a live assessment call today.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <button onclick="toggleMcaChat('ai')" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
+          <a href="/index.html#mca-widget-container" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
             Start Instant AI Assessment
-          </button>
+          </a>
           <button onclick="openBookingModal()" class="cta-button border-2 border-solid grunge-font px-8 py-4 cursor-pointer" style="border-color: var(--text-primary); color: var(--card-text);">
             Book Remote Discovery Call
           </button>
         </div>
       </div>
-
     </section>
   </main>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Booking Modal & Scripts -->
+  <!-- Full Booking Modal Overlay (Self-Contained) -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
+    <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none" style="background: var(--surface-color); box-shadow: 8px 8px 0px var(--card-btn-mainstreet);">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
+        ARC // PRACTICAL AI & TRAINING
+      </div>
+      <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2">Request Workflow Assessment</h3>
+      <p class="text-[var(--card-text-muted)] mb-8 font-medium">Eliminate admin bloat. Fill out your project parameters below and our system will instantly secure your discovery block.</p>
+      
+      <form id="booking-form" class="space-y-6" onsubmit="submitBooking(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Lead Executive</label>
+            <input type="text" id="book-name" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-colors placeholder-gray-600" placeholder="John Doe">
+          </div>
+          <div>
+            <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
+            <input type="email" id="book-email" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-colors placeholder-gray-600" placeholder="john@company.com">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Current Workflow Scope / Target Tools</label>
+          <input type="text" id="book-scope" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-colors placeholder-gray-600" placeholder="e.g., Microsoft 365 Copilot setup for 5 staff members">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
+            <input type="date" id="book-date" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-colors [color-scheme:dark]">
+          </div>
+          <div>
+            <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
+            <input type="time" id="book-time" required class="w-full bg-black/50 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-colors [color-scheme:dark]">
+          </div>
+        </div>
+        <button type="submit" id="submit-btn" class="w-full mt-4 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet); box-shadow: 4px 4px 0px #000;">
+          Secure Strategy Session
+        </button>
+        <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('booking-modal');
+    const form = document.getElementById('booking-form');
+    const statusText = document.getElementById('booking-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
+
+    function openBookingModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    }
+
+    function closeBookingModal() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        form.reset();
+        statusText.classList.add('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Secure Strategy Session';
+      }, 300);
+    }
+
+    async function submitBooking(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'INITIALIZING SYSTEM...';
+      statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
+      statusText.classList.add('text-gray-400');
+      statusText.innerText = "Transmitting payload...";
+
+      const dateVal = document.getElementById('book-date').value;
+      const timeVal = document.getElementById('book-time').value;
+      const nameVal = document.getElementById('book-name').value;
+      const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
+      const endDateTime = new Date(startDateTime.getTime() + (60 * 60 * 1000));
+
+      const payload = {
+        action: 'bookCalendar',
+        clientEmail: document.getElementById('book-email').value,
+        summary: `ARC Training Advisory: ${nameVal}`,
+        startTime: startDateTime.toISOString(),
+        endTime: endDateTime.toISOString()
+      };
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (result.status === 'SUCCESS') {
+          submitBtn.style.display = 'none';
+          statusText.classList.replace('text-gray-400', 'text-[#00ff00]');
+          statusText.innerText = "SESSION SECURED. CHECK YOUR INBOX.";
+          setTimeout(closeBookingModal, 4000);
+        } else if (result.status === 'CONFLICT') {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Secure Strategy Session';
+          statusText.classList.replace('text-gray-400', 'text-red-500');
+          statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER.";
+        } else {
+          throw new Error(result.message || 'Unknown error');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Secure Strategy Session';
+        statusText.classList.replace('text-gray-400', 'text-red-500');
+        statusText.innerText = "TRANSMISSION FAILED. PLEASE TRY AGAIN.";
+      }
+    }
+  </script>
+
+  <!-- Main Engine Scripts -->
   <script src="/main.js"></script>
 </body>
 </html>
