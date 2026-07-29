@@ -75,21 +75,21 @@
         </a>
       </div>
 
-      <!-- Bottom CTA (Opens Modal Directly) -->
-      <div class="text-center py-8">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--card-text)]">Ready to Eliminate Repetitive Admin Work?</h3>
-        <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--card-text-muted);">
-          Let our AI Voice Concierge run a rapid diagnostic on your workflow, or book a live assessment call today.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/index.html#mca-widget-container" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-            Start Instant AI Assessment
-          </a>
-          <button onclick="openBookingModal()" class="cta-button border-2 border-solid grunge-font px-8 py-4 cursor-pointer" style="border-color: var(--text-primary); color: var(--card-text);">
-            Book Remote Discovery Call
-          </button>
-        </div>
-      </div>
+      <!-- Bottom CTA -->
+<div class="text-center py-8">
+  <h3 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--card-text)]">Ready to Eliminate Repetitive Admin Work?</h3>
+  <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--card-text-muted);">
+    Let our AI Voice Concierge run a rapid diagnostic on your workflow, or book a live assessment call today.
+  </p>
+  <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <button onclick="toggleMcaChat('ai')" class="cta-button btn-outline inline-block grunge-font px-8 py-4 cursor-pointer">
+      Start Instant AI Assessment
+    </button>
+    <button onclick="openBookingModal()" class="cta-button btn-primary inline-block grunge-font px-8 py-4 cursor-pointer">
+      Book Remote Discovery Call
+    </button>
+  </div>
+</div>
     </section>
   </main>
 
