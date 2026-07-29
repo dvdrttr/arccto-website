@@ -164,9 +164,9 @@ h1, h2, h3, h4, .grunge-font {
 
 /* Solid Primary CTA Button (Always maintains high-contrast readable text) */
 .btn-primary {
-  background-color: var(--text-primary);
-  color: var(--inverse-text);
-  border: 2px solid var(--text-primary);
+  background-color: var(--text-primary) !important;
+  color: var(--inverse-text) !important;
+  border: 2px solid var(--text-primary) !important;
   box-shadow: 4px 4px 0px var(--btn-shadow);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -175,23 +175,23 @@ h1, h2, h3, h4, .grunge-font {
 .btn-primary:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--btn-shadow);
-  background-color: var(--text-primary);
-  color: var(--inverse-text);
+  background-color: var(--text-primary) !important;
+  color: var(--inverse-text) !important;
 }
 
 /* Outline "Explore" Button (Automatically adapts border & text in Light/Dark mode) */
 .btn-outline {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--text-primary);
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  border: 2px solid var(--text-primary) !important;
   box-shadow: 4px 4px 0px var(--btn-shadow);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .btn-outline:hover {
-  background-color: var(--text-primary);
-  color: var(--inverse-text);
+  background-color: var(--text-primary) !important;
+  color: var(--inverse-text) !important;
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--btn-shadow);
 }
