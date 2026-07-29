@@ -158,6 +158,44 @@ h1, h2, h3, h4, .grunge-font {
     box-shadow: 6px 6px 0px var(--btn-shadow);
 }
 
+/* =========================================
+   GLOBAL STANDARDIZED BUTTONS
+   ========================================= */
+
+/* Solid Primary CTA Button (Always maintains high-contrast readable text) */
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--inverse-text);
+  border: 2px solid var(--text-primary);
+  box-shadow: 4px 4px 0px var(--btn-shadow);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--btn-shadow);
+  background-color: var(--text-primary);
+  color: var(--inverse-text);
+}
+
+/* Outline "Explore" Button (Automatically adapts border & text in Light/Dark mode) */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  box-shadow: 4px 4px 0px var(--btn-shadow);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--text-primary);
+  color: var(--inverse-text);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--btn-shadow);
+}
+
 @media (min-width: 768px) {
     .grunge-card:hover { 
         transform: translate(-4px, -4px); 
