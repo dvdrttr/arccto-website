@@ -86,9 +86,9 @@
         <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--card-text-muted);">
           Lock in a remote discovery call today. We'll review your scope and get your audit scheduled immediately.
         </p>
-<a href="index.html#services" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+<button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
   Book Remote Discovery Call
-</a>
+</button>
       </div>
 
     </section>
@@ -96,7 +96,10 @@
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
-
+<!-- Booking Modal Placeholder/Container -->
+<div id="booking-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+  <!-- Your modal content will be handled by main.js -->
+</div>
   <!-- Booking Modal & Scripts -->
   <script src="/main.js"></script>
 </body>
