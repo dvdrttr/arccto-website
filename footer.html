@@ -1,8 +1,98 @@
-<footer class="border-t-4 border-solid brutalist-border frosted-glass py-12 px-6 text-center">
-    <p class="grunge-font text-xl mb-6 text-[var(--card-text)]">ARC | CONSULTING, TRAINING, & OPERATIONS</p>
-    <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 text-sm font-medium" style="color: var(--card-text-muted);">
-        <a href="/privacy-policy.html" class="hover:opacity-75 underline decoration-[var(--border-style)]">Privacy Policy</a>
-        <a href="/terms-of-service.html" class="hover:opacity-75 underline decoration-[var(--border-style)]">Terms of Service</a>
+<footer class="frosted-glass border-t-4 py-16 px-6 brutalist-border" style="background: var(--surface-color); border-color: var(--text-primary);">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+    
+    <!-- Column 1: Brand & NAP (Local SEO Trust Signal) -->
+    <div class="space-y-4">
+      <div class="inline-block px-3 py-1 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
+        ARC // CTO
+      </div>
+      <p class="text-sm font-medium leading-relaxed" style="color: var(--card-text-muted);">
+        Built on 26 years of hard-wired technology experience. Real-world infrastructure audits for investors, field-tested playbooks for integrators, and practical AI setups for growing SMBs.
+      </p>
+      <div class="font-mono text-xs space-y-1 font-bold uppercase tracking-wider" style="color: var(--card-text);">
+        <div>Pittsburgh, PA // USA</div>
+        <div>Direct: <a href="tel:8559230196" class="hover:underline">855-923-0196</a></div>
+      </div>
     </div>
-    <p class="text-xs font-mono" style="color: var(--card-text-muted);">© 2026 ARC CTO.</p>
+
+    <!-- Column 2: Core Service Silos -->
+    <div>
+      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+        // Core Services
+      </h4>
+      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
+        <li>
+          <a href="/consulting.html" class="hover:text-[var(--card-btn-investor)] transition-colors" style="color: var(--card-text-muted);">
+            + Tech Audits & Due Diligence
+          </a>
+        </li>
+        <li>
+          <a href="/training.html" class="hover:text-[var(--card-btn-mainstreet)] transition-colors" style="color: var(--card-text-muted);">
+            + Everyday AI & Playbooks
+          </a>
+        </li>
+        <li>
+          <a href="/operations.html" class="hover:text-[var(--card-btn-integrator)] transition-colors" style="color: var(--card-text-muted);">
+            + Retained Technical Advisory
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Self-Service & AI Concierge -->
+    <div>
+      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+        // Instant Access
+      </h4>
+      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
+        <li>
+          <a href="https://store.arccto.com" target="_blank" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
+            + DIY Field Playbooks ($49)
+          </a>
+        </li>
+        <li>
+          <button onclick="toggleMcaChat('assessment')" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
+            + Launch AI Concierge // Triage
+          </button>
+        </li>
+        <li>
+          <button onclick="openBookingModal()" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
+            + Secure Strategy Session
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Trust & Legal -->
+    <div>
+      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+        // Governance
+      </h4>
+      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
+        <li>
+          <a href="/privacy-policy.html" class="hover:underline" style="color: var(--card-text-muted);">
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="/terms-of-service.html" class="hover:underline" style="color: var(--card-text-muted);">
+            Terms of Service
+          </a>
+        </li>
+      </ul>
+      <p class="text-xs mt-6 font-mono font-bold" style="color: var(--card-text-muted);">
+        100% Remote Delivery.<br>Zero On-Site Overhead.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Divider & Copyright -->
+  <div class="max-w-6xl mx-auto pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono font-bold uppercase" style="color: var(--card-text-muted);">
+    <div>
+      &copy; 2026 ARC CTO. All rights reserved.
+    </div>
+    <div class="tracking-widest">
+    </div>
+  </div>
 </footer>
