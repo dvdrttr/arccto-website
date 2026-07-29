@@ -65,79 +65,89 @@
     <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
       ARC // CONSULTING • TRAINING • OPERATIONS
     </div>
-    <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">Our Services</h2>
+    <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">How We Work With You</h2>
     <p class="text-lg md:text-xl font-medium" style="color: var(--card-text-muted);">
-      Direct, plain-English technical guidance delivered 100% remotely. Choose your lane below.
+      No corporate fluff. No jargon. Just practical, plain-English technology guidance delivered 100% remotely for growing businesses and investors.
     </p>
   </div>
 
   <div class="space-y-12 relative z-10">
 
-    <!-- 1. CONSULTING: Microconsulting One-Offs -->
+    <!-- CONSULTING: Microconsulting & Tech Audits -->
     <div id="consulting" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor);">
       <div class="flex-1">
         <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-          1. CONSULTING // 100% REMOTE
+          CONSULTING // ONE-OFF AUDITS & SANITY CHECKS
         </div>
-        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Tech Audits & Sanity Checks</h3>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Tech Audits & Due Diligence</h3>
         <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-          Before you sign a contract, acquire a business, or buy new hardware, get a rapid ground-truth evaluation. We audit your existing tech stack, software liabilities, or vendor quotes and give you a plain-English assessment of what's broken, what's overpriced, and what to fix first.
+          Before you sign a vendor contract, acquire a small business, or spend thousands on new software, get an honest ground-truth assessment. We audit your existing systems, review proposals, and tell you in plain English what is overpriced, what is broken, and what to fix first.
         </p>
         <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-          <li>+ PRE-INVESTMENT & ACQUISITION DUE DILIGENCE</li>
-          <li>+ VENDOR QUOTE & ARCHITECTURE REVIEWS</li>
-          <li>+ ASYNC AUDIT & 30-MIN REMOTE BRIEFING</li>
+          <li>+ PRE-ACQUISITION DUE DILIGENCE & RISK AUDITS</li>
+          <li>+ VENDOR QUOTE & SOFTWARE BILL SANITY CHECKS</li>
+          <li>+ ASYNC SYSTEM REVIEW + 30-MIN REMOTE BRIEFING</li>
         </ul>
-        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-          Request Remote Audit
-        </button>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/consulting.html" class="cta-button border-2 border-solid text-center grunge-font px-6 py-4" style="border-color: var(--text-primary); color: var(--card-text);">
+            Explore Consulting &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+            Book Discovery Call
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- 2. TRAINING: Practical AI, Workflows & Self-Service Tools -->
+    <!-- TRAINING: Practical AI, M365 Copilot, Google Gemini & DIY Playbooks -->
     <div id="training" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(243, 167, 18, 0.2) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-mainstreet);">
       <div class="flex-1">
         <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-          2. TRAINING // PRACTICAL AI & TOOLS
+          TRAINING // PRACTICAL AI & WORKFLOW AUTOMATION
         </div>
-        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">AI Setup & Field Playbooks</h3>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Everyday AI & Field Playbooks</h3>
         <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-          Stop drowning in repetitive admin work. We train teams and set up practical AI automations directly inside Microsoft 365 or Google Workspace. Need immediate self-service tools? Access our field-tested estimating playbooks and SOPs.
+          Stop drowning in manual admin work and endless spreadsheets. We help small businesses put practical AI to work using tools they already pay for—like <strong>Microsoft 365 Copilot</strong>, <strong>Google Workspace Gemini</strong>, and <strong>Vertex AI</strong>. Need self-service tools right now? Grab our field-tested estimating sheets and SOPs.
         </p>
         <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-          <li>+ M365 & GOOGLE WORKSPACE AI WORKFLOW SETUPS</li>
-          <li>+ TEAM AUTOMATION TRAINING & ONBOARDING</li>
-          <li>+ INSTANT ACCESS DIY ESTIMATING & FIELD PLAYBOOKS</li>
+          <li>+ MICROSOFT 365 COPILOT & GOOGLE GEMINI SETUP</li>
+          <li>+ AUTOMATED INBOX & PAPERFLOW WORKFLOWS</li>
+          <li>+ INSTANT-ACCESS ESTIMATING & OPERATIONAL PLAYBOOKS</li>
         </ul>
         <div class="flex flex-col sm:flex-row gap-4">
-          <button onclick="toggleMcaChat('ai')" class="cta-button border-none inline-block grunge-font px-8 py-4 text-center cursor-pointer" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-            Start AI Review
-          </button>
-          <a href="https://store.arccto.com" target="_blank" class="cta-button border-2 border-solid text-center grunge-font px-6 py-4" style="border-color: var(--text-primary); color: var(--card-text);">
-            Browse DIY Store &rarr;
+          <a href="/training.html" class="cta-button border-2 border-solid text-center grunge-font px-6 py-4" style="border-color: var(--text-primary); color: var(--card-text);">
+            Explore Training & AI &rarr;
           </a>
+          <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
+            Book AI Assessment
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- 3. OPERATIONS: Ongoing Fractional CTO Retainer -->
+    <!-- OPERATIONS: Ongoing Fractional CTO Retainer -->
     <div id="operations" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(0, 168, 232, 0.25) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-integrator);">
       <div class="flex-1">
         <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
-          3. OPERATIONS // FRACTIONAL CTO
+          OPERATIONS // ON-DEMAND FRACTIONAL CTO
         </div>
-        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">On-Demand Tech Advisory</h3>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Retained Technical Advisory</h3>
         <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-          Executive technical oversight without full-time C-suite overhead. We serve as your ongoing fractional CTO—managing system architecture, guiding engineering teams, protecting margins, and keeping vendors accountable.
+          Get senior-level technical leadership without the cost of a full-time C-suite executive. We act as your ongoing remote CTO—managing your IT roadmaps, keeping software vendors accountable, protecting margins, and ensuring your systems scale cleanly.
         </p>
         <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-          <li>+ MONTHLY FRACTIONAL CTO RETAINER</li>
-          <li>+ SYSTEM ROADMAPPING, BUDGETING & RISK CONTROL</li>
-          <li>+ DIRECT EXECUTIVE ADVISORY VIA REMOTE SESSIONS</li>
+          <li>+ ONGOING FRACTIONAL CTO ADVISORY RETAINER</li>
+          <li>+ IT BUDGETING, VENDOR CONTROL & CYBER RISK OVERSIGHT</li>
+          <li>+ DIRECT ASYNC SUPPORT & MONTHLY STRATEGY SESSIONS</li>
         </ul>
-        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
-          Initiate Advisory Retainer
-        </button>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/operations.html" class="cta-button border-2 border-solid text-center grunge-font px-6 py-4" style="border-color: var(--text-primary); color: var(--card-text);">
+            Explore Operations &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer text-center" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
+            Book Discovery Call
+          </button>
+        </div>
       </div>
     </div>
 
