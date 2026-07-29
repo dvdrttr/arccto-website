@@ -92,92 +92,107 @@
 
             <div class="space-y-12 relative z-10">
                 
-                <!-- Funnel A: Investors & Developers (White/Grey Gradient Fill) -->
-                <div id="advisory" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor);">
-                    <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-                            SECTOR // INVESTORS & DEVELOPERS
-                        </div>
-                        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Strategic Advisory</h3>
-                        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-                            Rigorous physical infrastructure due diligence and pre-acquisition advisory for Private Equity, hedge funds, and developers. We provide ground-truth technical audits so you understand your exact CAPEX and OPEX liabilities before you sign the term sheet.
-                        </p>
-                        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-                            <li>+ CAPEX / OPEX INFRASTRUCTURE MODELING</li>
-                            <li>+ PRE-ACQUISITION TECH DUE DILIGENCE</li>
-                            <li>+ LOW-VOLTAGE, SECURITY & AV AUDITS</li>
-                        </ul>
-                        <!-- REPLACED CALENDLY LINK WITH MODAL TRIGGER -->
-                        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-                            Initiate Advisory Request
-                        </button>
-                    </div>
-                </div>
+                <!-- The Operations Matrix -->
+<section id="services" class="max-w-6xl mx-auto px-6 py-20 border-t-4 border-solid" style="border-color: var(--text-primary);">
+  
+  <!-- Header -->
+  <div class="mb-16 w-full grunge-card border-none p-8 md:p-12" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--text-primary);">
+    <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
+      ARC CTO // ENGAGEMENT LANES
+    </div>
+    <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">Operations & Services</h2>
+    <p class="text-lg md:text-xl font-medium" style="color: var(--card-text-muted);">
+      Direct, plain-English technology guidance delivered 100% remotely. Choose your lane below.
+    </p>
+  </div>
 
-                <!-- Funnel B: Main Street Integrators (Blue Gradient Fill) -->
-                <div id="store" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row-reverse gap-8 items-center" style="background: linear-gradient(135deg, rgba(0, 168, 232, 0.25) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-integrator);">
-                    <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
-                            SECTOR // MAIN STREET INTEGRATORS
-                        </div>
-                        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Digital Asset Store</h3>
-                        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-                            Built for the solo tech or the $1M–$5M integration firm ready to scale. Stop reinventing the wheel and bleeding margin on the job site. Instantly download the exact Excel estimators, field SOPs, and project playbooks we used to build our companies.
-                        </p>
-                        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-                            <li>+ JOB ESTIMATING & PROFIT CALCULATORS</li>
-                            <li>+ FIELD-TO-OFFICE HANDOFF SOPS</li>
-                            <li>+ FOREMAN & PM PLAYBOOKS</li>
-                        </ul>
-                        <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="cta-button border-none inline-block grunge-font px-8 py-4" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
-                            Browse Integrator Tools
-                        </a>
-                    </div>
-                </div>
+  <div class="space-y-12 relative z-10">
 
-                <!-- Funnel C: Main Street & Local Business (Orange/Yellow Gradient Fill) -->
-                <div id="main-street" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(243, 167, 18, 0.2) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-mainstreet);">
-                    <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-                            SECTOR // MAIN STREET BUSINESS
-                        </div>
-                        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Practical AI & Automation</h3>
-                        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
-                            Local businesses and sole owners can run just as fast as the big guys using tools you probably already pay for. We set up everyday AI to kill your boring, repetitive paperwork and get your time back. Want to do it yourself? Grab a $49 step-by-step playbook.
-                        </p>
-                        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
-                            <li>+ MICROSOFT 365 & AI SETUP</li>
-                            <li>+ AUTOMATING BORING PAPERWORK</li>
-                            <li>+ $49 DO-IT-YOURSELF GUIDES</li>
-                        </ul>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button onclick="toggleMcaChat('ai')" class="cta-button border-none inline-block grunge-font px-8 py-4 text-center" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-                                Start AI Review
-                            </button>
-                            <a href="https://ritterstrategic.lemonsqueezy.com" target="_blank" class="px-8 py-4 font-medium text-center border-none frosted-glass text-[var(--card-text)] shadow-[4px_4px_0px_var(--card-btn-mainstreet)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_var(--card-btn-mainstreet)] transition-all">
-                                Shop $49 Playbooks
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- FUNNEL 1: Microconsulting One-Offs -->
+    <div id="audit" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor);">
+      <div class="flex-1">
+        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+          ONE-OFF ENGAGEMENT // 100% REMOTE
+        </div>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Tech Audits & Sanity Checks</h3>
+        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
+          Before you sign a contract, acquire a company, or invest in new hardware, get a rapid ground-truth evaluation. We audit your current tech stack, software liabilities, or vendor quotes and tell you exactly what’s broken, what’s overpriced, and what to fix first.
+        </p>
+        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
+          <li>+ PRE-INVESTMENT & ACQUISITION TECH AUDITS</li>
+          <li>+ VENDOR QUOTE & INFRASTRUCTURE REVIEW</li>
+          <li>+ ASYNC ASSESSMENT & 30-MIN REMOTE BRIEFING</li>
+        </ul>
+        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+          Request Remote Audit
+        </button>
+      </div>
+    </div>
 
-                <!-- Future LMS Placeholder (Neutral Gradient Fill) -->
-                <div id="training" class="grunge-card border-none p-8 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--text-primary);">
-                    <div class="flex-1">
-                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
-                            IN DEVELOPMENT
-                        </div>
-                        <h3 class="text-2xl md:text-3xl mb-4" style="color: var(--card-text);">ARC Training Academy</h3>
-                        <p class="mb-4 text-lg" style="color: var(--card-text-muted);">
-                            Comprehensive Field-to-PM video courses designed specifically for Low-Voltage and AV technicians stepping into management. 
-                        </p>
-                        <a href="https://academy.arccto.com" class="font-mono text-sm underline text-[var(--card-text)] hover:opacity-75">
-                            academy.arccto.com // Coming Soon
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- FUNNEL 2: Retained Advisory -->
+    <div id="advisory" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row-reverse gap-8 items-center" style="background: linear-gradient(135deg, rgba(0, 168, 232, 0.25) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-integrator);">
+      <div class="flex-1">
+        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
+          ONGOING PARTNERSHIP // FRACTIONAL CTO
+        </div>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">On-Demand Tech Advisory</h3>
+        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
+          High-level executive technical oversight without full-time C-suite cost. We serve as your ongoing fractional CTO—protecting your margins, guiding your engineering decisions, and keeping vendors accountable through structured monthly check-ins.
+        </p>
+        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
+          <li>+ MONTHLY FRACTIONAL CTO RETAINER</li>
+          <li>+ ROADMAPPING, BUDGETING & RISK CONTROL</li>
+          <li>+ DIRECT EXECUTIVE ADVISORY VIA REMOTE SESSIONS</li>
+        </ul>
+        <button onclick="openBookingModal()" class="cta-button border-none inline-block grunge-font px-8 py-4 cursor-pointer" style="background-color: var(--card-btn-integrator); color: var(--card-btn-text-integrator);">
+          Initiate Advisory Retainer
+        </button>
+      </div>
+    </div>
+
+    <!-- FUNNEL 3: Practical AI & Automation -->
+    <div id="ai-automation" class="grunge-card border-none p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center" style="background: linear-gradient(135deg, rgba(243, 167, 18, 0.2) 0%, transparent 50%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-mainstreet);">
+      <div class="flex-1">
+        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
+          WORKFLOW OPTIMIZATION // MAIN STREET
+        </div>
+        <h3 class="text-3xl md:text-4xl mb-4 text-[var(--card-text)]">Everyday AI & Automation</h3>
+        <p class="mb-6 text-lg" style="color: var(--card-text-muted);">
+          Stop drowning in repetitive paperwork and manual admin. We configure practical AI automations directly inside Microsoft 365 or Google Workspace so your business runs faster with zero added clutter.
+        </p>
+        <ul class="font-mono text-sm space-y-3 mb-8 font-bold uppercase tracking-wide" style="color: var(--card-text);">
+          <li>+ MICROSOFT 365 & WORKFLOW AI SETUP</li>
+          <li>+ AUTOMATED DOCUMENT & INBOX HANDLING</li>
+          <li>+ INTERACTIVE MCA AI DIAGNOSTIC REVIEW</li>
+        </ul>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button onclick="toggleMcaChat('ai')" class="cta-button border-none inline-block grunge-font px-8 py-4 text-center cursor-pointer" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
+            Start AI Review
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUB-BOX: Retail Digital Offerings (Replaces Lemon Squeezy RSE links) -->
+    <div id="digital-store" class="grunge-card border-none p-8 md:p-10" style="background: var(--surface-color); border: 2px solid var(--text-primary); box-shadow: 6px 6px 0px var(--text-primary);">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
+            SELF-SERVICE // PASSIVE DIGITAL STORE
+          </div>
+          <h4 class="text-2xl md:text-3xl font-black uppercase text-[var(--card-text)] mb-2">Field Playbooks & DIY Tools</h4>
+          <p class="text-base md:text-lg max-w-2xl" style="color: var(--card-text-muted);">
+            Need immediate solutions without a consulting call? Download our field-tested job estimating spreadsheets, operational SOPs, and $49 DIY automation guides.
+          </p>
+        </div>
+        <a href="https://store.arccto.com" target="_blank" class="cta-button border-none whitespace-nowrap grunge-font px-8 py-4 text-center" style="background-color: var(--text-primary); color: var(--inverse-text);">
+          Visit ARC Store &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
     </main>
 
     <!-- The Footer will be injected here by main.js -->
