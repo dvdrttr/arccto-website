@@ -5,25 +5,23 @@
    CORE VARIABLES (LIGHT THEME DEFAULT)
    ========================================= */
 :root {
-    /* 1. Main Backgrounds (Warm Gold/Yellow -> Deep Crimson/Red) */
+    /* 1. Main Background (Warm Gold/Yellow -> Deep Crimson/Red) */
     --bg-base: linear-gradient(135deg, #CA8A04 0%, #7F1D1D 100%);
     --bg-blobs: radial-gradient(circle at 20% 30%, #EAB308 0%, transparent 45%),
                 radial-gradient(circle at 80% 80%, #991B1B 0%, transparent 55%);
     --bg-color: var(--bg-blobs), var(--bg-base);
     
-    /* The Cards (Smoked/Frosted Glass) */
+    /* 2. LOCKED: The Cards (Smoked/Frosted Glass - Same in Both Modes) */
     --surface-color: rgba(15, 15, 15, 0.88); 
     
-    /* 2. Text on Main Background */
+    /* 3. LOCKED: Page & Card Typography (Same in Both Modes) */
     --text-primary: #000000;     
     --text-secondary: #1F1F1F;   
     --inverse-text: #FFFFFF; 
-    
-    /* 3. Text Inside Frosted Cards */
     --card-text: #FFFFFF;        
     --card-text-muted: #CCCCCC;  
     
-    /* 4. Semantic CTA Colors */
+    /* 4. LOCKED: Semantic CTA Buttons & Category Colors (Same in Both Modes) */
     --card-btn-investor: #FFFFFF;       
     --card-btn-text-investor: #000000;    
     --card-btn-integrator: #00A8E8;     
@@ -31,7 +29,7 @@
     --card-btn-mainstreet: #EAB308;     
     --card-btn-text-mainstreet: #000000;  
 
-    /* 5. Floating UI Elements & Shadows */
+    /* 5. LOCKED: Floating UI Elements & Shadows */
     --agent-bg: #00A8E8; 
     --agent-text: #FFFFFF;
     --btn-shadow: #FFFFFF; 
@@ -49,52 +47,16 @@
 }
 
 /* =========================================
-   DARK THEME OVERRIDES
+   DARK THEME (BACKGROUND VARIATION ONLY)
    ========================================= */
 [data-theme="dark"] {
-    /* 1. Main Backgrounds */
-    --bg-base: linear-gradient(135deg, #1A0000 0%, #660000 60%, #B32400 100%);
-    --bg-blobs: radial-gradient(circle at 15% 20%, #FF4500 0%, transparent 40%),
-                radial-gradient(circle at 85% 90%, #FF0000 0%, transparent 50%);
+    /* ONLY change the page gradient background! 
+       All cards, buttons, shadows, and fonts inherit from :root above. */
+    --bg-base: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+    --bg-blobs: radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 168, 232, 0.12) 0%, transparent 50%);
     --bg-color: var(--bg-blobs), var(--bg-base);
-    
-    /* The Cards (Smoked/Frosted Glass) */
-    --surface-color: rgba(10, 10, 10, 0.75); 
-    
-    /* 2. Text on Main Background */
-    --text-primary: #FFFFFF;     
-    --text-secondary: #FFD1BA;  
-    --inverse-text: #000000; 
-    
-    /* 3. Text Inside Frosted Cards */
-    --card-text: #FFFFFF;
-    --card-text-muted: #AAAAAA;
-    
-    /* 4. Semantic CTA Colors */
-    --card-btn-investor: #D90429;       
-    --card-btn-text-investor: #FFFFFF;    
-    --card-btn-integrator: #00E5FF;     
-    --card-btn-text-integrator: #000000;  
-    --card-btn-mainstreet: #FF5722;     
-    --card-btn-text-mainstreet: #000000;  
-
-    /* 5. Floating UI Elements & Shadows */
-    --agent-bg: #00E5FF; 
-    --agent-text: #FFFFFF;
-    --btn-shadow: #FFFFFF; 
-    
-    /* Brand & Accent Highlights */
-    --glitch-1: #FF5722;
-    --glitch-2: #000000;
-    --stat-1: #FFFFFF;
-    --stat-2: #FF5722;
-    --stat-3: #00E5FF;
-
-    --accent-color: var(--text-primary);     
-    --border-style: 3px solid #000000;
-    --noise-opacity: 0.12; 
 }
-
 /* =========================================
    GLOBAL HTML ELEMENTS
    ========================================= */
