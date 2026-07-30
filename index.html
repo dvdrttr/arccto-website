@@ -38,11 +38,11 @@
     <div id="nav-placeholder"></div>
 
     <main class="flex-grow">
-        <!-- Refactored Executive Hero Section (The "Main Event Poster" Block) -->
-        <section class="max-w-6xl mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24">
+        <!-- Refactored Executive Hero Section (Tightened & High-Impact) -->
+        <section class="max-w-6xl mx-auto px-6 pt-8 pb-12 md:pt-14 md:pb-16">
             
-            <!-- Hero Poster Container (Industrial Album Sleeve Vibe) -->
-            <div class="grunge-card border-none p-8 md:p-16 relative overflow-hidden" 
+            <!-- Hero Container (Tightened Padding: p-8 to p-12 max) -->
+            <div class="grunge-card border-none p-8 md:p-12 relative overflow-hidden" 
                  style="background: 
                         radial-gradient(circle at 15% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
                         linear-gradient(135deg, rgba(20, 20, 20, 0.92) 0%, rgba(10, 10, 10, 0.96) 100%), 
@@ -50,30 +50,48 @@
                         box-shadow: 8px 8px 0px var(--text-primary);
                         border-top: 8px solid var(--glitch-2);">
                 
-                <!-- Oversized Background Watermark (Tour Banner Aesthetic) -->
-                <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-[11rem] uppercase tracking-tighter select-none pointer-events-none leading-none" 
+                <!-- Background Watermark -->
+                <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-[10rem] uppercase tracking-tighter select-none pointer-events-none leading-none" 
                      style="color: rgba(255, 255, 255, 0.03); transform: rotate(-2deg);">
                     ARC//2026
                 </div>
 
                 <div class="relative z-10 max-w-4xl">
                     <!-- High-Contrast Top Tag -->
-                    <div class="inline-block mb-8 px-4 py-2 shadow-[4px_4px_0px_var(--btn-shadow)]" 
+                    <div class="inline-block mb-6 px-3 py-1 shadow-[4px_4px_0px_var(--btn-shadow)]" 
                          style="background-color: var(--text-primary); color: var(--inverse-text);">
-                        <span class="grunge-font text-sm font-bold tracking-widest">ARC // CTO • RESILIENCE</span>
+                        <span class="grunge-font text-xs font-bold tracking-widest uppercase">ARC // TECH RESILIENCE • 26 YEARS FIELD-TESTED</span>
                     </div>
                     
-                    <!-- Injected Glitch Red into the Headline (Now 100% Crisp Inside Dark Sleeve) -->
-                    <h1 class="text-5xl md:text-7xl md:leading-[1.05] mb-8 uppercase font-black tracking-tight" 
-                        style="color: var(--card-text);">
+                    <!-- Headline (Slightly tighter line-height) -->
+                    <h1 class="text-4xl md:text-6xl md:leading-[1.08] mb-6 uppercase font-black tracking-tight text-[var(--card-text)]">
                         From <span style="color: var(--glitch-2);">Boots on the Ground</span> <br>
                         To the Boardroom.
                     </h1>
                     
-                    <p class="text-xl md:text-2xl mb-10 font-medium leading-relaxed" 
+                    <!-- Punchy, Client-Focused Summary -->
+                    <p class="text-lg md:text-xl mb-8 font-medium leading-relaxed" 
                        style="color: var(--card-text-muted);">
-                        Built on 26 years of hard-wired technology experience. We don't just consult—we've been getting our boots dirty with tools in hand for over two decades, and we still test the gear ourselves today. Plain English & Professional without the buzzwords and jargon.
+                        We don't just consult—we've been getting our boots dirty with tools in hand for over two decades. We audit messy infrastructure for investors, deploy practical AI workflows for growing businesses, and serve as fractional technical leadership—in plain English, without the agency jargon.
                     </p>
+
+                    <!-- Quick-Scan Target Audience Bar (Fills the visual bottom space cleanly) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-800 font-mono text-xs uppercase font-bold tracking-wider"
+                         style="color: var(--card-text);">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full" style="background-color: var(--card-btn-investor);"></span>
+                            <span>// Investors & M&A Audits</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full" style="background-color: var(--card-btn-mainstreet);"></span>
+                            <span>// Everyday AI Playbooks</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full" style="background-color: var(--card-btn-integrator);"></span>
+                            <span>// Fractional CTO Retainers</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
