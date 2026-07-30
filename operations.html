@@ -106,9 +106,13 @@
         </div>
         
         <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2 relative z-10">Request Retainer Consultation</h3>
-        <p class="text-[var(--card-text-muted)] mb-8 font-medium relative z-10">
-            Let's talk through your bottlenecks. <span style="color: var(--card-btn-integrator); font-weight: bold;">$300/hr Retainer.</span> Share your details below and pick a time that works for you.
-        </p>
+        <!-- REPLACEMENT MODAL SUBTITLE (Paste this over the <p> description in your booking modals) -->
+<p class="text-[var(--card-text-muted)] mb-8 font-medium relative z-10 text-sm md:text-base leading-relaxed">
+    Let's find a path forward. Your initial <strong class="text-white">30-minute discovery session is zero-cost</strong> and delivered on your terms (Video, Phone, Async Email, or SMS). <br>
+    <span class="inline-block mt-2 px-2 py-0.5 bg-gray-900 border border-gray-700 font-mono text-xs text-gray-300">
+        // NOTE: Mutual NDA &amp; formal $300/hr contract are executed prior to billable work.
+    </span>
+</p>
         
         <form id="booking-form" class="space-y-6 relative z-10" onsubmit="submitBooking(event)">
             
