@@ -92,82 +92,78 @@
   <div id="footer-placeholder"></div>
 
   <!-- Full Booking Modal Overlay (Self-Contained) -->
-  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
-    <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none" style="background: var(--surface-color); box-shadow: 8px 8px 0px var(--card-btn-investor);">
-      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-      <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
-        ARC // EXECUTIVE ADVISORY
-      </div>
-      <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2">Request Infrastructure Audit</h3>
-      <p class="text-[var(--card-text-muted)] mb-8 font-medium">Clear your bottlenecks. $300/hr Retainer. Fill out your project parameters below and our system will instantly secure your calendar block.</p>
-      
-      <form id="booking-form" class="space-y-6 relative z-10" onsubmit="submitBooking(event)">
-                
-                <!-- Row 1: Name & Email -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Your Name</label>
-                        <input type="text" id="book-name" required 
-                               class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
-                               placeholder="John Doe">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
-                        <input type="email" id="book-email" required 
-                               class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
-                               placeholder="john@company.com">
-                    </div>
-                </div>
-
-                <!-- Row 2: Scope -->
+  <!-- Full Booking Modal Overlay (Consulting - White Investor Theme) -->
+<div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
+    <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none" style="background: var(--surface-color); box-shadow: 8px 8px 0px var(--card-btn-investor); border-top: 8px solid #FFFFFF;">
+        
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer z-20">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <!-- White Consulting Badge -->
+        <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase relative z-10" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+            ARC // CONSULTING & DUE DILIGENCE
+        </div>
+        
+        <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2 relative z-10">Request Infrastructure Audit</h3>
+        <p class="text-[var(--card-text-muted)] mb-8 font-medium relative z-10">
+            Let's talk through your bottlenecks. <span style="color: #FFFFFF; font-weight: bold;">$300/hr Retainer.</span> Share your details below and pick a time that works for you.
+        </p>
+        
+        <form id="booking-form" class="space-y-6 relative z-10" onsubmit="submitBooking(event)">
+            
+            <!-- Row 1: Name & Email -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">What can we help you with?</label>
-                    <input type="text" id="book-scope" required 
-                           class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
-                           placeholder="e.g., Pre-acquisition due diligence, vendor contract review, or AI setup">
+                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Your Name</label>
+                    <input type="text" id="book-name" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="John Doe">
                 </div>
-
-                <!-- Row 3: How would you like to meet? -->
                 <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">
-                        How would you like to meet? <span style="color: var(--card-btn-integrator);">// YOUR TERMS</span>
-                    </label>
-                    <select id="book-channel" 
-                            class="w-full bg-black/80 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-integrator)] transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                        <option value="Video Call (Google Meet / Teams / Zoom)" class="bg-gray-900 text-white py-1">Video Call (Google Meet / Teams / Zoom)</option>
-                        <option value="Direct Phone Call / Audio Only" class="bg-gray-900 text-white py-1">Direct Phone Call / Audio Only</option>
-                        <option value="Async Email / SMS Briefing" class="bg-gray-900 text-white py-1">Async Email or Text/SMS Exchange</option>
-                        <option value="In-Person / On-Site Consultation" class="bg-gray-900 text-amber-400 font-bold py-1">In-Person / On-Site Consultation (Subject to Scope)</option>
-                    </select>
+                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
+                    <input type="email" id="book-email" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="john@company.com">
                 </div>
-
-                <!-- Row 4: Date & Time Pickers -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
-                        <input type="date" id="book-date" required 
-                               class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
-                        <input type="time" id="book-time" required 
-                               class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                    </div>
+            </div>
+            
+            <!-- Row 2: Scope -->
+            <div>
+                <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">What can we help you with?</label>
+                <input type="text" id="book-scope" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="e.g., Pre-acquisition due diligence, vendor contract review, or AI setup">
+            </div>
+            
+            <!-- Row 3: How would you like to meet? -->
+            <div>
+                <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">
+                    How would you like to meet? <span style="color: #FFFFFF;">// YOUR TERMS</span>
+                </label>
+                <select id="book-channel" class="w-full bg-black/80 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
+                    <option value="Video Call (Google Meet / Teams / Zoom)" class="bg-gray-900 text-white py-1">Video Call (Google Meet / Teams / Zoom)</option>
+                    <option value="Direct Phone Call / Audio Only" class="bg-gray-900 text-white py-1">Direct Phone Call / Audio Only</option>
+                    <option value="Async Email / SMS Briefing" class="bg-gray-900 text-white py-1">Async Email or Text/SMS Exchange</option>
+                    <option value="In-Person / On-Site Consultation" class="bg-gray-900 text-amber-400 font-bold py-1">In-Person / On-Site Consultation (Subject to Scope)</option>
+                </select>
+            </div>
+            
+            <!-- Row 4: Date & Time Pickers -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
+                    <input type="date" id="book-date" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
                 </div>
-
-                <!-- Submit Button -->
-                <button type="submit" id="submit-btn" 
-                        class="w-full mt-6 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1 uppercase tracking-wider font-black" 
-                        style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 6px 6px 0px #000000;">
-                    Request Strategy Session &rarr;
-                </button>
-                
-                <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
-            </form>
+                <div>
+                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
+                    <input type="time" id="book-time" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[#FFFFFF] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
+                </div>
+            </div>
+            
+            <!-- White/Black Contrast Submit Button -->
+            <button type="submit" id="submit-btn" class="w-full mt-6 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1 uppercase tracking-wider font-black" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 6px 6px 0px #000000;">
+                Request Strategy Session &rarr;
+            </button>
+            
+            <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
+        </form>
     </div>
-  </div>
+</div>
 
   <script>
     const modal = document.getElementById('booking-modal');
