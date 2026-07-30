@@ -1,96 +1,115 @@
 <footer class="frosted-glass border-t-4 py-16 px-6 brutalist-border" style="background: var(--surface-color); border-color: var(--text-primary);">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-    
-    <!-- Column 1: Brand & NAP (Local SEO Trust Signal) -->
-    <div class="space-y-4">
-      <div class="inline-block px-3 py-1 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
-        ARC // CTO
-      </div>
-      <p class="text-sm font-medium leading-relaxed" style="color: var(--card-text-muted);">
-        Built on 26 years of hard-wired technology experience. Real-world infrastructure audits for investors, field-tested playbooks for integrators, and practical AI setups for growing SMBs.
-      </p>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Column 1: Brand & NAP -->
+        <div class="space-y-4">
+            <div class="inline-block px-3 py-1 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
+                ARC // CTO
+            </div>
+            <p class="text-sm font-medium leading-relaxed" style="color: var(--card-text-muted);">
+                Built on 26 years of hard-wired technology experience. Real-world infrastructure audits for investors, field-tested playbooks for integrators, and practical AI setups for growing SMBs.
+            </p>
+        </div>
+
+        <!-- Column 2: Core Services & Field Playbooks -->
+        <div>
+            <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+                // Core Services
+            </h4>
+            <ul class="space-y-2.5 font-mono text-sm font-bold uppercase tracking-wide mb-6">
+                <li>
+                    <a href="/consulting.html" class="hover:text-[var(--card-btn-investor)] transition-colors" style="color: var(--card-text-muted);">
+                        + Tech Audits & Due Diligence
+                    </a>
+                </li>
+                <li>
+                    <a href="/training.html" class="hover:text-[var(--card-btn-mainstreet)] transition-colors" style="color: var(--card-text-muted);">
+                        + Everyday AI & Playbooks
+                    </a>
+                </li>
+                <li>
+                    <a href="/operations.html" class="hover:text-[var(--card-btn-integrator)] transition-colors" style="color: var(--card-text-muted);">
+                        + Retained Technical Advisory
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Added: SEO Field Guides Sub-Section -->
+            <h5 class="font-mono text-[10px] font-bold tracking-widest uppercase mb-3 text-gray-400">
+                // Published Guides
+            </h5>
+            <ul class="space-y-2 font-mono text-xs font-bold uppercase tracking-wide">
+                <li>
+                    <a href="/ma-due-diligence-guide.html" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
+                        &rarr; M&A IT Due Diligence Checklist
+                    </a>
+                </li>
+                <li>
+                    <a href="/practical-ai-comparison.html" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
+                        &rarr; Copilot vs. Gemini Guide
+                    </a>
+                </li>
+                <li>
+                    <a href="/fractional-cto-guide.html" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
+                        &rarr; Fractional CTO Pricing Guide
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Self-Service & AI Concierge -->
+        <div>
+            <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+                // Instant Access
+            </h4>
+            <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
+                <li>
+                    <a href="https://store.arccto.com" target="_blank" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
+                        + DIY Field Playbooks ($49)
+                    </a>
+                </li>
+                <li>
+                    <button onclick="toggleMcaChat('assessment')" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
+                        + Launch AI Concierge // Triage
+                    </button>
+                </li>
+                <li>
+                    <button onclick="openBookingModal()" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
+                        + Secure Strategy Session
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Trust & Legal -->
+        <div>
+            <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
+                // Governance & Delivery
+            </h4>
+            <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
+                <li>
+                    <a href="/privacy-policy.html" class="hover:underline" style="color: var(--card-text-muted);">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="/terms-of-service.html" class="hover:underline" style="color: var(--card-text-muted);">
+                        Terms of Service
+                    </a>
+                </li>
+            </ul>
+            <div class="text-xs mt-6 font-mono font-bold space-y-1" style="color: var(--card-text-muted);">
+                <p class="text-white">COMMUNICATION ON YOUR TERMS:</p>
+                <p>Voice // Video // Chat // Text // Email</p>
+                <p class="text-[var(--card-btn-integrator)]">+ On-Site Deployments When Warranted</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Column 2: Core Service Silos -->
-    <div>
-      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
-        // Core Services
-      </h4>
-      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
-        <li>
-          <a href="/consulting.html" class="hover:text-[var(--card-btn-investor)] transition-colors" style="color: var(--card-text-muted);">
-            + Tech Audits & Due Diligence
-          </a>
-        </li>
-        <li>
-          <a href="/training.html" class="hover:text-[var(--card-btn-mainstreet)] transition-colors" style="color: var(--card-text-muted);">
-            + Everyday AI & Playbooks
-          </a>
-        </li>
-        <li>
-          <a href="/operations.html" class="hover:text-[var(--card-btn-integrator)] transition-colors" style="color: var(--card-text-muted);">
-            + Retained Technical Advisory
-          </a>
-        </li>
-      </ul>
+    <!-- Bottom Divider & Copyright -->
+    <div class="max-w-6xl mx-auto pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono font-bold uppercase" style="color: var(--card-text-muted);">
+        <div>
+            &copy; 2026 ARC CTO. All rights reserved.
+        </div>
     </div>
-
-    <!-- Column 3: Self-Service & AI Concierge -->
-    <div>
-      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
-        // Instant Access
-      </h4>
-      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
-        <li>
-          <a href="https://store.arccto.com" target="_blank" class="hover:text-white transition-colors" style="color: var(--card-text-muted);">
-            + DIY Field Playbooks ($49)
-          </a>
-        </li>
-        <li>
-          <button onclick="toggleMcaChat('assessment')" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
-            + Launch AI Concierge // Triage
-          </button>
-        </li>
-        <li>
-          <button onclick="openBookingModal()" class="text-left hover:text-white transition-colors cursor-pointer" style="color: var(--card-text-muted);">
-            + Secure Strategy Session
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Column 4: Trust & Legal -->
-    <div>
-      <h4 class="font-mono text-xs font-bold tracking-widest uppercase mb-4" style="color: var(--card-text);">
-        // Governance & Delivery
-      </h4>
-      <ul class="space-y-3 font-mono text-sm font-bold uppercase tracking-wide">
-        <li>
-          <a href="/privacy-policy.html" class="hover:underline" style="color: var(--card-text-muted);">
-            Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a href="/terms-of-service.html" class="hover:underline" style="color: var(--card-text-muted);">
-            Terms of Service
-          </a>
-        </li>
-      </ul>
-      <div class="text-xs mt-6 font-mono font-bold space-y-1" style="color: var(--card-text-muted);">
-        <p class="text-white">COMMUNICATION ON YOUR TERMS:</p>
-        <p>Voice // Video // Chat // Text // Email</p>
-        <p class="text-[var(--card-btn-integrator)]">+ On-Site Deployments When Warranted</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Bottom Divider & Copyright -->
-  <div class="max-w-6xl mx-auto pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono font-bold uppercase" style="color: var(--card-text-muted);">
-    <div>
-      &copy; 2026 ARC CTO. All rights reserved.
-    </div>
-    <div class="tracking-widest">
-    </div>
-  </div>
 </footer>
