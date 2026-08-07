@@ -5,21 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Due Diligence & Vendor Sanity Checks | ARC // CTO</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black">
+<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
 
-  <header class="border-b border-neutral-800 bg-neutral-950 px-6 py-4 flex justify-between items-center">
-    <a href="/index.html" class="font-mono font-black text-xl tracking-tighter hover:text-amber-400 transition">ARC // CTO</a>
-    <nav class="space-x-6 text-sm font-mono uppercase tracking-wider">
-      <a href="/consulting.html" class="text-amber-400 font-bold underline">Consulting</a>
-      <a href="/training.html" class="hover:text-emerald-400 transition">Training</a>
-      <a href="/operations.html" class="hover:text-blue-400 transition">Operations</a>
-      <button onclick="openBookingModal()" class="bg-white text-black px-4 py-2 font-bold hover:bg-neutral-200 transition">Book Call</button>
-    </nav>
-  </header>
+  <!-- Navigation injected by main.js -->
+  <div id="nav-placeholder"></div>
 
-  <main class="max-w-6xl mx-auto px-6 py-12">
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
+    
     <!-- Hero Section -->
     <section class="border-l-4 border-amber-400 bg-neutral-900/80 p-8 md:p-12 mb-12 shadow-2xl relative overflow-hidden">
       <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none opacity-5">
@@ -34,24 +28,30 @@
       <p class="text-xl text-neutral-300 max-w-3xl mb-8 leading-relaxed">
         Before you sign a binding vendor deal, acquire a business, or drop tens of thousands on new software, get an unvarnished ground-truth assessment. We audit legacy systems, calculate true technical debt, and give you plain-English facts on what is overpriced, what is broken, and what to fix first.
       </p>
-      <div class="flex flex-wrap gap-4 font-mono text-sm">
-        <button onclick="openBookingModal()" class="bg-amber-400 text-black font-bold px-8 py-4 hover:bg-amber-300 transition">
-          Schedule Zero-Cost 30-Min Discovery
+      
+      <!-- Dual Engagement Path CTA -->
+      <div class="flex flex-col sm:flex-row gap-4 font-mono text-sm">
+        <button onclick="openBookingModal()" class="bg-amber-400 text-black font-bold px-8 py-4 hover:bg-amber-300 transition text-center uppercase tracking-wider">
+          Schedule Free 30-Min Discovery
         </button>
+        <a href="#pricing-tiers" class="border border-neutral-600 text-neutral-300 hover:text-white hover:border-white font-bold px-8 py-4 transition text-center uppercase tracking-wider">
+          View Paid Audit Tiers & Direct Checkout &darr;
+        </a>
       </div>
     </section>
 
-    <!-- Pricing Tiers Section -->
-    <section class="grid md:grid-cols-2 gap-8 mb-16">
+    <!-- Services & Pricing Tiers Section -->
+    <section id="pricing-tiers" class="grid md:grid-cols-2 gap-8 mb-16">
+      
       <!-- M&A / Investor Tier -->
-      <div class="bg-neutral-900 border border-neutral-800 p-8 flex flex-col justify-between">
+      <div class="bg-neutral-900 border border-amber-400/30 p-8 flex flex-col justify-between relative">
         <div>
           <div class="flex justify-between items-start mb-4">
             <h2 class="text-2xl font-bold text-white">M&A IT Due Diligence & Risk Audits</h2>
-            <span class="font-mono text-amber-400 font-bold text-lg">$300/HR or $1,500/DAY</span>
+            <span class="font-mono text-amber-400 font-bold text-lg text-right">$300/HR<br><span class="text-xs text-neutral-400 font-normal">or $1,500/Day Scope</span></span>
           </div>
           <p class="text-neutral-400 text-sm mb-6">
-            Designed for buyers, investors, and PE partners acquiring businesses between $1M–$10M in revenue.
+            Designed for buyers, investors, and PE partners acquiring small-to-midsize businesses ($1M–$10M revenue).
           </p>
           <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
             <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> Complete codebase, cloud architecture & infrastructure review</li>
@@ -60,17 +60,24 @@
             <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> Executive Red-Flag Summary Report prior to closing</li>
           </ul>
         </div>
-        <button onclick="openBookingModal()" class="w-full border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-mono font-bold py-3 transition text-sm uppercase">
-          Book M&A Audit Scope Call
-        </button>
+        
+        <!-- Dual Option Buttons for M&A -->
+        <div class="space-y-3 pt-4 border-t border-neutral-800">
+          <a href="https://buy.stripe.com/YOUR_MA_DUE_DILIGENCE_CHECKOUT_LINK" target="_blank" class="w-full block bg-amber-400 text-black hover:bg-amber-300 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
+            Pay & Lock In Session via Stripe &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase">
+            Book Free 30-Min Scope Call First
+          </button>
+        </div>
       </div>
 
       <!-- Main Street SMB Tier -->
-      <div class="bg-neutral-900 border border-neutral-800 p-8 flex flex-col justify-between">
+      <div class="bg-neutral-900 border border-emerald-500/30 p-8 flex flex-col justify-between relative">
         <div>
           <div class="flex justify-between items-start mb-4">
             <h2 class="text-2xl font-bold text-white">Vendor Quote & Software Bill Teardowns</h2>
-            <span class="font-mono text-emerald-400 font-bold text-lg">$120/HR CHAMPION RATE</span>
+            <span class="font-mono text-emerald-400 font-bold text-lg text-right">$120/HR<br><span class="text-xs text-neutral-400 font-normal">Champion Rate</span></span>
           </div>
           <p class="text-neutral-400 text-sm mb-6">
             Designed for local business owners, trade contractors, and single operators tired of getting overcharged by IT vendors.
@@ -82,9 +89,16 @@
             <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Actionable vendor negotiation playbook to cut annual overhead</li>
           </ul>
         </div>
-        <button onclick="openBookingModal()" class="w-full border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black font-mono font-bold py-3 transition text-sm uppercase">
-          Submit Quote for Teardown
-        </button>
+        
+        <!-- Dual Option Buttons for SMB -->
+        <div class="space-y-3 pt-4 border-t border-neutral-800">
+          <a href="https://buy.stripe.com/YOUR_VENDOR_TEARDOWN_CHECKOUT_LINK" target="_blank" class="w-full block bg-emerald-500 text-black hover:bg-emerald-400 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
+            Pay & Lock In Session via Stripe &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase">
+            Book Free 30-Min Discovery First
+          </button>
+        </div>
       </div>
     </section>
 
@@ -94,24 +108,25 @@
       <h4 class="text-2xl font-bold text-white mb-6">How We Work Together</h4>
       <div class="grid md:grid-cols-3 gap-6 font-mono text-xs">
         <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
-          <div class="text-amber-400 font-bold text-sm mb-1">01. Zero-Cost Discovery</div>
-          <p class="text-neutral-400">30-minute introductory session on your terms (Voice, Video, Google Chat, Text, or Email). Zero obligations.</p>
+          <div class="text-amber-400 font-bold text-sm mb-1">01. Discovery Options</div>
+          <p class="text-neutral-400">Choose between a zero-cost 30-minute discovery call or direct pay via Stripe to reserve immediate priority audit time.</p>
         </div>
         <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
           <div class="text-amber-400 font-bold text-sm mb-1">02. Mutual NDA & Scope</div>
-          <p class="text-neutral-400">No system credentials or internal files are inspected without a fully executed mutual NDA and fixed agreement.</p>
+          <p class="text-neutral-400">No internal credentials or confidential files are reviewed without an executed mutual NDA and clear scope agreement.</p>
         </div>
         <div class="bg-neutral-900 p-4 border-l-2 border-amber-400">
           <div class="text-amber-400 font-bold text-sm mb-1">03. Ground-Truth Briefing</div>
-          <p class="text-neutral-400">Complete audit execution followed by an async video breakdown and clear 1-page action plan.</p>
+          <p class="text-neutral-400">Complete audit execution followed by an async video breakdown, red-flag summary, and plain-English action plan.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-neutral-800 bg-neutral-950 px-6 py-8 text-center text-xs font-mono text-neutral-500">
-    <p>ARC // CTO is a technical consulting brand of Ritter Strategic Enterprises LLC.</p>
-    <p class="mt-2">Headquarters: 406 Palo Alto Drive, Ellwood City, PA 16117 | Direct Intake: advisory@arccto.com</p>
-  </footer>
+  <!-- Footer injected by main.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Centralized Engine Scripts -->
+  <script src="/main.js"></script>
 </body>
 </html>
