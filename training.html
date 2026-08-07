@@ -5,21 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practical AI & Workflow Automation | ARC // CTO</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black">
+<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
 
-  <header class="border-b border-neutral-800 bg-neutral-950 px-6 py-4 flex justify-between items-center">
-    <a href="/index.html" class="font-mono font-black text-xl tracking-tighter hover:text-emerald-400 transition">ARC // CTO</a>
-    <nav class="space-x-6 text-sm font-mono uppercase tracking-wider">
-      <a href="/consulting.html" class="hover:text-amber-400 transition">Consulting</a>
-      <a href="/training.html" class="text-emerald-400 font-bold underline">Training</a>
-      <a href="/operations.html" class="hover:text-blue-400 transition">Operations</a>
-      <button onclick="openBookingModal()" class="bg-white text-black px-4 py-2 font-bold hover:bg-neutral-200 transition">Book Call</button>
-    </nav>
-  </header>
+  <!-- Navigation injected by main.js -->
+  <div id="nav-placeholder"></div>
 
-  <main class="max-w-6xl mx-auto px-6 py-12">
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
+    
     <!-- Hero Section -->
     <section class="border-l-4 border-emerald-500 bg-neutral-900/80 p-8 md:p-12 mb-12 shadow-2xl relative overflow-hidden">
       <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none opacity-5">
@@ -34,55 +28,278 @@
       <p class="text-xl text-neutral-300 max-w-3xl mb-8 leading-relaxed">
         Stop drowning in manual administrative tasks, endless paper trails, and bloated spreadsheets. We help small businesses and single operators deploy practical AI using standard tools you already pay for—like Microsoft 365 Copilot, Google Workspace Gemini, and Vertex AI.
       </p>
-      <div class="flex flex-wrap gap-4 font-mono text-sm">
-        <button onclick="openBookingModal()" class="bg-emerald-500 text-black font-bold px-8 py-4 hover:bg-emerald-400 transition">
-          Schedule Zero-Cost 30-Min Discovery
+      
+      <!-- Dual Engagement Path CTA -->
+      <div class="flex flex-col sm:flex-row gap-4 font-mono text-sm">
+        <button onclick="openBookingModal()" class="bg-emerald-500 text-black font-bold px-8 py-4 hover:bg-emerald-400 transition text-center uppercase tracking-wider cursor-pointer">
+          Schedule Free 30-Min Discovery
         </button>
+        <a href="#pricing-tiers" class="border border-neutral-600 text-neutral-300 hover:text-white hover:border-white font-bold px-8 py-4 transition text-center uppercase tracking-wider">
+          View Playbooks & Deploy Tiers &darr;
+        </a>
       </div>
     </section>
 
-    <!-- Core Services Grid -->
-    <section class="grid md:grid-cols-3 gap-8 mb-16">
-      <div class="bg-neutral-900 border border-neutral-800 p-6">
-        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">$120/HR CHAMPION RATE</div>
-        <h2 class="text-xl font-bold text-white mb-3">Copilot & Gemini Integration</h2>
-        <p class="text-neutral-400 text-sm mb-4">
-          Turn your existing office software into an automated admin assistant. We set up prompt playbooks and privacy guardrails for Microsoft 365 Copilot and Google Gemini.
-        </p>
+    <!-- Services & Pricing Tiers Section -->
+    <section id="pricing-tiers" class="grid md:grid-cols-2 gap-8 mb-16">
+      
+      <!-- AI Setup Tier -->
+      <div class="bg-neutral-900 border border-emerald-500/30 p-8 flex flex-col justify-between relative">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="text-2xl font-bold text-white">AI Setup & Automated Workflows</h2>
+            <span class="font-mono text-emerald-400 font-bold text-lg text-right">$120/HR<br><span class="text-xs text-neutral-400 font-normal">Champion Rate</span></span>
+          </div>
+          <p class="text-neutral-400 text-sm mb-6">
+            Turn your existing office software into an automated admin assistant. Zero enterprise bloat—just tools you already pay for working harder.
+          </p>
+          <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Prompt playbooks & privacy guardrails for Copilot & Gemini</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Convert PDF quotes & paper invoices into database records</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Eliminate double data entry and manual calendar scheduling</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> 5-minute automation wins to instantly clear your inbox</li>
+          </ul>
+        </div>
+        
+        <!-- Dual Option Buttons -->
+        <div class="space-y-3 pt-4 border-t border-neutral-800">
+          <a href="https://buy.stripe.com/YOUR_AI_SETUP_CHECKOUT_LINK" target="_blank" class="w-full block bg-emerald-500 text-black hover:bg-emerald-400 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
+            Pay & Lock In Session via Stripe &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase cursor-pointer">
+            Book Free 30-Min Scope Call First
+          </button>
+        </div>
       </div>
 
-      <div class="bg-neutral-900 border border-neutral-800 p-6">
-        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">$120/HR CHAMPION RATE</div>
-        <h2 class="text-xl font-bold text-white mb-3">Automated Inbox & Paperflow</h2>
-        <p class="text-neutral-400 text-sm mb-4">
-          Eliminate double data entry. Convert customer emails, PDF quotes, and paper invoices into automated database records and schedule events without manual typing.
-        </p>
-      </div>
-
-      <div class="bg-neutral-900 border border-neutral-800 p-6">
-        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">FIELD-TESTED SOPs</div>
-        <h2 class="text-xl font-bold text-white mb-3">Estimating & Operational Playbooks</h2>
-        <p class="text-neutral-400 text-sm mb-4">
-          Get instant access to pre-built estimating spreadsheets, automated proposal generators, and step-by-step standard operating procedures tailored for field operations.
-        </p>
+      <!-- Playbooks Tier -->
+      <div class="bg-neutral-900 border border-emerald-500/30 p-8 flex flex-col justify-between relative">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="text-2xl font-bold text-white">Estimating & Operational Playbooks</h2>
+            <span class="font-mono text-emerald-400 font-bold text-lg text-right">$120/HR<br><span class="text-xs text-neutral-400 font-normal">Or Flat-Rate Deploy</span></span>
+          </div>
+          <p class="text-neutral-400 text-sm mb-6">
+            Big-tech agencies charge $50,000 for bloated chatbots nobody uses. We build practical SOPs to generate field quotes in 60 seconds.
+          </p>
+          <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Instant access to pre-built estimating spreadsheets</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Automated proposal generators tailored for field ops</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> Step-by-step SOPs to permanently eliminate weekend paperwork</li>
+            <li class="flex items-start"><span class="text-emerald-400 mr-2">+</span> No expensive custom development or coding required</li>
+          </ul>
+        </div>
+        
+        <!-- Dual Option Buttons -->
+        <div class="space-y-3 pt-4 border-t border-neutral-800">
+          <a href="https://buy.stripe.com/YOUR_PLAYBOOK_CHECKOUT_LINK" target="_blank" class="w-full block bg-emerald-500 text-black hover:bg-emerald-400 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
+            Pay & Lock In Session via Stripe &rarr;
+          </a>
+          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase cursor-pointer">
+            Book Free 30-Min Discovery First
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- Value Proposition Callout -->
-    <section class="bg-neutral-950 border-l-2 border-emerald-500 p-8 font-mono text-sm">
-      <h3 class="text-white font-bold text-base mb-2 uppercase">Why Main Street AI Implementation Fails</h3>
-      <p class="text-neutral-400 mb-4 leading-relaxed">
-        Big-tech agencies charge $50,000 to deliver over-engineered chatbots that nobody uses. We focus strictly on 5-minute automation wins: clearing your inbox, generating accurate project quotes in 60 seconds, and eliminating weekend paperwork.
-      </p>
-      <div class="text-emerald-400 font-bold">
-        Rate: Fixed at $120/Hour for Small Business Operations.
+    <!-- Engagement Governance Pipeline -->
+    <section class="bg-neutral-950 border border-neutral-800 p-8 mb-12">
+      <h3 class="font-mono text-xs text-emerald-400 uppercase tracking-widest mb-2">ENGAGEMENT PATHWAY & GOVERNANCE</h3>
+      <h4 class="text-2xl font-bold text-white mb-6">How We Work Together</h4>
+      <div class="grid md:grid-cols-3 gap-6 font-mono text-xs">
+        <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
+          <div class="text-emerald-400 font-bold text-sm mb-1">01. Discovery Options</div>
+          <p class="text-neutral-400">Choose between a zero-cost 30-minute discovery call or direct pay via Stripe to reserve immediate priority implementation time.</p>
+        </div>
+        <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
+          <div class="text-emerald-400 font-bold text-sm mb-1">02. Mutual NDA & Scope</div>
+          <p class="text-neutral-400">No internal systems or confidential data are accessed without an executed mutual NDA and clear scope agreement.</p>
+        </div>
+        <div class="bg-neutral-900 p-4 border-l-2 border-emerald-400">
+          <div class="text-emerald-400 font-bold text-sm mb-1">03. Practical Deployment</div>
+          <p class="text-neutral-400">Complete playbook deployment followed by a recorded video breakdown, team handoff, and plain-English usage guide.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-neutral-800 bg-neutral-950 px-6 py-8 text-center text-xs font-mono text-neutral-500">
-    <p>ARC // CTO is a technical consulting brand of Ritter Strategic Enterprises LLC.</p>
-    <p class="mt-2">Headquarters: 406 Palo Alto Drive, Ellwood City, PA 16117 | Direct Intake: advisory@arccto.com</p>
-  </footer>
+  <!-- Premium Booking Modal Overlay -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md transition-opacity opacity-0">
+      <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none overflow-hidden" 
+           style="background: 
+                  radial-gradient(circle at 90% 10%, rgba(220, 38, 38, 0.12) 0%, transparent 60%),
+                  linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%), 
+                  var(--surface-color); 
+                  box-shadow: 10px 10px 0px var(--text-primary);
+                  border-top: 8px solid var(--glitch-2);">
+          
+          <div class="absolute -right-6 -bottom-8 font-mono font-black text-7xl md:text-8xl uppercase tracking-tighter select-none pointer-events-none" 
+               style="color: rgba(255, 255, 255, 0.03); transform: rotate(-3deg);">
+              ADVISORY//01
+          </div>
+
+          <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer z-20">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+
+          <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase relative z-10" 
+               style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+              ARC // EXECUTIVE ADVISORY
+          </div>
+          
+          <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2 relative z-10">
+              Request an Initial Discussion
+          </h3>
+          <p class="text-[var(--card-text-muted)] mb-8 font-medium relative z-10">
+              Let's talk through your bottlenecks. Share your details below and pick a time that works for you.
+          </p>
+
+          <form id="booking-form" class="space-y-6 relative z-10" onsubmit="submitBooking(event)">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                      <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Your Name</label>
+                      <input type="text" id="book-name" required 
+                             class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
+                             placeholder="John Doe">
+                  </div>
+                  <div>
+                      <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
+                      <input type="email" id="book-email" required 
+                             class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
+                             placeholder="john@company.com">
+                  </div>
+              </div>
+
+              <div>
+                  <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">What can we help you with?</label>
+                  <input type="text" id="book-scope" required 
+                         class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" 
+                         placeholder="e.g., Copilot setup, estimating workflows, or general playbook questions">
+              </div>
+
+              <div>
+                  <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">
+                      How would you like to meet? <span style="color: var(--card-btn-integrator);">// YOUR TERMS</span>
+                  </label>
+                  <select id="book-channel" 
+                          class="w-full bg-black/80 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-integrator)] transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
+                      <option value="Video Call (Google Meet / Teams / Zoom)" class="bg-gray-900 text-white py-1">Video Call (Google Meet / Teams / Zoom)</option>
+                      <option value="Direct Phone Call / Audio Only" class="bg-gray-900 text-white py-1">Direct Phone Call / Audio Only</option>
+                      <option value="Async Email / SMS Briefing" class="bg-gray-900 text-white py-1">Async Email or Text/SMS Exchange</option>
+                      <option value="In-Person / On-Site Consultation" class="bg-gray-900 text-amber-400 font-bold py-1">In-Person / On-Site Consultation (Subject to Scope)</option>
+                  </select>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                      <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
+                      <input type="date" id="book-date" required 
+                             class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
+                  </div>
+                  <div>
+                      <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
+                      <input type="time" id="book-time" required 
+                             class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
+                  </div>
+              </div>
+
+              <button type="submit" id="submit-btn" 
+                      class="w-full mt-6 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1 uppercase tracking-wider font-black" 
+                      style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor); box-shadow: 6px 6px 0px #000000;">
+                  Request Strategy Session &rarr;
+              </button>
+              
+              <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
+          </form>
+      </div>
+  </div>
+
+  <script>
+      const modal = document.getElementById('booking-modal');
+      const form = document.getElementById('booking-form');
+      const statusText = document.getElementById('booking-status');
+      const submitBtn = document.getElementById('submit-btn');
+
+      // IMPORTANT: Paste your actual Google Apps Script Web App URL here
+      const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
+
+      function openBookingModal() {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      }
+
+      function closeBookingModal() {
+          modal.classList.add('opacity-0');
+          setTimeout(() => {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+              form.reset();
+              statusText.classList.add('hidden');
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = 'Request Strategy Session &rarr;';
+          }, 300);
+      }
+
+      async function submitBooking(e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'SENDING REQUEST...';
+          statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
+          statusText.classList.add('text-gray-400');
+          statusText.innerText = "Securing your calendar spot...";
+
+          const dateVal = document.getElementById('book-date').value;
+          const timeVal = document.getElementById('book-time').value;
+          const nameVal = document.getElementById('book-name').value;
+          const channelVal = document.getElementById('book-channel').value;
+          
+          const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
+          const endDateTime = new Date(startDateTime.getTime() + (60 * 60 * 1000));
+
+          const payload = {
+              action: 'bookCalendar',
+              clientEmail: document.getElementById('book-email').value,
+              summary: `ARC Strategic Advisory: ${nameVal} [${channelVal}]`,
+              startTime: startDateTime.toISOString(),
+              endTime: endDateTime.toISOString()
+          };
+
+          try {
+              const response = await fetch(WEBHOOK_URL, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'text/plain' },
+                  body: JSON.stringify(payload)
+              });
+
+              const result = await response.json();
+
+              if (result.status === 'SUCCESS') {
+                  submitBtn.style.display = 'none';
+                  statusText.classList.replace('text-gray-400', 'text-[#00ff00]');
+                  statusText.innerText = "REQUEST RECEIVED. CHECK YOUR INBOX FOR CONFIRMATION.";
+                  setTimeout(closeBookingModal, 4000);
+              } else if (result.status === 'CONFLICT') {
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = 'Request Strategy Session &rarr;';
+                  statusText.classList.replace('text-gray-400', 'text-red-500');
+                  statusText.innerText = "THAT TIME IS UNAVAILABLE. PLEASE SELECT ANOTHER SLOT.";
+              } else {
+                  throw new Error(result.message || 'Unknown error');
+              }
+          } catch (err) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = 'Request Strategy Session &rarr;';
+              statusText.classList.replace('text-gray-400', 'text-red-500');
+              statusText.innerText = "COULD NOT SEND REQUEST. PLEASE TRY AGAIN.";
+          }
+      }
+  </script>
+
+  <!-- Footer injected by main.js -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Centralized Engine Scripts -->
+  <script src="/main.js"></script>
 </body>
 </html>
