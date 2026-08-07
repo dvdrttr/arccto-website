@@ -20,4 +20,4 @@ This repository hosts the primary storefront for **ARC Tech Resilience** (`arcct
 The application is continuously deployed via the `main` branch to **Cloudflare/GitHub Pages**, while the AI backend is managed through the Google Cloud console.
 
 ---
-*© 2026 Ritter Strategic Enterprises LLC d/b/a ARC Tech Resilience. Technical Resilience Since 2010.*
+*© 2026 ARC CTO.*
