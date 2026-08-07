@@ -1,255 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-fit=cover, width=device-width, initial-scale=1.0">
-  <title>ARC // Everyday AI & Workflow Automation (Training)</title>
-  <meta name="description" content="Practical AI implementation, Microsoft 365 Copilot, Google Workspace Gemini, and field playbooks for growing businesses by ARC CTO.">
-  <!-- Favicon & Custom Styles -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css">
-  <!-- Tailwind CSS CDN (Required for Layout & Typography) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical AI & Workflow Automation | ARC // CTO</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Optional: Include Google Fonts if your style.css references them -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="min-h-screen flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--inverse-text)]">
-  <!-- Navigation -->
-  <div id="nav-placeholder"></div>
+<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black">
 
-  <!-- Main Content -->
-  <main class="flex-grow pt-28 pb-20">
-    <section class="max-w-4xl mx-auto px-6">
-      <!-- Breadcrumb / Hero Card -->
-<div class="grunge-card border-none p-8 md:p-12 mb-12" style="background: linear-gradient(135deg, rgba(243, 167, 18, 0.15) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-mainstreet);">
-  <a href="/index.html#services" class="inline-block font-mono text-xs font-bold tracking-widest uppercase mb-4 hover:underline" style="color: var(--card-btn-mainstreet);">
-    &larr; Back to All Services
-  </a>
-  <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase ml-2" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-    TRAINING // PRACTICAL AI & WORKFLOW AUTOMATION
-  </div>
-  <h1 class="text-4xl md:text-6xl font-black uppercase mb-6 text-[var(--card-text)]">
-    Everyday AI & Field Playbooks
-  </h1>
-  <p class="text-xl md:text-2xl font-medium leading-relaxed" style="color: var(--card-text-muted);">
-    Stop drowning in manual admin work, messy inboxes, and endless spreadsheets. We help small businesses put practical AI to work using tools you already pay for—no coding required, no sci-fi hype.
-  </p>
-</div>
-      <!-- Core SEO / Practical AI Value Box -->
-      <div class="grunge-card border-none p-8 md:p-12 mb-12" style="background: linear-gradient(135deg, rgba(243, 167, 18, 0.15) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-mainstreet);">
-        <h2 class="text-2xl md:text-3xl font-black uppercase mb-6 text-[var(--card-text)]">
-          Tools You Already Own, Actually Working
-        </h2>
-        <div class="space-y-6 text-lg" style="color: var(--card-text-muted);">
-          <div>
-            <h3 class="font-bold text-[var(--card-text)] mb-1">+ Microsoft 365 Copilot Integration</h3>
-            <p>Turn Excel spreadsheets into instant reports, automate meeting summaries in Teams, and draft client correspondence in Outlook without leaving your standard Microsoft workflow.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-[var(--card-text)] mb-1">+ Google Workspace Gemini & Vertex AI</h3>
-            <p>Leverage Google's enterprise AI to categorize incoming lead emails, summarize messy project drives, and automate data entry across Sheets and Docs cleanly and securely.</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-[var(--card-text)] mb-1">+ Plain-English Staff Onboarding</h3>
-            <p>Tools are useless if your team refuses to use them. We provide simple, jargon-free video training and SOP playbooks so your staff adopts time-saving workflows immediately.</p>
-          </div>
-        </div>
+  <header class="border-b border-neutral-800 bg-neutral-950 px-6 py-4 flex justify-between items-center">
+    <a href="/index.html" class="font-mono font-black text-xl tracking-tighter hover:text-emerald-400 transition">ARC // CTO</a>
+    <nav class="space-x-6 text-sm font-mono uppercase tracking-wider">
+      <a href="/consulting.html" class="hover:text-amber-400 transition">Consulting</a>
+      <a href="/training.html" class="text-emerald-400 font-bold underline">Training</a>
+      <a href="/operations.html" class="hover:text-blue-400 transition">Operations</a>
+      <button onclick="openBookingModal()" class="bg-white text-black px-4 py-2 font-bold hover:bg-neutral-200 transition">Book Call</button>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Hero Section -->
+    <section class="border-l-4 border-emerald-500 bg-neutral-900/80 p-8 md:p-12 mb-12 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none opacity-5">
+        NO//BS//AI
+      </div>
+      <div class="inline-block px-3 py-1 mb-4 text-xs font-mono font-bold tracking-widest uppercase bg-emerald-500 text-black">
+        TRAINING // PRACTICAL AI & WORKFLOW AUTOMATION
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">
+        Practical AI Consulting & Workflow Playbooks
+      </h1>
+      <p class="text-xl text-neutral-300 max-w-3xl mb-8 leading-relaxed">
+        Stop drowning in manual administrative tasks, endless paper trails, and bloated spreadsheets. We help small businesses and single operators deploy practical AI using standard tools you already pay for—like Microsoft 365 Copilot, Google Workspace Gemini, and Vertex AI.
+      </p>
+      <div class="flex flex-wrap gap-4 font-mono text-sm">
+        <button onclick="openBookingModal()" class="bg-emerald-500 text-black font-bold px-8 py-4 hover:bg-emerald-400 transition">
+          Schedule Zero-Cost 30-Min Discovery
+        </button>
+      </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-neutral-900 border border-neutral-800 p-6">
+        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">$120/HR CHAMPION RATE</div>
+        <h2 class="text-xl font-bold text-white mb-3">Copilot & Gemini Integration</h2>
+        <p class="text-neutral-400 text-sm mb-4">
+          Turn your existing office software into an automated admin assistant. We set up prompt playbooks and privacy guardrails for Microsoft 365 Copilot and Google Gemini.
+        </p>
       </div>
 
-      <!-- Digital Store / Playbook Sub-Section -->
-      <div class="grunge-card border-none p-8 md:p-12 mb-12" style="background: var(--surface-color); border: 2px solid var(--text-primary); box-shadow: 6px 6px 0px var(--text-primary);">
-        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
-          SELF-SERVICE // INSTANT DOWNLOADS
-        </div>
-        <h2 class="text-2xl md:text-3xl font-black uppercase mb-4 text-[var(--card-text)]">
-          Need Immediate DIY Field Playbooks?
-        </h2>
-        <p class="text-lg mb-6" style="color: var(--card-text-muted);">
-          Not ready for a custom AI setup? Browse our digital storefront for $49 field-tested estimating spreadsheets, operational playbooks, and standardized SOP templates designed for solo techs and small integrators.
+      <div class="bg-neutral-900 border border-neutral-800 p-6">
+        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">$120/HR CHAMPION RATE</div>
+        <h2 class="text-xl font-bold text-white mb-3">Automated Inbox & Paperflow</h2>
+        <p class="text-neutral-400 text-sm mb-4">
+          Eliminate double data entry. Convert customer emails, PDF quotes, and paper invoices into automated database records and schedule events without manual typing.
         </p>
-        <a href="https://store.arccto.com" target="_blank" class="cta-button border-none inline-block grunge-font px-8 py-4 text-center" style="background-color: var(--text-primary); color: var(--inverse-text);">
-          Browse ARC Store Playbooks &rarr;
-        </a>
       </div>
 
-      <!-- Bottom CTA -->
-      <div class="text-center py-8">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--card-text)]">Ready to Eliminate Repetitive Admin Work?</h3>
-        <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--card-text-muted);">
-          Let our AI Voice Concierge run a rapid diagnostic on your workflow, or book a live assessment call today.
+      <div class="bg-neutral-900 border border-neutral-800 p-6">
+        <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-2">FIELD-TESTED SOPs</div>
+        <h2 class="text-xl font-bold text-white mb-3">Estimating & Operational Playbooks</h2>
+        <p class="text-neutral-400 text-sm mb-4">
+          Get instant access to pre-built estimating spreadsheets, automated proposal generators, and step-by-step standard operating procedures tailored for field operations.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <button onclick="toggleMcaChat('ai')" class="cta-button btn-category inline-block grunge-font px-8 py-4 cursor-pointer">
-            Start Instant AI Assessment
-          </button>
-          <button onclick="openBookingModal()" class="cta-button btn-category btn-training inline-block grunge-font px-8 py-4 cursor-pointer">
-            Book Remote Discovery Call
-          </button>
-        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Callout -->
+    <section class="bg-neutral-950 border-l-2 border-emerald-500 p-8 font-mono text-sm">
+      <h3 class="text-white font-bold text-base mb-2 uppercase">Why Main Street AI Implementation Fails</h3>
+      <p class="text-neutral-400 mb-4 leading-relaxed">
+        Big-tech agencies charge $50,000 to deliver over-engineered chatbots that nobody uses. We focus strictly on 5-minute automation wins: clearing your inbox, generating accurate project quotes in 60 seconds, and eliminating weekend paperwork.
+      </p>
+      <div class="text-emerald-400 font-bold">
+        Rate: Fixed at $120/Hour for Small Business Operations.
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Full Booking Modal Overlay (Self-Contained) -->
-  <!-- Full Booking Modal Overlay (Training - Yellow Mainstreet Theme) -->
-<div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity opacity-0">
-    <div class="grunge-card relative w-full max-w-2xl mx-4 p-8 md:p-12 border-none" style="background: var(--surface-color); box-shadow: 8px 8px 0px var(--card-btn-mainstreet); border-top: 8px solid #F3A712;">
-        
-        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer z-20">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        
-        <!-- Yellow Training Badge -->
-        <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase relative z-10" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet);">
-            ARC // PRACTICAL AI & TRAINING
-        </div>
-        
-        <h3 class="text-3xl font-black uppercase tracking-tight text-[var(--card-text)] mb-2 relative z-10">Request Workflow Assessment</h3>
-        <!-- REPLACEMENT MODAL SUBTITLE (Paste this over the <p> description in your booking modals) -->
-<p class="text-[var(--card-text-muted)] mb-8 font-medium relative z-10 text-sm md:text-base leading-relaxed">
-    Let's find a path forward. Your initial <strong class="text-white">30-minute discovery session is zero-cost</strong> and delivered on your terms (Video, Phone, Async Email, or SMS). <br>
-    <span class="inline-block mt-2 px-2 py-0.5 bg-gray-900 border border-gray-700 font-mono text-xs text-gray-300">
-        // NOTE: Mutual NDA &amp; formal $300/hr contract are executed prior to billable work.
-    </span>
-</p>
-        
-        <form id="booking-form" class="space-y-6 relative z-10" onsubmit="submitBooking(event)">
-            
-            <!-- Row 1: Name & Email -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Your Name</label>
-                    <input type="text" id="book-name" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="John Doe">
-                </div>
-                <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Direct Email</label>
-                    <input type="email" id="book-email" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="john@company.com">
-                </div>
-            </div>
-            
-            <!-- Row 2: Scope -->
-            <div>
-                <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">What can we help you with?</label>
-                <input type="text" id="book-scope" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all placeholder-gray-500 font-mono text-sm" placeholder="e.g., Pre-acquisition due diligence, vendor contract review, or AI setup">
-            </div>
-            
-            <!-- Row 3: How would you like to meet? -->
-            <div>
-                <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">
-                    How would you like to meet? <span style="color: var(--card-btn-mainstreet);">// YOUR TERMS</span>
-                </label>
-                <select id="book-channel" class="w-full bg-black/80 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                    <option value="Video Call (Google Meet / Teams / Zoom)" class="bg-gray-900 text-white py-1">Video Call (Google Meet / Teams / Zoom)</option>
-                    <option value="Direct Phone Call / Audio Only" class="bg-gray-900 text-white py-1">Direct Phone Call / Audio Only</option>
-                    <option value="Async Email / SMS Briefing" class="bg-gray-900 text-white py-1">Async Email or Text/SMS Exchange</option>
-                    <option value="In-Person / On-Site Consultation" class="bg-gray-900 text-amber-400 font-bold py-1">In-Person / On-Site Consultation (Subject to Scope)</option>
-                </select>
-            </div>
-            
-            <!-- Row 4: Date & Time Pickers -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Requested Date</label>
-                    <input type="date" id="book-date" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                </div>
-                <div>
-                    <label class="block text-xs font-mono font-bold text-[var(--card-text-muted)] uppercase mb-2">Time (EST)</label>
-                    <input type="time" id="book-time" required class="w-full bg-black/60 border-2 border-gray-700 text-white px-4 py-3 focus:outline-none focus:border-[var(--card-btn-mainstreet)] focus:bg-black transition-all font-mono text-sm [color-scheme:dark] cursor-pointer">
-                </div>
-            </div>
-            
-            <!-- Yellow/Black Contrast Submit Button -->
-            <button type="submit" id="submit-btn" class="w-full mt-6 cta-button border-none grunge-font px-8 py-5 text-lg cursor-pointer transition-all hover:translate-x-1 hover:-translate-y-1 uppercase tracking-wider font-black" style="background-color: var(--card-btn-mainstreet); color: var(--card-btn-text-mainstreet); box-shadow: 6px 6px 0px #000000;">
-                Request Strategy Session &rarr;
-            </button>
-            
-            <p id="booking-status" class="text-center font-mono text-sm font-bold mt-4 hidden"></p>
-        </form>
-    </div>
-</div>
-
-  <script>
-    const modal = document.getElementById('booking-modal');
-    const form = document.getElementById('booking-form');
-    const statusText = document.getElementById('booking-status');
-    const submitBtn = document.getElementById('submit-btn');
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
-
-    function openBookingModal() {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      setTimeout(() => modal.classList.remove('opacity-0'), 10);
-    }
-
-    function closeBookingModal() {
-      modal.classList.add('opacity-0');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        form.reset();
-        statusText.classList.add('hidden');
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Secure Strategy Session';
-      }, 300);
-    }
-
-    async function submitBooking(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'INITIALIZING SYSTEM...';
-      statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
-      statusText.classList.add('text-gray-400');
-      statusText.innerText = "Transmitting payload...";
-
-      const dateVal = document.getElementById('book-date').value;
-      const timeVal = document.getElementById('book-time').value;
-      const nameVal = document.getElementById('book-name').value;
-      const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
-      const endDateTime = new Date(startDateTime.getTime() + (60 * 60 * 1000));
-
-      const payload = {
-        action: 'bookCalendar',
-        clientEmail: document.getElementById('book-email').value,
-        summary: `ARC Training Advisory: ${nameVal}`,
-        startTime: startDateTime.toISOString(),
-        endTime: endDateTime.toISOString()
-      };
-
-      try {
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify(payload)
-        });
-        const result = await response.json();
-        if (result.status === 'SUCCESS') {
-          submitBtn.style.display = 'none';
-          statusText.classList.replace('text-gray-400', 'text-[#00ff00]');
-          statusText.innerText = "SESSION SECURED. CHECK YOUR INBOX.";
-          setTimeout(closeBookingModal, 4000);
-        } else if (result.status === 'CONFLICT') {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Secure Strategy Session';
-          statusText.classList.replace('text-gray-400', 'text-red-500');
-          statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER.";
-        } else {
-          throw new Error(result.message || 'Unknown error');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Secure Strategy Session';
-        statusText.classList.replace('text-gray-400', 'text-red-500');
-        statusText.innerText = "TRANSMISSION FAILED. PLEASE TRY AGAIN.";
-      }
-    }
-  </script>
-
-  <!-- Main Engine Scripts -->
-  <script src="/main.js"></script>
+  <footer class="border-t border-neutral-800 bg-neutral-950 px-6 py-8 text-center text-xs font-mono text-neutral-500">
+    <p>ARC // CTO is a technical consulting brand of Ritter Strategic Enterprises LLC.</p>
+    <p class="mt-2">Headquarters: 406 Palo Alto Drive, Ellwood City, PA 16117 | Direct Intake: advisory@arccto.com</p>
+  </footer>
 </body>
 </html>
