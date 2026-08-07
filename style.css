@@ -28,6 +28,8 @@
     --card-btn-text-integrator: #000000;  
     --card-btn-mainstreet: #EAB308;     
     --card-btn-text-mainstreet: #000000;  
+    --card-btn-automation: #10B981;     
+    --card-btn-text-automation: #000000;
 
     /* 5. LOCKED: Floating UI Elements & Shadows */
     --agent-bg: #00A8E8; 
@@ -167,6 +169,14 @@ h1, h2, h3, h4, .grunge-font {
 }
 .btn-operations:hover {
   box-shadow: 7px 7px 0px var(--card-btn-integrator) !important;
+}
+
+/* Category 4: AUTOMATION (Emerald/Green Shadow Accent) */
+.btn-automation {
+  box-shadow: 5px 5px 0px var(--card-btn-automation) !important;
+}
+.btn-automation:hover {
+  box-shadow: 7px 7px 0px var(--card-btn-automation) !important;
 }
 
 @media (min-width: 768px) {
