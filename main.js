@@ -128,3 +128,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 60000); 
     }
 });
+
+// ==========================================
+// GLOBAL ANALYTICS INJECTION (Statcounter)
+// ==========================================
+function injectAnalytics() {
+    // 1. Inject the configuration variables
+    const configScript = document.createElement('script');
+    configScript.type = 'text/javascript';
+    configScript.innerHTML = `
+        var sc_project=13336855; 
+        var sc_invisible=1; 
+        var sc_security="73022e84"; 
+    `;
+    document.body.appendChild(configScript);
+
+    // 2. Inject the external Statcounter script
+    const externalScript = document.createElement('script');
+    externalScript.type = 'text/javascript';
+    externalScript.src = 'https://www.statcounter.com/counter/counter.js';
+    externalScript.async = true;
+    document.body.appendChild(externalScript);
+
+    // 3. Inject the noscript fallback (for browsers with JS disabled)
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = `<div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13336855/0/73022e84/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div>`;
+    document.body.appendChild(noscript);
+}
+
+// Ensure it runs as soon as the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    injectAnalytics();
+});
