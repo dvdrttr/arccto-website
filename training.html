@@ -40,72 +40,39 @@
       </div>
     </section>
 
-   <!-- Services & Pricing Tiers Section -->
-    <section id="pricing-tiers" class="grid md:grid-cols-2 gap-8 mb-16">
+   <!-- AI Training & Workflows -->
+    <section id="pricing-tiers" class="max-w-4xl mx-auto mb-16">
       
-      <!-- AI Setup Tier (Main Page Theme: White) -->
-      <div class="bg-neutral-900 p-8 flex flex-col justify-between relative" style="border: 1px solid rgba(255, 255, 255, 0.2);">
-        <div>
+      <!-- AI & Automations Block -->
+      <div class="bg-neutral-900 p-10 flex flex-col md:flex-row gap-8 relative border border-white/20">
+        <div class="md:w-3/5">
           <div class="flex justify-between items-start mb-4">
-            <h2 class="text-2xl font-bold text-white">AI Setup & Automated Workflows</h2>
-            <span class="font-mono font-bold text-lg text-right" style="color: var(--card-btn-investor);">FLAT RATE<br><span class="text-xs text-neutral-400 font-normal">$300 or $750 Scope</span></span>
+            <h2 class="text-2xl font-bold text-white">AI Setup & Workflow Optimization</h2>
           </div>
           <p class="text-neutral-400 text-sm mb-6">
-            Turn your existing office software into an automated admin assistant. Zero enterprise bloat—just tools you already pay for working harder.
+            Turn your existing office software into an automated admin assistant. We deploy practical, data-secure AI models including <strong>Microsoft 365 Copilot</strong>, <strong>Google Gemini</strong>, and customized <strong>Vertex AI</strong> pipelines. 
           </p>
-          <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-investor);">+</span> <strong>QUICK-START:</strong> Copilot/Gemini guardrails + prompt library + 60-min training</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-investor);">+</span> <strong>FULL PIPELINE:</strong> Complete setup + automated inbox/PDF-to-database workflows</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-investor);">+</span> Eliminate double data entry and manual calendar scheduling</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-investor);">+</span> 5-minute automation wins to instantly clear your inbox</li>
+          <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide">
+            <li class="flex items-start"><span class="mr-2 font-bold text-white">+</span> <strong>QUICK-START:</strong> Copilot/Gemini guardrails + prompt library + 60-min training</li>
+            <li class="flex items-start"><span class="mr-2 font-bold text-white">+</span> <strong>FULL PIPELINE:</strong> Complete setup + automated inbox/PDF-to-database workflows</li>
+            <li class="flex items-start"><span class="mr-2 font-bold text-white">+</span> Eliminate double data entry and manual calendar scheduling</li>
           </ul>
         </div>
         
-        <!-- Dual Option Buttons -->
-        <div class="space-y-3 pt-4 border-t border-neutral-800">
-          <a href="https://buy.stripe.com/6oU7sMcOp7wY7nybL5aZi04" target="_blank" class="w-full block font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider hover:opacity-90" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+        <div class="md:w-2/5 flex flex-col justify-center space-y-4 border-t md:border-t-0 md:border-l border-neutral-800 pt-6 md:pt-0 md:pl-8">
+          <div class="text-center mb-2">
+             <span class="font-mono font-bold text-xl text-white">FLAT RATE SETUP</span><br>
+             <span class="text-sm text-neutral-400 font-mono">$300 or $750 Scope</span>
+          </div>
+          <a href="https://buy.stripe.com/6oU7sMcOp7wY7nybL5aZi04" target="_blank" class="w-full block bg-white text-black hover:bg-neutral-200 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
             Lock In Quick-Start ($300) &rarr;
           </a>
           <a href="https://buy.stripe.com/3cI6oI9Cd7wY8rC9CXaZi05" target="_blank" class="w-full block border border-white text-white hover:bg-white hover:text-black font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
             Lock In Full Pipeline ($750) &rarr;
           </a>
-          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase cursor-pointer">
-            Book Free 30-Min Scope Call First
-          </button>
         </div>
       </div>
 
-      <!-- Playbooks Tier (Accent Theme: Emerald / Automation) -->
-      <div class="bg-neutral-900 p-8 flex flex-col justify-between relative" style="border: 1px solid rgba(16, 185, 129, 0.4);">
-        <div>
-          <div class="flex justify-between items-start mb-4">
-            <h2 class="text-2xl font-bold text-white">Estimating & Operational Playbooks</h2>
-            <span class="font-mono font-bold text-lg text-right" style="color: var(--card-btn-automation);">FLAT RATE<br><span class="text-xs text-neutral-400 font-normal">$300 or $750 Scope</span></span>
-          </div>
-          <p class="text-neutral-400 text-sm mb-6">
-            Big-tech agencies charge $50,000 for bloated chatbots nobody uses. We build practical SOPs to generate field quotes in 60 seconds.
-          </p>
-          <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-automation);">+</span> <strong>GENERATOR ONLY:</strong> Custom estimating spreadsheet + proposal generator</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-automation);">+</span> <strong>FULL SUITE:</strong> Complete SOP playbook suite + estimating engine + custom workflows</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-automation);">+</span> Step-by-step SOPs to permanently eliminate weekend paperwork</li>
-            <li class="flex items-start"><span class="mr-2 font-bold" style="color: var(--card-btn-automation);">+</span> No expensive custom development or coding required</li>
-          </ul>
-        </div>
-        
-        <!-- Dual Option Buttons -->
-        <div class="space-y-3 pt-4 border-t border-neutral-800">
-          <a href="https://buy.stripe.com/9B66oI4hTcRigY86qLaZi07" target="_blank" class="w-full block font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider hover:opacity-90" style="background-color: var(--card-btn-automation); color: var(--card-btn-text-automation);">
-            Lock In Generator ($300) &rarr;
-          </a>
-          <a href="https://buy.stripe.com/3cIcN69Cdg3u9vGeXhaZi08" target="_blank" class="w-full block border hover:bg-neutral-800 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider" style="border-color: var(--card-btn-automation); color: var(--card-btn-automation);">
-            Lock In Full Suite ($750) &rarr;
-          </a>
-          <button onclick="openBookingModal()" class="w-full block border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 font-mono font-bold py-2.5 transition text-xs text-center uppercase cursor-pointer">
-            Book Free 30-Min Discovery First
-          </button>
-        </div>
-      </div>
     </section>
 
     <!-- Engagement Governance Pipeline (White Investor Theme) -->
