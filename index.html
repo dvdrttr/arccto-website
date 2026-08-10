@@ -246,18 +246,18 @@
     <!-- The Footer will be injected here by main.js -->
     <div id="footer-placeholder"></div>
 
-    <!-- ARC MCA Agent (Plain English + Industrial Design + Tactical Emerald Toggle) -->
+    <!-- ARC MCA Agent (Plain English + Industrial Design + Crimson Alert Theme) -->
     <div id="mca-widget-container" class="z-40">
         
         <!-- Teaser Popup Card (Bottom Right Banner) -->
         <div id="mca-teaser" 
              class="teaser-exit p-5 w-80 mb-4 relative transition-all duration-500 hidden border-none overflow-hidden grunge-card" 
              style="background: 
-                    radial-gradient(circle at 90% 10%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+                    radial-gradient(circle at 90% 10%, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
                     linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%), 
                     var(--surface-color); 
                     box-shadow: 8px 8px 0px #000000;
-                    border-top: 6px solid #10B981;">
+                    border-top: 6px solid #DC2626;">
             
             <!-- Faint Background Watermark -->
             <div class="absolute -right-4 -bottom-4 font-mono font-black text-6xl uppercase tracking-tighter select-none pointer-events-none" 
@@ -270,10 +270,10 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
-            <!-- Emerald Status Bar -->
+            <!-- Crimson Status Bar -->
             <div class="flex items-center gap-2 mb-3 relative z-10">
-                <div class="w-2.5 h-2.5 rounded-full animate-pulse" style="background-color: #10B981; box-shadow: 0 0 8px #10B981;"></div>
-                <span class="font-mono text-xs font-bold tracking-widest uppercase" style="color: #10B981;">
+                <div class="w-2.5 h-2.5 rounded-full animate-pulse" style="background-color: #DC2626; box-shadow: 0 0 8px #DC2626;"></div>
+                <span class="font-mono text-xs font-bold tracking-widest uppercase" style="color: #DC2626;">
                     MCA // AI ASSISTANT
                 </span>
             </div>
@@ -285,7 +285,7 @@
             <!-- Plain English Action CTA Button -->
             <button onclick="toggleMcaChat('assessment'); dismissTeaser();" 
                     class="cta-button border-none w-full py-2.5 text-xs font-mono font-black tracking-widest uppercase cursor-pointer transition-all hover:translate-x-0.5 hover:-translate-y-0.5 relative z-10" 
-                    style="background-color: #10B981; color: #000000; box-shadow: 4px 4px 0px #000000;">
+                    style="background-color: #DC2626; color: #FFFFFF; box-shadow: 4px 4px 0px #000000;">
                 Ask a Question &rarr;
             </button>
         </div>
@@ -295,7 +295,7 @@
              class="border-none grunge-card overflow-hidden transition-all duration-300" 
              style="background: rgba(15, 15, 15, 0.98);
                     box-shadow: 12px 12px 0px #000000; 
-                    border-top: 8px solid #10B981;">
+                    border-top: 8px solid #DC2626;">
             <iframe id="mca-iframe" 
                     src="https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc" 
                     class="w-full h-full border-none" 
@@ -306,8 +306,8 @@
         <button id="mca-toggle-btn" 
                 onclick="toggleMcaChat()" 
                 class="border-none cursor-pointer transition-all duration-200 hover:scale-105 flex items-center justify-center p-3.5" 
-                style="background-color: #10B981; 
-                       color: #000000; 
+                style="background-color: #DC2626; 
+                       color: #FFFFFF; 
                        border-radius: 50% 50% 50% 5%; 
                        transform: rotate(-45deg); 
                        box-shadow: 4px 4px 0px #000000;">
