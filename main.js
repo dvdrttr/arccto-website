@@ -3,21 +3,16 @@
 // ==========================================
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Core function to apply the theme across the page and agent
 function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
-    
-    // Ping the iframe to update its theme (if the agent widget exists on this page)
     const iframe = document.getElementById('mca-iframe');
     if (iframe && iframe.contentWindow) {
         iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: theme }, '*');
     }
 }
 
-// 1. Initial Load: Set based on OS System Preference
 applyTheme(prefersDarkScheme.matches ? "dark" : "light");
 
-// 2. Real-Time OS Listener: Auto-switch if the user changes their device settings
 prefersDarkScheme.addEventListener("change", (e) => {
     applyTheme(e.matches ? "dark" : "light");
 });
@@ -31,42 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Inject Navigation
     const navPlaceholder = document.getElementById('nav-placeholder');
     if (navPlaceholder) {
-        fetch(`${window.location.origin}/nav.html`)
-            .then(response => {
-                if (!response.ok) throw new Error("Nav fetch failed");
-                return response.text();
-            })
-            .then(data => {
-                navPlaceholder.innerHTML = data;
-            })
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => navPlaceholder.innerHTML = data)
             .catch(error => console.error('Error loading nav:', error));
     }
 
     // 2. Inject Footer
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        fetch(`${window.location.origin}/footer.html`)
-            .then(response => {
-                if (!response.ok) throw new Error("Footer fetch failed");
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-            })
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => footerPlaceholder.innerHTML = data)
             .catch(error => console.error('Error loading footer:', error));
     }
 
     // 3. Inject Booking Modal
     const modalPlaceholder = document.getElementById('modal-placeholder');
     if (modalPlaceholder) {
-        fetch(`${window.location.origin}/modal.html`)
-            .then(response => {
-                if (!response.ok) throw new Error("Modal fetch failed");
-                return response.text();
-            })
-            .then(data => {
-                modalPlaceholder.innerHTML = data;
-            })
+        fetch('/modal.html')
+            .then(response => response.text())
+            .then(data => modalPlaceholder.innerHTML = data)
             .catch(error => console.error('Error loading modal:', error));
     }
 });
@@ -83,9 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc";
     let teaserDismissed = false;
 
-    // FAILSAFE: Only run this logic if the widget actually exists on the page
     if (btn && chatWindow && iframe) {
-        
         window.toggleMcaChat = function(intent = null) {
             if (intent && typeof intent === 'string') { 
                 iframe.src = `${baseUrl}&intent=${intent}`; 
@@ -108,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 chatWindow.classList.remove('hidden');
                 chatWindow.style.display = 'block';
                 btn.classList.add('active');
-                // Swap to the Close 'X' icon (keeping the +45deg upright rotation)
                 if (iconChat) iconChat.classList.add('hidden');
                 if (iconClose) iconClose.classList.remove('hidden');
             } else {
@@ -116,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 chatWindow.classList.add('hidden');
                 chatWindow.style.display = 'none';
                 btn.classList.remove('active');
-                // Swap back to the Speech Bubble icon
                 if (iconChat) iconChat.classList.remove('hidden');
                 if (iconClose) iconClose.classList.add('hidden');
             }
@@ -130,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => teaser.classList.add('hidden'), 500);
         };
 
-        // Auto-trigger the teaser after 60 seconds
         setTimeout(() => {
             if (teaser && !chatWindow.classList.contains('active') && !teaserDismissed) {
                 teaser.classList.remove('hidden');
@@ -147,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // GLOBAL ANALYTICS INJECTION (Statcounter)
 // ==========================================
 function injectAnalytics() {
-    // 1. Inject the configuration variables
     const configScript = document.createElement('script');
     configScript.type = 'text/javascript';
     configScript.innerHTML = `
@@ -157,33 +131,68 @@ function injectAnalytics() {
     `;
     document.body.appendChild(configScript);
 
-    // 2. Inject the external Statcounter script
     const externalScript = document.createElement('script');
     externalScript.type = 'text/javascript';
     externalScript.src = 'https://www.statcounter.com/counter/counter.js';
     externalScript.async = true;
     document.body.appendChild(externalScript);
 
-    // 3. Inject the noscript fallback (for browsers with JS disabled)
     const noscript = document.createElement('noscript');
     noscript.innerHTML = `<div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13336855/0/73022e84/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div>`;
     document.body.appendChild(noscript);
 }
-
-// Ensure it runs as soon as the page loads
 document.addEventListener("DOMContentLoaded", () => {
     injectAnalytics();
 });
 
 
 // ==========================================
-// GLOBAL BOOKING MODAL LOGIC
+// GLOBAL BOOKING MODAL & DYNAMIC THEME LOGIC
 // ==========================================
 const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
 
 window.openBookingModal = function() {
     const modal = document.getElementById('booking-modal');
+    const badge = document.getElementById('modal-badge');
+    const submitBtn = document.getElementById('submit-btn');
+    
     if (modal) {
+        // --- DYNAMIC THEME ENGINE ---
+        const url = window.location.href.toLowerCase();
+
+        if (url.includes('consulting')) {
+            if (badge) {
+                badge.innerText = 'CONSULTING // STRATEGIC SANITY CHECKS';
+                badge.style.backgroundColor = 'var(--card-btn-mainstreet)';
+                badge.style.color = 'var(--card-btn-text-mainstreet)';
+            }
+            if (submitBtn) {
+                submitBtn.style.backgroundColor = 'var(--card-btn-mainstreet)';
+                submitBtn.style.color = 'var(--card-btn-text-mainstreet)';
+            }
+        } else if (url.includes('operations')) {
+            if (badge) {
+                badge.innerText = 'OPERATIONS // ENGINES & PLAYBOOKS';
+                badge.style.backgroundColor = 'var(--card-btn-integrator)';
+                badge.style.color = 'var(--card-btn-text-integrator)';
+            }
+            if (submitBtn) {
+                submitBtn.style.backgroundColor = 'var(--card-btn-integrator)';
+                submitBtn.style.color = 'var(--card-btn-text-integrator)';
+            }
+        } else {
+            if (badge) {
+                badge.innerText = 'ARC // EXECUTIVE ADVISORY';
+                badge.style.backgroundColor = 'var(--card-btn-investor)';
+                badge.style.color = 'var(--card-btn-text-investor)';
+            }
+            if (submitBtn) {
+                submitBtn.style.backgroundColor = 'var(--card-btn-investor)';
+                submitBtn.style.color = 'var(--card-btn-text-investor)';
+            }
+        }
+        // ----------------------------
+
         modal.classList.remove('hidden');
         modal.classList.add('flex');
         setTimeout(() => modal.classList.remove('opacity-0'), 10);
@@ -231,8 +240,6 @@ window.submitBooking = async function(e) {
     const channelVal = document.getElementById('book-channel').value;
     
     const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
-    
-    // Updated to correctly calculate 30 minutes instead of 1 hour
     const endDateTime = new Date(startDateTime.getTime() + (30 * 60 * 1000)); 
 
     const payload = {
@@ -252,7 +259,6 @@ window.submitBooking = async function(e) {
 
         const result = await response.json();
 
-        // Conflict Handling
         if (result.status === 'CONFLICT') {
             submitBtn.disabled = false;
             submitBtn.innerHTML = 'Try Different Time &rarr;';
@@ -262,7 +268,6 @@ window.submitBooking = async function(e) {
             return; 
         }
 
-        // Success Handling
         submitBtn.style.display = 'none';
         statusText.classList.remove('hidden', 'text-red-500');
         statusText.classList.add('text-[#DC2626]');
