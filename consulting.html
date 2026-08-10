@@ -258,21 +258,33 @@
           };
 
           try {
-            // --- THE NO-CORS FIX ---
-            // Adding 'mode: no-cors' forces the browser to send the data to the webhook
-            // and ignore Google's 302 Redirect, preventing the CORS crash.
-            await fetch(WEBHOOK_URL, {
+            // --- REMOVED NO-CORS BLINDFOLD ---
+            // Using 'text/plain;charset=utf-8' allows the request to pass Google's security
+            // while still allowing the browser to read the JSON response.
+            const response = await fetch(WEBHOOK_URL, {
                 method: 'POST',
-                mode: 'no-cors', // <--- THE CRITICAL FIX
-                headers: { 'Content-Type': 'text/plain' },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             });
 
-            // Because of 'no-cors', we cannot read the success/fail message from Google.
-            // If the code reaches this line without crashing, the webhook was successfully called.
+            // Read what the Google Script says back
+            const result = await response.json();
+
+            // --- CONFLICT HANDLING ---
+            if (result.status === 'CONFLICT') {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Try Different Time &rarr;';
+                statusText.classList.remove('hidden', 'text-gray-400', 'text-[#DC2626]');
+                statusText.classList.add('text-red-500');
+                statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER TIME.";
+                return; // Stop the code here so the modal stays open!
+            }
+            // -------------------------
+
+            // --- SUCCESS HANDLING ---
             submitBtn.style.display = 'none';
-            statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
-            statusText.classList.replace('text-gray-400', 'text-[#DC2626]'); 
+            statusText.classList.remove('hidden', 'text-red-500');
+            statusText.classList.add('text-[#DC2626]'); 
             statusText.innerText = "REQUEST RECEIVED. CHECK YOUR INBOX FOR CONFIRMATION.";
             setTimeout(closeBookingModal, 4000);
 
@@ -280,7 +292,7 @@
             submitBtn.disabled = false;
             submitBtn.innerHTML = 'Request Strategy Session &rarr;';
             statusText.classList.remove('hidden');
-            statusText.classList.replace('text-gray-400', 'text-red-500');
+            statusText.classList.add('text-red-500');
             statusText.innerText = "COULD NOT SEND REQUEST. PLEASE TRY AGAIN.";
         }
       }
