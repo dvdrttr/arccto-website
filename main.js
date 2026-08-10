@@ -24,7 +24,7 @@ prefersDarkScheme.addEventListener("change", (e) => {
 
 
 // ==========================================
-// DYNAMIC HTML INJECTION (NAV & FOOTER)
+// DYNAMIC HTML INJECTION (NAV, FOOTER, MODAL)
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -54,6 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 footerPlaceholder.innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
+    }
+
+    // 3. Inject Booking Modal
+    const modalPlaceholder = document.getElementById('modal-placeholder');
+    if (modalPlaceholder) {
+        fetch(`${window.location.origin}/modal.html`)
+            .then(response => {
+                if (!response.ok) throw new Error("Modal fetch failed");
+                return response.text();
+            })
+            .then(data => {
+                modalPlaceholder.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading modal:', error));
     }
 });
 
@@ -106,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (iconChat) iconChat.classList.remove('hidden');
                 if (iconClose) iconClose.classList.add('hidden');
             }
-        }; // <-- THIS CLOSING BRACE WAS MISSING BEFORE!
+        };
 
         window.dismissTeaser = function() {
             if (!teaser) return;
@@ -160,3 +174,106 @@ function injectAnalytics() {
 document.addEventListener("DOMContentLoaded", () => {
     injectAnalytics();
 });
+
+
+// ==========================================
+// GLOBAL BOOKING MODAL LOGIC
+// ==========================================
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
+
+window.openBookingModal = function() {
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    }
+};
+
+window.closeBookingModal = function() {
+    const modal = document.getElementById('booking-modal');
+    const form = document.getElementById('booking-form');
+    const statusText = document.getElementById('booking-status');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            if (form) form.reset();
+            if (statusText) statusText.classList.add('hidden');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Request Strategy Session &rarr;';
+                submitBtn.style.display = 'block';
+            }
+        }, 300);
+    }
+};
+
+window.submitBooking = async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submit-btn');
+    const statusText = document.getElementById('booking-status');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'SENDING REQUEST...';
+    
+    statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
+    statusText.classList.add('text-gray-400');
+    statusText.innerText = "Securing your calendar spot...";
+
+    const dateVal = document.getElementById('book-date').value;
+    const timeVal = document.getElementById('book-time').value;
+    const nameVal = document.getElementById('book-name').value;
+    const channelVal = document.getElementById('book-channel').value;
+    
+    const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
+    
+    // Updated to correctly calculate 30 minutes instead of 1 hour
+    const endDateTime = new Date(startDateTime.getTime() + (30 * 60 * 1000)); 
+
+    const payload = {
+        action: 'bookCalendar',
+        clientEmail: document.getElementById('book-email').value,
+        summary: `ARC Discovery Session: ${nameVal} [${channelVal}]`,
+        startTime: startDateTime.toISOString(),
+        endTime: endDateTime.toISOString()
+    };
+
+    try {
+        const response = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        // Conflict Handling
+        if (result.status === 'CONFLICT') {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Try Different Time &rarr;';
+            statusText.classList.remove('hidden', 'text-gray-400', 'text-[#DC2626]');
+            statusText.classList.add('text-red-500');
+            statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER TIME.";
+            return; 
+        }
+
+        // Success Handling
+        submitBtn.style.display = 'none';
+        statusText.classList.remove('hidden', 'text-red-500');
+        statusText.classList.add('text-[#DC2626]');
+        statusText.innerText = "REQUEST RECEIVED. CHECK YOUR INBOX FOR CONFIRMATION.";
+        setTimeout(window.closeBookingModal, 4000);
+
+    } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Request Strategy Session &rarr;';
+        statusText.classList.remove('hidden');
+        statusText.classList.add('text-red-500');
+        statusText.innerText = "COULD NOT SEND REQUEST. PLEASE TRY AGAIN.";
+    }
+};
