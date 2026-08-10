@@ -117,103 +117,12 @@
   </main>
 
   <!-- The Booking Modal will be injected here by main.js -->
-<div id="modal-placeholder"></div>
+    <div id="modal-placeholder"></div>
 
-  <script>
-      const modal = document.getElementById('booking-modal');
-      const form = document.getElementById('booking-form');
-      const statusText = document.getElementById('booking-status');
-      const submitBtn = document.getElementById('submit-btn');
+    <!-- Footer injected by main.js -->
+    <div id="footer-placeholder"></div>
 
-      const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyxnK1SIf8w3nnRKk0ziB5cx8TjJVh6EEcYlzYVR92K0TPRLJDWv8V5MXUulx6rLEpv/exec';
-
-      function openBookingModal() {
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
-          setTimeout(() => modal.classList.remove('opacity-0'), 10);
-      }
-
-      function closeBookingModal() {
-          modal.classList.add('opacity-0');
-          setTimeout(() => {
-              modal.classList.add('hidden');
-              modal.classList.remove('flex');
-              form.reset();
-              statusText.classList.add('hidden');
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = 'Request Strategy Session &rarr;';
-          }, 300);
-      }
-
-      async function submitBooking(e) {
-          e.preventDefault();
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = 'SENDING REQUEST...';
-          statusText.classList.remove('hidden', 'text-red-500', 'text-green-500');
-          statusText.classList.add('text-gray-400');
-          statusText.innerText = "Securing your calendar spot...";
-
-          const dateVal = document.getElementById('book-date').value;
-          const timeVal = document.getElementById('book-time').value;
-          const nameVal = document.getElementById('book-name').value;
-          const channelVal = document.getElementById('book-channel').value;
-          
-          const startDateTime = new Date(`${dateVal}T${timeVal}:00-04:00`);
-          const endDateTime = new Date(startDateTime.getTime() + (60 * 60 * 1000));
-
-          const payload = {
-              action: 'bookCalendar',
-              clientEmail: document.getElementById('book-email').value,
-              summary: `ARC Strategic Advisory: ${nameVal} [${channelVal}]`,
-              startTime: startDateTime.toISOString(),
-              endTime: endDateTime.toISOString()
-          };
-
-          try {
-            // --- REMOVED NO-CORS BLINDFOLD ---
-            // Using 'text/plain;charset=utf-8' allows the request to pass Google's security
-            // while still allowing the browser to read the JSON response.
-            const response = await fetch(WEBHOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload)
-            });
-
-            // Read what the Google Script says back
-            const result = await response.json();
-
-            // --- CONFLICT HANDLING ---
-            if (result.status === 'CONFLICT') {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Try Different Time &rarr;';
-                statusText.classList.remove('hidden', 'text-gray-400', 'text-[#DC2626]');
-                statusText.classList.add('text-red-500');
-                statusText.innerText = "TIME SLOT UNAVAILABLE. PLEASE SELECT ANOTHER TIME.";
-                return; // Stop the code here so the modal stays open!
-            }
-            // -------------------------
-
-            // --- SUCCESS HANDLING ---
-            submitBtn.style.display = 'none';
-            statusText.classList.remove('hidden', 'text-red-500');
-            statusText.classList.add('text-[#DC2626]'); 
-            statusText.innerText = "REQUEST RECEIVED. CHECK YOUR INBOX FOR CONFIRMATION.";
-            setTimeout(closeBookingModal, 4000);
-
-        } catch (err) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Request Strategy Session &rarr;';
-            statusText.classList.remove('hidden');
-            statusText.classList.add('text-red-500');
-            statusText.innerText = "COULD NOT SEND REQUEST. PLEASE TRY AGAIN.";
-        }
-      }
-  </script>
-
-  <!-- Footer injected by main.js -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Centralized Engine Scripts -->
-  <script src="/main.js"></script>
+    <!-- Centralized Engine Scripts -->
+    <script src="/main.js"></script>
 </body>
 </html>
