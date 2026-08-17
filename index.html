@@ -55,21 +55,79 @@
     <!-- Centralized Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
-    <!-- RB2B Tracking Script -->
+    <!-- Custom Brutalist Cookie Banner & RB2B Trigger -->
+    <style>
+      #arc-cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        max-width: 400px;
+        background-color: var(--surface-color);
+        border: 2px solid var(--text-primary);
+        box-shadow: 4px 4px 0px var(--text-primary);
+        padding: 20px;
+        z-index: 9999;
+        display: none;
+        color: var(--card-text);
+      }
+    </style>
+
     <script>
-      !function(key) {
-        if (window.reb2b) return;
-        window.reb2b = {loaded: true};
-        var s = document.createElement("script");
-        s.async = true;
-        s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
-        document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
-      }("DNXY8HJDK1O0");
+      function loadRB2B() {
+        !function(key) {
+          if (window.reb2b) return;
+          window.reb2b = {loaded: true};
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
+          document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
+        }("DNXY8HJDK1O0");
+      }
+
+      function acceptCookies() {
+        document.getElementById('arc-cookie-banner').style.display = 'none';
+        localStorage.setItem('arc_cookies_accepted', 'true');
+        loadRB2B(); // Fire the tracking script
+      }
+
+      function declineCookies() {
+        document.getElementById('arc-cookie-banner').style.display = 'none';
+        localStorage.setItem('arc_cookies_accepted', 'false');
+        // RB2B script is never loaded
+      }
+
+      window.onload = function() {
+        if (!localStorage.getItem('arc_cookies_accepted')) {
+          document.getElementById('arc-cookie-banner').style.display = 'block';
+        } else if (localStorage.getItem('arc_cookies_accepted') === 'true') {
+          loadRB2B(); // Automatically load on future pages if already accepted
+        }
+      };
     </script>
-    
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
+<!-- ARC CTO Custom Cookie Banner -->
+<div id="arc-cookie-banner" class="brutalist-border">
+  <div class="inline-block px-2 py-1 mb-3 text-xs font-bold tracking-widest uppercase bg-[var(--text-primary)] text-[var(--inverse-text)]">
+    // SYSTEM NOTICE
+  </div>
+  <p class="text-sm mb-4 font-medium">
+    We use tracking technologies to verify B2B traffic and measure site performance. By clicking "Accept", you consent to our data tracking policies.
+  </p>
+  <div class="flex gap-3">
+    <button onclick="acceptCookies()" class="flex-1 bg-[var(--card-btn-integrator)] text-[var(--inverse-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
+      ACCEPT
+    </button>
+    <button onclick="declineCookies()" class="flex-1 bg-transparent text-[var(--card-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
+      DECLINE
+    </button>
+  </div>
+  <div class="mt-3 text-xs text-[var(--card-text-muted)] underline">
+    <a href="/privacy-policy.html">Read Privacy Policy</a>
+  </div>
+</div>
+    
     <!-- The Navigation Bar will be injected here by main.js -->
     <div id="nav-placeholder"></div>
 
