@@ -162,7 +162,7 @@ window.openBookingModal = function() {
 
         if (url.includes('consulting')) {
             if (badge) {
-                badge.innerText = 'CONSULTING // STRATEGIC SANITY CHECKS';
+                badge.innerText = 'CONSULTING // TECH ADVICE & SYSTEMS REVIEWS';
                 badge.style.backgroundColor = 'var(--card-btn-mainstreet)';
                 badge.style.color = 'var(--card-btn-text-mainstreet)';
             }
