@@ -11,6 +11,7 @@
     <meta property="og:description" content="26 years of field-tested tech resilience. We audit messy infrastructure for investors, deploy practical AI workflows, and serve as fractional technical leadership.">
     <meta property="og:url" content="https://www.arccto.com/">
     <meta property="og:type" content="website">
+    
     <!-- Tailwind for layout grids and spacing -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -107,114 +108,155 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-<!-- ARC CTO Custom Cookie Banner -->
-<div id="arc-cookie-banner" class="brutalist-border">
-  <div class="inline-block px-2 py-1 mb-3 text-xs font-bold tracking-widest uppercase bg-[var(--text-primary)] text-[var(--inverse-text)]">
-    // SYSTEM NOTICE
-  </div>
-  <p class="text-sm mb-4 font-medium">
-    We use tracking technologies to verify B2B traffic and measure site performance. By clicking "Accept", you consent to our data tracking policies.
-  </p>
-  <div class="flex gap-3">
-    <button onclick="acceptCookies()" class="flex-1 bg-[var(--card-btn-integrator)] text-[var(--inverse-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
-      ACCEPT
-    </button>
-    <button onclick="declineCookies()" class="flex-1 bg-transparent text-[var(--card-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
-      DECLINE
-    </button>
-  </div>
-  <div class="mt-3 text-xs text-[var(--card-text-muted)] underline">
-    <a href="/privacy-policy.html">Read Privacy Policy</a>
-  </div>
-</div>
+    <!-- ARC CTO Custom Cookie Banner -->
+    <div id="arc-cookie-banner" class="brutalist-border">
+      <div class="inline-block px-2 py-1 mb-3 text-xs font-bold tracking-widest uppercase bg-[var(--text-primary)] text-[var(--inverse-text)]">
+        // SYSTEM NOTICE
+      </div>
+      <p class="text-sm mb-4 font-medium">
+        We use tracking technologies to verify B2B traffic and measure site performance. By clicking "Accept", you consent to our data tracking policies.
+      </p>
+      <div class="flex gap-3">
+        <button onclick="acceptCookies()" class="flex-1 bg-[var(--card-btn-integrator)] text-[var(--inverse-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
+          ACCEPT
+        </button>
+        <button onclick="declineCookies()" class="flex-1 bg-transparent text-[var(--card-text)] font-bold py-2 border-2 border-[var(--text-primary)] shadow-[2px_2px_0px_var(--text-primary)] hover:translate-y-px hover:shadow-[1px_1px_0px_var(--text-primary)] transition-all">
+          DECLINE
+        </button>
+      </div>
+      <div class="mt-3 text-xs text-[var(--card-text-muted)] underline">
+        <a href="/privacy-policy.html">Read Privacy Policy</a>
+      </div>
+    </div>
     
     <!-- The Navigation Bar will be injected here by main.js -->
     <div id="nav-placeholder"></div>
 
-    <main class="flex-grow">
-  <!-- Refactored Signature Hero Section -->
-  <section class="max-w-6xl mx-auto px-6 pt-8 pb-12 md:pt-14 md:pb-16 hero-animate">
-    <!-- Hero Container -->
-    <div class="grunge-card border-none p-8 md:p-12 relative overflow-hidden" 
-         style="background: radial-gradient(circle at 15% 20%, rgba(220, 38, 38, 0.18) 0%, transparent 50%), linear-gradient(135deg, rgba(20, 20, 20, 0.94) 0%, rgba(10, 10, 10, 0.98) 100%), var(--surface-color); box-shadow: 8px 8px 0px var(--text-primary); border-top: 8px solid var(--glitch-2);">
+    <main class="flex-grow pt-[60px]">
       
-      <!-- Background Watermark -->
-      <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-[10rem] uppercase tracking-tighter select-none pointer-events-none leading-none" 
-           style="color: rgba(255, 255, 255, 0.03); transform: rotate(-2deg);">
-        ARC//CTO
-      </div>
-
-      <div class="relative z-10 max-w-4xl">
-        <!-- System Identifier Tag -->
-        <div class="inline-block mb-6 px-3 py-1 shadow-[4px_4px_0px_var(--btn-shadow)]" style="background-color: var(--text-primary); color: var(--inverse-text);">
-          <span class="grunge-font text-xs font-bold tracking-widest uppercase">// ARC CTO • 26 YEARS FIELD-TESTED RESILIENCE</span>
+      <!-- 1. The Hero Component (Split-Screen / No Bullsh*t) -->
+      <section class="max-w-[1400px] mx-auto px-6 py-16 flex flex-col lg:flex-row border-b border-[var(--text-primary)] gap-8 min-h-[70vh]">
+        <!-- Left 60%: Direct Typography -->
+        <div class="lg:w-[60%] flex flex-col justify-center pr-4">
+           <div class="inline-block mb-6 px-3 py-1 bg-[var(--text-primary)] text-[var(--inverse-text)] w-max border border-transparent">
+              <span class="font-mono text-xs font-bold tracking-widest uppercase">// 26_YEARS_FIELD_TESTED</span>
+           </div>
+           <h1 class="text-5xl md:text-[5.5rem] mb-6 uppercase font-black tracking-tight text-[var(--text-primary)] font-['Inter'] leading-[0.9]">
+              Big Tech Capability.<br>
+              <span style="color: var(--glitch-2);">Main Street Budgets.</span>
+           </h1>
+           <p class="text-xl mb-8 font-medium font-mono text-[var(--text-secondary)] max-w-2xl">
+              Enterprise IT due diligence, custom workflow automation, and practical AI for solo operators and mid-market dealmakers. No corporate agency fluff. No bloated retainers. Just systems that work.
+           </p>
+           <div class="flex gap-4">
+             <button onclick="openBookingModal()" class="btn-category bg-[var(--text-primary)] text-[var(--inverse-text)] font-mono font-bold uppercase tracking-widest px-8 py-4 text-base border-2 border-[var(--text-primary)] shadow-[6px_6px_0px_var(--glitch-2)] hover:translate-y-1.5 hover:translate-x-1.5 hover:shadow-none cursor-pointer transition-none">
+               Book Discovery
+             </button>
+           </div>
         </div>
-
-        <!-- Main Headline -->
-        <h1 class="text-4xl md:text-6xl md:leading-[1.08] mb-6 uppercase font-black tracking-tight text-[var(--card-text)]">
-          Big Tech Capability. <br>
-          <span style="color: var(--glitch-2);">Main Street Budgets.</span>
-        </h1>
-
-        <!-- Plain-English Client Summary -->
-        <p class="text-lg md:text-xl mb-8 font-medium leading-relaxed" style="color: var(--card-text-muted);">
-          You don't need a $300k full-time executive or a bloated agency to run a modern operation. We bring enterprise IT due diligence, custom workflow automation, and practical AI down to main street business owners, solo operators, and mid-market dealmakers—in plain English, at rates built for real balance sheets.
-        </p>
-
-        <!-- Dynamic Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 mb-8">
-          <button onclick="openBookingModal()" class="btn-category btn-training grunge-font px-8 py-4 text-center cursor-pointer text-base">
-            Book 30-Min Discovery Exchange &rarr;
-          </button>
-          <a href="tel:8559230196" class="btn-category btn-operations grunge-font px-6 py-4 text-center text-base">
-            Call / Text: 855-923-0196
-          </a>
+        
+        <!-- Right 40%: Interactive Media / HD Object -->
+        <div class="lg:w-[40%] flex items-center justify-center border-4 border-[var(--text-primary)] bg-[#111111] shadow-[8px_8px_0px_var(--text-primary)] relative overflow-hidden min-h-[400px]">
+           <div class="absolute inset-0 scanline-overlay"></div>
+           <div class="font-mono font-bold text-4xl text-[#00ff41] z-10 animate-pulse bg-black px-4 py-2 border border-[#00ff41]">
+             [ SYSTEM // READY ]
+           </div>
+           <!-- Insert High-Res 3D Model / Vinyl / Amp Graphic Here -->
         </div>
+      </section>
 
-        <!-- Quick-Scan Target Audience Bar -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-800 font-mono text-xs uppercase font-bold tracking-wider" style="color: var(--card-text);">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full status-beacon" style="background-color: var(--card-btn-investor);"></span>
-            <span>// Investors &amp; M&amp;A Audits</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full status-beacon" style="background-color: var(--card-btn-mainstreet);"></span>
-            <span>// Everyday AI Playbooks</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full status-beacon" style="background-color: var(--card-btn-integrator);"></span>
-            <span>// 50+ Languages Real-Time</span>
-          </div>
+      <!-- 2. Feature Matrix (Bento Box Grid) -->
+      <section class="max-w-[1400px] mx-auto px-6 py-16 border-b border-[var(--text-primary)]">
+        <div class="mb-8 font-mono text-xl font-bold uppercase text-[var(--text-primary)] border-b-2 border-[var(--text-primary)] pb-2 inline-block">
+          // 01_CAPABILITIES_MATRIX
         </div>
-      </div>
-    </div>
-  </section>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <!-- Grid Item 1 -->
+           <div class="bento-card p-8 border-2 border-[var(--text-primary)] bg-[var(--surface-color)] shadow-[6px_6px_0px_var(--text-primary)] flex flex-col h-full group cursor-default">
+              <div class="font-mono text-xs mb-6 text-[var(--card-btn-integrator)] border-b border-current pb-2 uppercase tracking-widest">A. Tech Due Diligence</div>
+              <h3 class="text-3xl font-black uppercase mb-4 text-[var(--text-primary)] group-hover:text-[var(--inverse-text)]">Ground // Truth</h3>
+              <p class="font-mono text-sm mt-auto text-[var(--text-secondary)] group-hover:text-gray-300">
+                Identify hidden tech debt before acquisition. Real-world physical security, vendor contract reviews, and low-voltage assessments.
+              </p>
+           </div>
+           
+           <!-- Grid Item 2 (Wide) -->
+           <div class="bento-card p-8 border-2 border-[var(--text-primary)] bg-[var(--surface-color)] shadow-[6px_6px_0px_var(--text-primary)] flex flex-col h-full group md:col-span-2 cursor-default">
+              <div class="font-mono text-xs mb-6 text-[var(--glitch-2)] border-b border-current pb-2 uppercase tracking-widest">B. AI_Playbooks</div>
+              <h3 class="text-4xl font-black uppercase mb-4 text-[var(--text-primary)] group-hover:text-[var(--inverse-text)]">Everyday Automation</h3>
+              <div class="flex flex-col md:flex-row gap-8 mt-auto items-end">
+                 <p class="font-mono text-sm text-[var(--text-secondary)] group-hover:text-gray-300 md:w-2/3">
+                   Stop buying new SaaS subscriptions. We train your staff to automate workflows using the Microsoft 365 or Google Workspace tools you already pay for.
+                 </p>
+                 <!-- B&W Documentary Style Image Placeholder -->
+                 <div class="w-full md:w-1/3 h-24 bg-gray-900 border border-current flex items-center justify-center text-xs font-mono text-gray-500 overflow-hidden relative grayscale">
+                   <div class="absolute inset-0 scanline-overlay opacity-50"></div>
+                   [ REF_IMG_01 ]
+                 </div>
+              </div>
+           </div>
+           
+           <!-- Grid Item 3 (Full Width In-Take) -->
+           <div class="bento-card p-8 border-2 border-[var(--text-primary)] bg-[var(--surface-color)] shadow-[6px_6px_0px_var(--text-primary)] flex flex-col md:flex-row gap-6 h-full group md:col-span-3 items-center justify-between cursor-default">
+              <div>
+                <div class="font-mono text-xs mb-4 text-[var(--card-btn-mainstreet)] uppercase tracking-widest">C. Zero-Barrier Intake</div>
+                <h3 class="text-2xl font-black uppercase text-[var(--text-primary)] group-hover:text-[var(--inverse-text)]">50+ Languages Auto-Translated</h3>
+                <p class="font-mono text-sm text-[var(--text-secondary)] group-hover:text-gray-300 mt-2">
+                  Voice (855-923-0196) / Google Chat / Email.
+                </p>
+              </div>
+              <div class="font-mono text-6xl font-black opacity-20 group-hover:opacity-100 group-hover:text-[var(--glitch-2)]">
+                //
+              </div>
+           </div>
+        </div>
+      </section>
 
-  <!-- Omnichannel Intake Banner -->
-  <section id="services" class="max-w-6xl mx-auto px-6 py-12 border-t-4 border-solid" style="border-color: var(--text-primary);">
-    <div class="mb-12 w-full grunge-card border-none p-8 md:p-12" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--text-primary);">
-      <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase" style="background-color: var(--text-primary); color: var(--inverse-text);">
-        ARC // CONSULTING • TRAINING • OPERATIONS
-      </div>
-      <h2 class="text-3xl md:text-5xl mb-4 text-[var(--card-text)]">Zero-Barrier Technical Advisory</h2>
-      <p class="text-lg md:text-xl font-medium mb-6" style="color: var(--card-text-muted);">
-        No corporate fluff or language barriers. We support real-time, bi-directional translation across <strong class="text-white">50+ languages</strong>. Every engagement begins with a <strong class="text-white">free 30-minute discovery exchange</strong>—conducted via voice call, video, Google Chat, email, or SMS text in your preferred language.
-      </p>
-      
-      <!-- Communication Channels List -->
-      <div class="flex flex-wrap items-center gap-4 text-xs font-mono font-bold uppercase tracking-wider">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-gray-700" style="background: rgba(255,255,255,0.03); color: var(--card-text);">
-          <span class="w-2 h-2 rounded-full" style="background-color: var(--card-btn-integrator);"></span>
-          INBOUND: VOICE (855-923-0196) // GOOGLE CHAT // SMS TEXT // EMAIL
+      <!-- 3. Interactive Heritage Gallery (The Retro Nod) -->
+      <section class="max-w-[1400px] mx-auto px-6 py-16 border-b border-[var(--text-primary)] overflow-hidden">
+        <div class="mb-8 font-mono text-xl font-bold uppercase text-[var(--text-primary)] border-b-2 border-[var(--text-primary)] pb-2 inline-block">
+          // 02_TRACK_RECORD_ARCHIVE
         </div>
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-gray-700" style="background: rgba(255,255,255,0.03); color: var(--card-btn-investor);">
-          <span>// 50+ LANGUAGES AUTO-TRANSLATED</span>
+        
+        <!-- Horizontal Scroll Media Container -->
+        <div class="media-scroll-container gap-8 pb-8">
+           
+           <!-- Cassette Tape Card 1 -->
+           <div class="min-w-[320px] sm:min-w-[420px] h-[260px] border-2 border-[var(--text-primary)] bg-[var(--surface-color)] shadow-[8px_8px_0px_var(--text-primary)] p-6 flex flex-col justify-between snap-center relative hover:bg-[#111111] hover:text-white group transition-none">
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-full border-4 border-current border-dashed animate-[spin_10s_linear_infinite] opacity-30"></div>
+              <div class="font-mono text-xs bg-[var(--text-primary)] text-[var(--inverse-text)] w-max px-3 py-1 font-bold group-hover:bg-white group-hover:text-black">
+                TAPE // A-SIDE
+              </div>
+              <div>
+                <h4 class="text-2xl font-black uppercase mt-4">The $10M PE Audit</h4>
+                <p class="font-mono text-sm mt-3 text-[var(--text-secondary)] group-hover:text-gray-400">
+                  Found $150k in hidden tech debt prior to close. Prevented post-acquisition fallout by auditing unverified low-voltage setups.
+                </p>
+              </div>
+           </div>
+
+           <!-- Cassette Tape Card 2 -->
+           <div class="min-w-[320px] sm:min-w-[420px] h-[260px] border-2 border-[var(--text-primary)] bg-[var(--surface-color)] shadow-[8px_8px_0px_var(--text-primary)] p-6 flex flex-col justify-between snap-center relative hover:bg-[#111111] hover:text-white group transition-none">
+              <div class="font-mono text-xs bg-[var(--glitch-2)] text-[var(--inverse-text)] w-max px-3 py-1 font-bold group-hover:bg-white group-hover:text-black">
+                TAPE // B-SIDE
+              </div>
+              <div>
+                <h4 class="text-2xl font-black uppercase mt-4">Roofing Automation</h4>
+                <p class="font-mono text-sm mt-3 text-[var(--text-secondary)] group-hover:text-gray-400">
+                  Saved a local contractor 12 hours a week by ripping out Excel and building a custom estimating pipeline in Microsoft 365.
+                </p>
+              </div>
+           </div>
+
         </div>
-      </div>
-    </div>
-  </section>
-</main>
-    <!-- The Footer will be injected here by main.js -->
+      </section>
+    </main>
+
+    <!-- The Booking Modal will be injected here by main.js -->
+    <div id="modal-placeholder"></div>
+
+    <!-- Footer injected by main.js -->
     <div id="footer-placeholder"></div>
 
     <!-- ARC MCA Agent (Plain English + Industrial Design + Crimson Alert Theme) -->
@@ -292,11 +334,6 @@
             </svg>
         </button>
     </div>
-<!-- The Booking Modal will be injected here by main.js -->
-    <div id="modal-placeholder"></div>
-
-    <!-- Footer injected by main.js -->
-    <div id="footer-placeholder"></div>
 
     <!-- Centralized Engine Scripts -->
     <script src="/main.js"></script>
