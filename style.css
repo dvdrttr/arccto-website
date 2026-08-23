@@ -91,7 +91,56 @@ h1, h2, h3, h4, .grunge-font {
     font-weight: 700;
     letter-spacing: -0.05em;
 }
+/* =========================================
+   INDUSTRIAL MOTION & PERFORMANCE INTERACTION
+   ========================================= */
 
+/* Fast Page Load Reveal (Zero Layout Shift) */
+@keyframes brutalistFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: brutalistFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tactile Button Press (Desktop & Mobile Touch Feedback) */
+.btn-category, .cta-button {
+  will-change: transform, box-shadow;
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.12s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+.btn-category:active, .cta-button:active {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 1px 1px 0px var(--text-primary) !important;
+}
+
+/* Card Depth Elevation on Hover */
+.grunge-card {
+  will-change: transform, box-shadow;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.grunge-card:hover {
+  transform: translate(-3px, -3px);
+}
+
+/* Status Indicator Pulse Glow */
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.status-beacon {
+  animation: statusPulse 2s ease-in-out infinite;
+}
 /* =========================================
    UI COMPONENTS & CONTAINERS
    ========================================= */
