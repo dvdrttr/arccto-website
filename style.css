@@ -330,3 +330,47 @@ h1, h2, h3, h4, .grunge-font {
     opacity: 0; 
     pointer-events: none; 
 }
+/* =========================================
+   GEN X TACTILE UX & MICRO-INTERACTIONS
+   ========================================= */
+
+/* 1. Eliminate slow sliding transitions for instant, binary feedback */
+.cta-button, .btn-category, .grunge-card, a {
+  transition: all 0ms !important; 
+}
+
+/* 2. Heavy Physical "Click" States */
+.cta-button:hover, .btn-category:hover, .bento-card:hover {
+  transform: translate(4px, 4px) !important;
+  box-shadow: 0px 0px 0px transparent !important;
+  background-color: var(--text-primary) !important;
+  color: var(--inverse-text) !important;
+}
+
+/* 3. CRT / Tape Scanline Overlays */
+.scanline-overlay {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    var(--text-primary) 2px,
+    var(--text-primary) 4px
+  );
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* 4. Horizontal Scroll (Heritage Gallery) */
+.media-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-primary) transparent;
+}
+.media-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.media-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--text-primary);
+}
