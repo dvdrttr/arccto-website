@@ -53,6 +53,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================================
+// MOBILE NAV TOGGLE
+// ==========================================
+window.toggleMobileNav = function() {
+    const panel = document.getElementById('mobile-nav-panel');
+    const iconOpen = document.getElementById('mobile-nav-icon-open');
+    const iconClose = document.getElementById('mobile-nav-icon-close');
+    const toggleBtn = document.querySelector('[aria-controls="mobile-nav-panel"]');
+    if (!panel) return;
+
+    const isHidden = panel.classList.contains('hidden');
+    panel.classList.toggle('hidden');
+    if (iconOpen) iconOpen.classList.toggle('hidden');
+    if (iconClose) iconClose.classList.toggle('hidden');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+};
+
+// Close the mobile nav automatically if the viewport is resized up to desktop
+window.addEventListener('resize', () => {
+    const panel = document.getElementById('mobile-nav-panel');
+    if (panel && window.innerWidth >= 768 && !panel.classList.contains('hidden')) {
+        panel.classList.add('hidden');
+        const iconOpen = document.getElementById('mobile-nav-icon-open');
+        const iconClose = document.getElementById('mobile-nav-icon-close');
+        if (iconOpen) iconOpen.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+    }
+});
+
+// ==========================================
 // MCA AGENT WIDGET LOGIC
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -163,12 +192,12 @@ window.openBookingModal = function() {
         if (url.includes('consulting')) {
             if (badge) {
                 badge.innerText = 'CONSULTING // TECH ADVICE & SYSTEMS REVIEWS';
-                badge.style.backgroundColor = 'var(--card-btn-mainstreet)';
-                badge.style.color = 'var(--card-btn-text-mainstreet)';
+                badge.style.backgroundColor = 'var(--card-btn-investor)';
+                badge.style.color = 'var(--card-btn-text-investor)';
             }
             if (submitBtn) {
-                submitBtn.style.backgroundColor = 'var(--card-btn-mainstreet)';
-                submitBtn.style.color = 'var(--card-btn-text-mainstreet)';
+                submitBtn.style.backgroundColor = 'var(--card-btn-investor)';
+                submitBtn.style.color = 'var(--card-btn-text-investor)';
             }
         } else if (url.includes('operations')) {
             if (badge) {
@@ -179,6 +208,16 @@ window.openBookingModal = function() {
             if (submitBtn) {
                 submitBtn.style.backgroundColor = 'var(--card-btn-integrator)';
                 submitBtn.style.color = 'var(--card-btn-text-integrator)';
+            }
+        } else if (url.includes('training')) {
+            if (badge) {
+                badge.innerText = 'TRAINING // SYSTEM MAXIMIZATION';
+                badge.style.backgroundColor = 'var(--card-btn-mainstreet)';
+                badge.style.color = 'var(--card-btn-text-mainstreet)';
+            }
+            if (submitBtn) {
+                submitBtn.style.backgroundColor = 'var(--card-btn-mainstreet)';
+                submitBtn.style.color = 'var(--card-btn-text-mainstreet)';
             }
         } else {
             if (badge) {
@@ -282,3 +321,4 @@ window.submitBooking = async function(e) {
         statusText.innerText = "COULD NOT SEND REQUEST. PLEASE TRY AGAIN.";
     }
 };
+
