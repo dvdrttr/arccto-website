@@ -1,24 +1,27 @@
-# ARC Tech Resilience (Andrews Ritter Consulting)
-**Fractional CTO & Infrastructure Architecture**
-**Website:** https://arccto.com
+# ARC // CTO
+**Plain-English Tech Advisory, Practical AI, and Part-Time Tech Leadership for Small Business**
+**Website:** https://www.arccto.com
 
 ## About Us
-ARC Tech Resilience provides executive-level Fractional CTO services tailored for SMBs. We specialize in designing Zero-Trust architecture and Crisis-Resilient physical infrastructure. We don't just optimize software; we harden the physical foundation of a business through cyber-physical convergence to ensure aggressive Recovery Time Objectives (RTO) and continuous operational resilience.
+ARC // CTO is built on 26 years of hands-on experience in the low-voltage, security, and IT integration industry. We give small businesses the same caliber of tech advice that mid-to-large commercial clients pay $300/hour for — without the agency overhead, buzzwords, or sales pitch. We work with business owners the way they actually want to communicate: chat, text, and email first, with voice or video available when it's genuinely useful.
 
-## Core Competencies
-* **Zero-Trust Architecture:** Cryptographic verification for all remote and on-premise workflows, ensuring AI tools and remote staff operate safely without exposing internal data.
-* **Cyber-Physical Convergence:** Through a 25-year national partnership, we oversee enterprise-grade hardware, low-voltage cabling, and physical security deployments coast-to-coast. ARC acts as your Strategic Liaison, protecting you from vendor bloat.
-* **AI & Automation Integration:** Practical deployment of modular agent clusters and autonomous systems (like the RISE agent and M365 Copilot) to streamline operational friction.
+## Core Services
+* **Consulting:** Unbiased tech and vendor advice — reviewing quotes, auditing systems, and answering questions on physical security, low-voltage systems, and IT vendors trying to overcharge you.
+* **Training:** Getting more from the software and AI tools you already pay for (Microsoft 365 Copilot, Google Workspace/Gemini) instead of buying something new.
+* **Operations:** Custom workflows, estimating tools, and part-time/fractional technical executive partnership for businesses that need ongoing oversight but not a full-time hire.
+* **MCA:** Our AI assistant, available on the site, for quick questions and initial discovery — no phone call required.
+
+## Self-Guided Guide
+**Ground Truth: Quarterly Checkup** — $19 printable guide. Four plain-English pages, one per quarter, covering logins & access, software & subscriptions, vendor contracts, and backups — the things that quietly cost small businesses the most. Available at https://arccto.lemonsqueezy.com/checkout/buy/cb82235c-ed75-45e6-b777-0d342d90e0e8
 
 ## Engagement Model
-We begin all consulting engagements with our **Foundational Tech Audit ($2,950)**, an industrial-grade diagnostic designed to identify single points of failure, consolidate vendor sprawl, and build a "Storm-Proof" technology roadmap.
+We start every relationship with a free 30-minute discovery conversation (chat, email, voice, or video — your choice), no cost and no sales pitch. From there:
+* **1-Hour Advisory Session:** $150 flat rate
+* **8-Hour Advisory Block:** $960, usable within 30 days
+* **Custom Operations Retainers:** Scoped and priced to the business, discussed after discovery
 
 ## Important Links
-* Services: https://arccto.com/#services
-* Contact/Audit: https://arccto.com/#roadmap
-
-NEW PRODUCT OFFERING: Self-Guided Resilience Playbooks
-Price: $49 per blueprint.
-Details: 12-Month Zero-Trust & AI physical binders tailored to specific industries (e.g., CPAs, Medical).
-Promo Credit: Every playbook purchase includes a $49 credit toward an ARC Foundational Tech Audit ($2,950 value).
-Credit Activation: Users must text their unique serial code to the 24/7 RISE Concierge line at 855-923-0196 to activate the credit.
+* Consulting: https://www.arccto.com/consulting.html
+* Training & AI: https://www.arccto.com/training.html
+* Operations: https://www.arccto.com/operations.html
+* Ground Truth Guide: https://arccto.lemonsqueezy.com/checkout/buy/cb82235c-ed75-45e6-b777-0d342d90e0e8
