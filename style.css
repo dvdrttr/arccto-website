@@ -92,47 +92,60 @@ h1, h2, h3, h4, .grunge-font {
     letter-spacing: -0.05em;
 }
 /* =========================================
-   INDUSTRIAL MOTION & PERFORMANCE INTERACTION
+   UNIFIED MOTION SYSTEM
+   One source of truth for: hero load-in, scroll reveal,
+   button/card touch+hover feedback, status pulse, page transitions.
    ========================================= */
 
-/* Fast Page Load Reveal (Zero Layout Shift) */
+/* --- Hero / on-load reveal --- */
 @keyframes brutalistFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .hero-animate {
   animation: brutalistFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Tactile Button Press (Desktop & Mobile Touch Feedback) */
-.btn-category, .cta-button {
-  will-change: transform, box-shadow;
-  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.12s cubic-bezier(0.2, 0, 0, 1) !important;
+/* --- Scroll-triggered reveal (progressive enhancement: only hides
+   content once JS has confirmed it can un-hide it again) --- */
+.js .reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-category:active, .cta-button:active {
-  transform: translate(3px, 3px) !important;
-  box-shadow: 1px 1px 0px var(--text-primary) !important;
+.js .reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Card Depth Elevation on Hover */
+/* --- Blended button/card feedback: eased lift on hover (desktop),
+   instant snap on active (works via touch AND mouse) --- */
+.btn-category,
+.cta-button,
 .grunge-card {
   will-change: transform, box-shadow;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.btn-category:hover,
+.cta-button:hover,
 .grunge-card:hover {
   transform: translate(-3px, -3px);
 }
 
-/* Status Indicator Pulse Glow */
+.btn-category:active,
+.cta-button:active,
+.grunge-card:active {
+  transition: transform 0.06s linear, box-shadow 0.06s linear;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--text-primary) !important;
+}
+
+/* --- Status indicator pulse (single system, replaces Tailwind's animate-pulse) --- */
 @keyframes statusPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.85); }
@@ -140,6 +153,51 @@ h1, h2, h3, h4, .grunge-font {
 
 .status-beacon {
   animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* --- Page-to-page cross-fade (progressive: no-op in browsers without support) --- */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.15s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Respect OS-level reduced motion preference across the whole system --- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .status-beacon {
+    animation: none;
+  }
+
+  .js .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-category,
+  .cta-button,
+  .grunge-card {
+    transition: none;
+  }
+
+  .btn-category:hover,
+  .cta-button:hover,
+  .grunge-card:hover,
+  .btn-category:active,
+  .cta-button:active,
+  .grunge-card:active {
+    transform: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }
 /* =========================================
    UI COMPONENTS & CONTAINERS
@@ -153,8 +211,9 @@ h1, h2, h3, h4, .grunge-font {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: var(--border-style);
-    color: var(--card-text); 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--card-text);
+    /* transform/box-shadow transitions + hover/active states live in the
+       Unified Motion System block above — don't redeclare them here. */
 }
 
 .cta-button {
@@ -162,13 +221,9 @@ h1, h2, h3, h4, .grunge-font {
     color: var(--inverse-text);
     border: var(--border-style);
     box-shadow: 4px 4px 0px var(--btn-shadow);
-    transition: all 0.2s ease;
     cursor: pointer;
-}
-
-.cta-button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px var(--btn-shadow);
+    /* transform/box-shadow transitions + hover/active states live in the
+       Unified Motion System block above — don't redeclare them here. */
 }
 
 /* =========================================
@@ -186,14 +241,9 @@ h1, h2, h3, h4, .grunge-font {
   font-family: 'Courier Prime', monospace;
   font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
-}
-
-.btn-category:hover {
-  transform: translate(-2px, -2px);
-  background-color: var(--text-primary) !important;
-  color: var(--inverse-text) !important;
+  /* transform/box-shadow transitions + hover/active states live in the
+     Unified Motion System block above — don't redeclare them here. */
 }
 
 /* Category 1: CONSULTING (White/Silver Shadow Accent) */
@@ -229,10 +279,12 @@ h1, h2, h3, h4, .grunge-font {
 }
 
 @media (min-width: 768px) {
-    .grunge-card:hover { 
-        transform: translate(-4px, -4px); 
-        z-index: 10; 
-        position: relative; 
+    /* Same -3px lift as the Unified Motion System (kept consistent across
+       breakpoints); this just adds z-index so a lifted card clears its
+       neighbors instead of tucking underneath them. */
+    .grunge-card:hover {
+        z-index: 10;
+        position: relative;
     }
 }
 
@@ -332,22 +384,10 @@ h1, h2, h3, h4, .grunge-font {
 }
 /* =========================================
    GEN X TACTILE UX & MICRO-INTERACTIONS
+   (hover/active states now live in the Unified Motion System above)
    ========================================= */
 
-/* 1. Eliminate slow sliding transitions for instant, binary feedback */
-.cta-button, .btn-category, .grunge-card, a {
-  transition: all 0ms !important; 
-}
-
-/* 2. Heavy Physical "Click" States */
-.cta-button:hover, .btn-category:hover, .bento-card:hover {
-  transform: translate(4px, 4px) !important;
-  box-shadow: 0px 0px 0px transparent !important;
-  background-color: var(--text-primary) !important;
-  color: var(--inverse-text) !important;
-}
-
-/* 3. CRT / Tape Scanline Overlays */
+/* CRT / Tape Scanline Overlays */
 .scanline-overlay {
   background-image: repeating-linear-gradient(
     0deg,
