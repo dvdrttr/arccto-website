@@ -17,41 +17,6 @@ prefersDarkScheme.addEventListener("change", (e) => {
     applyTheme(e.matches ? "dark" : "light");
 });
 
-
-// ==========================================
-// DYNAMIC HTML INJECTION (NAV, FOOTER, MODAL)
-// ==========================================
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. Inject Navigation
-    const navPlaceholder = document.getElementById('nav-placeholder');
-    if (navPlaceholder) {
-        fetch('/nav.html')
-            .then(response => response.text())
-            .then(data => navPlaceholder.innerHTML = data)
-            .catch(error => console.error('Error loading nav:', error));
-    }
-
-    // 2. Inject Footer
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(data => footerPlaceholder.innerHTML = data)
-            .catch(error => console.error('Error loading footer:', error));
-    }
-
-    // 3. Inject Booking Modal
-    const modalPlaceholder = document.getElementById('modal-placeholder');
-    if (modalPlaceholder) {
-        fetch('/modal.html')
-            .then(response => response.text())
-            .then(data => modalPlaceholder.innerHTML = data)
-            .catch(error => console.error('Error loading modal:', error));
-    }
-});
-
-
 // ==========================================
 // MOBILE NAV TOGGLE
 // ==========================================
