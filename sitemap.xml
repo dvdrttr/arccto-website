@@ -4,7 +4,7 @@
   <!-- Core Homepage -->
   <url>
     <loc>https://www.arccto.com/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,19 +12,19 @@
   <!-- Service Pages -->
   <url>
     <loc>https://www.arccto.com/consulting.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.arccto.com/training.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.arccto.com/operations.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -32,19 +32,19 @@
   <!-- SEO Playbooks & Guides -->
   <url>
     <loc>https://www.arccto.com/ma-due-diligence-guide.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arccto.com/practical-ai-comparison.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arccto.com/fractional-cto-guide.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -52,13 +52,13 @@
   <!-- Legal & Trust Pages -->
   <url>
     <loc>https://www.arccto.com/privacy-policy.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.arccto.com/terms-of-service.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
