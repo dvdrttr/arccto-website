@@ -1,23 +1,26 @@
-# ARC Tech Resilience (Andrews Ritter Consulting)
-**Engineering Technical Resilience and Strategic AI Automation for SMBs.**
-
-## Project Overview
-This repository hosts the primary storefront for **ARC Tech Resilience** (`arccto.com`), the dedicated consulting and AI automation division of Ritter Strategic Enterprises (RSE LLC). The site is engineered to serve as a high-trust entry point for our Fractional CTO services, centered around the **RISE Strategic Concierge**—an advanced agentic AI assistant capable of orchestrating our primary business silos:
-
-1.  **Fractional CTO & Tech Resilience Audits**: Industrial-grade diagnostics, Zero-Trust architecture, and "Storm-Proof" recovery planning for non-tech SMBs in high-risk zones.
-2.  **Agentic AI & Copilot Deployment**: Implementation of modular AI agent clusters and M365 Copilot to automate high-friction enterprise workflows while securing internal data.
-3.  **Cyber-Physical Convergence Operations**: Vendor management and infrastructure oversight bridging physical security (low-voltage systems) and cybersecurity.
-
-## Technical Architecture
--   **Frontend**: Responsive HTML5 and Tailwind CSS featuring a custom adaptive theme engine that mirrors the user's system color scheme.
--   **AI Engine**: RISE Concierge deployed via **Google Cloud Run** and **Vertex AI Agent Studio**, utilizing a dedicated Knowledge Vault (GCS) for technical grounding, integrated with Retell.AI (855-923-0196) for automated voice routing.
--   **Branding (Industrial High-Trust Palette)**:
-    -   **International Orange (`#FF4F00`)**: Interactive elements, icons, and status indicators.
-    -   **Deep Navy (`#0A192F`)**: Primary brand identity and dark-mode foundations.
-    -   **Charcoal (`#1F2937`)**: Secondary component panels and card backgrounds.
-
-## Deployment
-The application is continuously deployed via the `main` branch to **Cloudflare/GitHub Pages**, while the AI backend is managed through the Google Cloud console.
-
+ARC // CTO
+Plain-English tech advisory, practical AI, and part-time technical leadership for small business — built on 26 years of hands-on low-voltage, security, and IT integration experience.
+Project Overview
+This repository hosts the storefront for ARC // CTO (`arccto.com`), a venture of RSE LLC (Ritter Strategic Enterprises), ARC // CTO gives small businesses the same caliber of tech advice mid-to-large commercial clients pay $300/hour for, without the buzzwords or the sales pitch. Core service lines:
+Consulting — unbiased tech and vendor advice, systems reviews, and quote second opinions.
+Training — getting more out of Microsoft 365 Copilot, Google Workspace/Gemini, and other tools businesses already pay for.
+Operations — custom workflows, estimating tools, and part-time/fractional technical executive partnership.
+Ground Truth: Quarterly Checkup — a $29 self-guided printable guide, sold via Lemon Squeezy.
+MCA, the AI assistant embedded on the site, handles initial discovery and qualification by chat so visitors aren't required to get on a call.
+Technical Architecture
+Frontend: Responsive HTML5 and Tailwind CSS (CDN), with a shared design-token system (`/style.css`) driving both light and dark themes via the `data-theme` attribute on `<html>`, auto-detected from the visitor's OS preference in `/main.js`.
+Shared includes: `/nav.html`, `/footer.html`, and `/modal.html` are injected client-side by `/main.js` into placeholder divs (`#nav-placeholder`, `#footer-placeholder`, `#modal-placeholder`).
+Booking: The discovery-call modal posts to a Google Apps Script webhook to reserve calendar time.
+MCA Agent: Deployed as a Cloud Run app, embedded via iframe, theme-synced to the site's light/dark mode.
+Branding (Grunge/Brutalist Palette):
+Gold (`#EAB308`) — Consulting / Main Street accent
+Cyan (`#00A8E8`) — Operations / Integrator accent
+White (`#FFFFFF`) — Training / Investor accent
+Crimson (`#DC2626` / `#7F1D1D`) — background gradient accent
+Black surfaces with frosted-glass cards, offset "brutalist" box-shadows, and Courier Prime monospace headers
+Other RSE LLC Ventures
+RSE LLC also holds Ritter Remote Notary and other ventures David takes on — not part of this repository.
+Deployment
+Deployed via the `main` branch to GitHub Pages (or equivalent static host). No server-side rendering; all dynamic behavior is client-side JS plus the Cloud Run MCA backend and the Google Apps Script booking webhook.
 ---
-*© 2026 ARC CTO.*
+© 2026 ARC // CTO.
