@@ -1,122 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Advisory & Audits | ARC // CTO</title>
-    <!-- Restored Favicon -->
+    <meta name="description" content="Plain-English vendor and IT advisory for small business. Flat-rate hourly sessions and day blocks for vendor defense, systems reviews, and M&A due diligence.">
+    <link rel="canonical" href="https://www.arccto.com/consulting.html" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-gray-100 font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--inverse-text)]">
 
-    <!-- Navigation injected by main.js -->
+    <!-- Navigation -->
     <div id="nav-placeholder"></div>
 
-    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow">
-        
-        <!-- Hero Section -->
-        <section class="border-l-4 border-amber-400 bg-neutral-900/80 p-8 md:p-12 mb-12 shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-8 -bottom-12 font-mono font-black text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none opacity-5">
-                GROUND//TRUTH
-            </div>
-            
-            <div class="inline-block px-3 py-1 mb-4 text-xs font-mono font-bold tracking-widest uppercase bg-amber-400 text-black">
-                CONSULTING // TECH ADVICE & SYSTEMS REVIEWS
-            </div>
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">
-                Unbiased Vendor & Tech Guidance
-            </h1>
-            
-            <p class="text-xl text-neutral-300 max-w-3xl mb-8 leading-relaxed">
-                We are here to answer questions and provide support the way you need it, when you need it. We talk through whatever tech issue is slowing you down—from physical security and low-voltage systems to software vendors trying to overcharge you. Backed by 26 years of engineering complex commercial environments from the studs up, we give you plain-English advice via Google Chat, async email, voice, or video.
-            </p>
+    <main class="flex-grow pt-8 md:pt-12 pb-16 md:pb-20">
+        <section class="max-w-6xl mx-auto px-4 sm:px-6">
 
-            <!-- Dual Engagement Path CTA -->
-            <div class="flex flex-col sm:flex-row gap-4 font-mono text-sm">
-                <button onclick="openBookingModal()" class="bg-amber-400 text-black font-bold px-8 py-4 hover:bg-amber-300 transition text-center uppercase tracking-wider cursor-pointer">
-                    Book Free 30-Min Discovery
-                </button>
-                <a href="#pricing-tiers" class="border border-neutral-600 text-neutral-300 hover:text-white hover:border-white font-bold px-8 py-4 transition text-center uppercase tracking-wider">
-                    View Hourly & Day Rates &darr;
-                </a>
-            </div>
-        </section>
+            <!-- Hero -->
+            <div class="grunge-card border-none p-6 sm:p-8 md:p-12 mb-10 md:mb-12 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor); border-top: 8px solid var(--card-btn-investor);">
 
-        <!-- Consulting Services Tiers -->
-        <section id="pricing-tiers" class="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
-            
-            <!-- 1-Hour Tier -->
-            <div class="bg-neutral-900 border border-amber-500/30 p-8 flex flex-col justify-between relative">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <h2 class="text-2xl font-bold text-white">1-Hour Session</h2>
-                        <span class="font-mono text-amber-400 font-bold text-xl text-right">$150<br><span class="text-xs text-neutral-400 font-normal">Flat Rate</span></span>
-                    </div>
-                    <p class="text-neutral-400 text-sm mb-6">
-                        Perfect for a quick vendor quote teardown, a rapid IT systems check, or having us sit in on a single vendor call to enforce standards.
-                    </p>
-                    <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>FLEXIBLE FORMAT:</strong> Google Chat, Email, Voice, or Video</li>
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>USE CASE:</strong> Vendor Defense & Single-Quote Audits</li>
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>OUTCOME:</strong> Plain-English advice & negotiation tactics</li>
-                    </ul>
+                <div class="absolute -right-8 -bottom-12 font-mono font-black text-7xl sm:text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none" style="color: rgba(255,255,255,0.04); transform: rotate(-2deg);">
+                    GROUND//TRUTH
                 </div>
-                <div class="space-y-3 pt-4 border-t border-neutral-800">
-                    <a href="https://buy.stripe.com/fZu3cw01D7wY6ju9CXaZi09" target="_blank" class="w-full block bg-amber-400 text-black hover:bg-amber-300 font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
-                        Lock In 1-Hour ($150) &rarr;
+
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase relative z-10" style="background-color: var(--card-btn-investor); color: var(--card-btn-text-investor);">
+                    CONSULTING // TECH ADVICE &amp; SYSTEMS REVIEWS
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-6 tracking-tight relative z-10" style="color: var(--card-text);">
+                    Unbiased Vendor &amp; Tech Guidance
+                </h1>
+
+                <p class="text-base sm:text-lg md:text-xl font-medium leading-relaxed mb-8 relative z-10 max-w-3xl" style="color: var(--card-text-muted);">
+                    We are here to answer questions and provide support the way you need it, when you need it. We talk through whatever tech issue is slowing you down&mdash;from physical security and low-voltage systems to software vendors trying to overcharge you. Backed by 26 years of engineering complex commercial environments from the studs up, we give you plain-English advice via Google Chat, async email, voice, or video.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+                    <button onclick="openBookingModal()" class="btn-category btn-consulting grunge-font px-8 py-4 text-center cursor-pointer">
+                        Book Free 30-Min Discovery
+                    </button>
+                    <a href="#pricing-tiers" class="grunge-font px-8 py-4 text-center border-2 font-bold uppercase tracking-wider transition-colors" style="border-color: var(--card-text); color: var(--card-text);">
+                        View Hourly &amp; Day Rates &darr;
                     </a>
                 </div>
             </div>
 
-            <!-- 8-Hour Tier -->
-            <div class="bg-neutral-900 border border-amber-500/30 p-8 flex flex-col justify-between relative">
-                <div>
-                    <div class="flex justify-between items-start mb-4">
-                        <h2 class="text-2xl font-bold text-white">8-Hour Block</h2>
-                        <span class="font-mono text-amber-400 font-bold text-xl text-right">$960<br><span class="text-xs text-neutral-400 font-normal">Full Day Equivalent</span></span>
+            <!-- Pricing Tiers -->
+            <section id="pricing-tiers" class="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 max-w-5xl mx-auto">
+
+                <!-- 1-Hour Tier -->
+                <div class="grunge-card border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
+                    <div>
+                        <div class="flex justify-between items-start mb-4 gap-3">
+                            <h2 class="text-xl sm:text-2xl font-bold" style="color: var(--card-text);">1-Hour Session</h2>
+                            <span class="font-mono font-bold text-lg sm:text-xl text-right shrink-0" style="color: var(--card-btn-investor);">$150<br><span class="text-xs font-normal" style="color: var(--card-text-muted);">Flat Rate</span></span>
+                        </div>
+                        <p class="text-sm mb-6" style="color: var(--card-text-muted);">
+                            Perfect for a quick vendor quote teardown, a rapid IT systems check, or having us sit in on a single vendor call to enforce standards.
+                        </p>
+                        <ul class="space-y-3 font-mono text-xs uppercase tracking-wide mb-8 font-bold" style="color: var(--card-text);">
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>FLEXIBLE FORMAT:</strong> Google Chat, Email, Voice, or Video</span></li>
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>USE CASE:</strong> Vendor Defense &amp; Single-Quote Audits</span></li>
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>OUTCOME:</strong> Plain-English advice &amp; negotiation tactics</span></li>
+                        </ul>
                     </div>
-                    <p class="text-neutral-400 text-sm mb-6">
-                        Ideal for M&A due diligence, comprehensive full-stack IT teardowns, or keeping us on speed-dial for a month of flexible support.
-                    </p>
-                    <ul class="space-y-3 font-mono text-xs text-neutral-300 uppercase tracking-wide mb-8">
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>FLEXIBLE USE:</strong> Split time however you need within 30 days</li>
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>USE CASE:</strong> M&A Audits, Stack Teardowns, Ongoing Q&A</li>
-                        <li class="flex items-start"><span class="text-amber-400 mr-2">+</span> <strong>OUTCOME:</strong> Complete red-flag reports & continuous defense</li>
-                    </ul>
+                    <div class="pt-4 border-t" style="border-color: rgba(255,255,255,0.1);">
+                        <a href="https://buy.stripe.com/fZu3cw01D7wY6ju9CXaZi09" target="_blank" rel="noopener" class="w-full block btn-category btn-consulting font-mono py-3 text-sm text-center uppercase tracking-wider">
+                            Lock In 1-Hour ($150) &rarr;
+                        </a>
+                    </div>
                 </div>
-                <div class="space-y-3 pt-4 border-t border-neutral-800">
-                    <a href="https://buy.stripe.com/8x26oI3dP2cE6judTdaZi0b" target="_blank" class="w-full block border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-mono font-bold py-3 transition text-sm text-center uppercase tracking-wider">
-                        Lock In 8-Hour Block ($960) &rarr;
-                    </a>
+
+                <!-- 8-Hour Tier -->
+                <div class="grunge-card border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
+                    <div>
+                        <div class="flex justify-between items-start mb-4 gap-3">
+                            <h2 class="text-xl sm:text-2xl font-bold" style="color: var(--card-text);">8-Hour Block</h2>
+                            <span class="font-mono font-bold text-lg sm:text-xl text-right shrink-0" style="color: var(--card-btn-investor);">$960<br><span class="text-xs font-normal" style="color: var(--card-text-muted);">Full Day Equivalent</span></span>
+                        </div>
+                        <p class="text-sm mb-6" style="color: var(--card-text-muted);">
+                            Ideal for M&amp;A due diligence, comprehensive full-stack IT teardowns, or keeping us on speed-dial for a month of flexible support.
+                        </p>
+                        <ul class="space-y-3 font-mono text-xs uppercase tracking-wide mb-8 font-bold" style="color: var(--card-text);">
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>FLEXIBLE USE:</strong> Split time however you need within 30 days</span></li>
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>USE CASE:</strong> M&amp;A Audits, Stack Teardowns, Ongoing Q&amp;A</span></li>
+                            <li class="flex items-start gap-2"><span style="color: var(--card-btn-investor);">+</span> <span><strong>OUTCOME:</strong> Complete red-flag reports &amp; continuous defense</span></li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t" style="border-color: rgba(255,255,255,0.1);">
+                        <a href="https://buy.stripe.com/8x26oI3dP2cE6judTdaZi0b" target="_blank" rel="noopener" class="w-full block border-2 font-mono font-bold py-3 text-sm text-center uppercase tracking-wider transition-colors" style="border-color: var(--card-btn-investor); color: var(--card-btn-investor);">
+                            Lock In 8-Hour Block ($960) &rarr;
+                        </a>
+                    </div>
                 </div>
-            </div>
+
+            </section>
+
+            <!-- Engagement Governance Pipeline -->
+            <section class="grunge-card border-none p-6 sm:p-8 mb-6" style="background: var(--surface-color);">
+                <h3 class="font-mono text-xs uppercase tracking-widest mb-2" style="color: var(--card-btn-investor);">ENGAGEMENT PATHWAY &amp; GOVERNANCE</h3>
+                <h4 class="text-xl sm:text-2xl font-bold mb-6" style="color: var(--card-text);">How We Work Together</h4>
+
+                <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 font-mono text-xs">
+                    <div class="p-4 border-l-2" style="background: rgba(255,255,255,0.03); border-color: var(--card-btn-investor);">
+                        <div class="font-bold text-sm mb-1" style="color: var(--card-btn-investor);">01. Discovery Options</div>
+                        <p style="color: var(--card-text-muted);">Choose between a zero-cost 30-minute discovery chat (to feel out a fit with no sales pitch) or direct pay via Stripe to reserve immediate priority advisory time.</p>
+                    </div>
+                    <div class="p-4 border-l-2" style="background: rgba(255,255,255,0.03); border-color: var(--card-btn-investor);">
+                        <div class="font-bold text-sm mb-1" style="color: var(--card-btn-investor);">02. Mutual NDA &amp; Scope</div>
+                        <p style="color: var(--card-text-muted);">No internal credentials or confidential files are reviewed without an executed mutual NDA and clear scope agreement.</p>
+                    </div>
+                    <div class="p-4 border-l-2" style="background: rgba(255,255,255,0.03); border-color: var(--card-btn-investor);">
+                        <div class="font-bold text-sm mb-1" style="color: var(--card-btn-investor);">03. On-Demand Execution</div>
+                        <p style="color: var(--card-text-muted);">We communicate how you work. We run the play and deliver unvarnished, plain-English advice directly via your preferred channel.</p>
+                    </div>
+                </div>
+            </section>
 
         </section>
-
-        <!-- Engagement Governance Pipeline -->
-        <section class="bg-neutral-950 border border-neutral-800 p-8 mb-12">
-            <h3 class="font-mono text-xs text-amber-400 uppercase tracking-widest mb-2">ENGAGEMENT PATHWAY & GOVERNANCE</h3>
-            <h4 class="text-2xl font-bold text-white mb-6">How We Work Together</h4>
-            
-            <div class="grid md:grid-cols-3 gap-6 font-mono text-xs">
-                <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
-                    <div class="text-amber-400 font-bold text-sm mb-1">01. Discovery Options</div>
-                    <p class="text-neutral-400">Choose between a zero-cost 30-minute discovery chat (to feel out a fit with no sales pitch) or direct pay via Stripe to reserve immediate priority advisory time.</p>
-                </div>
-                <div class="bg-neutral-900 p-4 border-l-2 border-neutral-700">
-                    <div class="text-amber-400 font-bold text-sm mb-1">02. Mutual NDA & Scope</div>
-                    <p class="text-neutral-400">No internal credentials or confidential files are reviewed without an executed mutual NDA and clear scope agreement.</p>
-                </div>
-                <div class="bg-neutral-900 p-4 border-l-2 border-amber-400">
-                    <div class="text-amber-400 font-bold text-sm mb-1">03. On-Demand Execution</div>
-                    <p class="text-neutral-400">We communicate how you work. We run the play and deliver unvarnished, plain-English advice directly via your preferred channel.</p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- The Booking Modal will be injected here by main.js -->
