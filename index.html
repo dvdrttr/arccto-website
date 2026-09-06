@@ -62,8 +62,7 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <!-- The Navigation Bar will be injected here by main.js -->
-    <div id="nav-placeholder"></div>
+    {% include "nav.html" %}
 
     <main class="flex-grow">
         <!-- Refactored Executive Hero Section (Tightened & High-Impact) -->
@@ -284,8 +283,7 @@
 </section>
     </main>
 
-    <!-- The Footer will be injected here by main.js -->
-    <div id="footer-placeholder"></div>
+    {% include "footer.html" %}
 
     <!-- ARC MCA Agent (Plain English + Industrial Design + Olive Drab Theme) -->
     <div id="mca-widget-container" class="z-40">
@@ -362,8 +360,8 @@
             </svg>
         </button>
     </div>
-<!-- The Booking Modal will be injected here by main.js -->
-    <div id="modal-placeholder"></div>
+    
+{% include "modal.html" %}
 
     <!-- Scroll reveal: adds .js first (so .reveal-up only hides content
          once we can guarantee it'll be un-hidden), then reveals each
