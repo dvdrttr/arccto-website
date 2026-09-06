@@ -6,6 +6,14 @@
     <title>Tech Advisory & Audits | ARC // CTO</title>
     <meta name="description" content="Plain-English vendor and IT advisory for small business. Flat-rate hourly sessions and day blocks for vendor defense, systems reviews, and M&A due diligence.">
     <link rel="canonical" href="https://www.arccto.com/consulting.html" />
+    <meta property="og:title" content="Tech Advisory & Audits | ARC // CTO">
+    <meta property="og:description" content="Plain-English vendor and IT advisory for small business. Flat-rate hourly sessions and day blocks for vendor defense, systems reviews, and M&A due diligence.">
+    <meta property="og:url" content="https://www.arccto.com/consulting.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.arccto.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +27,7 @@
         <section class="max-w-6xl mx-auto px-4 sm:px-6">
 
             <!-- Hero -->
-            <div class="grunge-card border-none p-6 sm:p-8 md:p-12 mb-10 md:mb-12 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor); border-top: 8px solid var(--card-btn-investor);">
+            <div class="grunge-card hero-animate border-none p-6 sm:p-8 md:p-12 mb-10 md:mb-12 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%), var(--surface-color); box-shadow: 6px 6px 0px var(--card-btn-investor); border-top: 8px solid var(--card-btn-investor);">
 
                 <div class="absolute -right-8 -bottom-12 font-mono font-black text-7xl sm:text-8xl md:text-9xl uppercase tracking-tighter select-none pointer-events-none" style="color: rgba(255,255,255,0.04); transform: rotate(-2deg);">
                     GROUND//TRUTH
@@ -51,7 +59,7 @@
             <section id="pricing-tiers" class="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 max-w-5xl mx-auto">
 
                 <!-- 1-Hour Tier -->
-                <div class="grunge-card border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
+                <div class="grunge-card reveal-up border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
                     <div>
                         <div class="flex justify-between items-start mb-4 gap-3">
                             <h2 class="text-xl sm:text-2xl font-bold" style="color: var(--card-text);">1-Hour Session</h2>
@@ -74,7 +82,7 @@
                 </div>
 
                 <!-- 8-Hour Tier -->
-                <div class="grunge-card border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
+                <div class="grunge-card reveal-up border-none p-6 sm:p-8 flex flex-col justify-between" style="background: var(--surface-color); border-left: 4px solid var(--card-btn-investor);">
                     <div>
                         <div class="flex justify-between items-start mb-4 gap-3">
                             <h2 class="text-xl sm:text-2xl font-bold" style="color: var(--card-text);">8-Hour Block</h2>
@@ -99,7 +107,7 @@
             </section>
 
             <!-- Engagement Governance Pipeline -->
-            <section class="grunge-card border-none p-6 sm:p-8 mb-6" style="background: var(--surface-color);">
+            <section class="grunge-card reveal-up border-none p-6 sm:p-8 mb-6" style="background: var(--surface-color);">
                 <h3 class="font-mono text-xs uppercase tracking-widest mb-2" style="color: var(--card-btn-investor);">ENGAGEMENT PATHWAY &amp; GOVERNANCE</h3>
                 <h4 class="text-xl sm:text-2xl font-bold mb-6" style="color: var(--card-text);">How We Work Together</h4>
 
@@ -122,11 +130,31 @@
         </section>
     </main>
 
+    <!-- Modal -->
     {% include "modal.html" %}
 
+    <!-- Footer -->
     {% include "footer.html" %}
 
     <!-- Centralized Engine Scripts -->
+    <script>
+        document.documentElement.classList.add('js');
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var revealEls = document.querySelectorAll('.reveal-up');
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        } else {
+            var revealObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function (el) { revealObserver.observe(el); });
+        }
+    </script>
     <script src="/main.js"></script>
 
 </body>
