@@ -13,7 +13,7 @@
 <body class="min-h-screen flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--inverse-text)]">
 
     <!-- Navigation -->
-    <div id="nav-placeholder"></div>
+    {% include "nav.html" %}
 
     <main class="flex-grow pt-8 md:pt-12 pb-16 md:pb-20">
         <section class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -122,11 +122,9 @@
         </section>
     </main>
 
-    <!-- The Booking Modal will be injected here by main.js -->
-    <div id="modal-placeholder"></div>
+    {% include "modal.html" %}
 
-    <!-- Footer injected by main.js -->
-    <div id="footer-placeholder"></div>
+    {% include "footer.html" %}
 
     <!-- Centralized Engine Scripts -->
     <script src="/main.js"></script>
