@@ -35,6 +35,15 @@ fetch('/footer.html')
     }
   });
 
+// Inject Modal
+fetch('/_includes/modal.html')
+  .then(response => response.text())
+  .then(data => {
+    if(document.getElementById('modal-placeholder')) {
+        document.getElementById('modal-placeholder').innerHTML = data;
+    }
+  });
+
 // ==========================================
 // MOBILE NAV TOGGLE
 // ==========================================
