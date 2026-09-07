@@ -21,22 +21,17 @@ prefersDarkScheme.addEventListener("change", (e) => {
 fetch('/_includes/nav.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById('nav-placeholder').innerHTML = data;
+    if(document.getElementById('nav-placeholder')) {
+        document.getElementById('nav-placeholder').innerHTML = data;
+    }
   });
 
 // Inject Footer
 fetch('/_includes/footer.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-  });
-
-// Inject Modal
-fetch('/_includes/modal.html')
-  .then(response => response.text())
-  .then(data => {
-    if(document.getElementById('modal-placeholder')) {
-        document.getElementById('modal-placeholder').innerHTML = data;
+    if(document.getElementById('footer-placeholder')) {
+        document.getElementById('footer-placeholder').innerHTML = data;
     }
   });
 
