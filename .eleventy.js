@@ -1,17 +1,15 @@
 module.exports = function(eleventyConfig) {
-  // Pass through all static assets to the final build
-  eleventyConfig.addPassthroughCopy("style.css");
-  eleventyConfig.addPassthroughCopy("main.js");
-  eleventyConfig.addPassthroughCopy("favicon.svg");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("llms.txt");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
+  // Pass through static assets so they end up in the _site build folder
+  eleventyConfig.addPassthroughCopy("src/style.css");
+  eleventyConfig.addPassthroughCopy("src/main.js");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   return {
     dir: {
-      input: ".",
-      output: "_site",
-      includes: "_includes"
+      input: "src",      // Tell Eleventy to look in the src folder for files
+      output: "_site",   // The default build folder Cloudflare is already using
+      includes: "_includes" // Where Eleventy will look for your nav/footer files
     }
   };
 };
