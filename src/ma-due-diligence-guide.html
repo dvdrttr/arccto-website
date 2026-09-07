@@ -12,7 +12,7 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[var(--text-primary)] selection:text-[var(--inverse-text)]">
     <!-- Navigation -->
-    <div id="nav-placeholder"></div>
+    {% include "nav.html" %}
 
     <main class="flex-grow pt-8 md:pt-12 pb-16 md:pb-20">
         <section class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -68,7 +68,11 @@
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <!-- Booking Modal (Injected by Eleventy) -->
+    {% include "modal.html" %}
+
+    <!-- Footer (Injected by Eleventy) -->
+    {% include "footer.html" %}
     <script src="/main.js"></script>
 </body>
 </html>
