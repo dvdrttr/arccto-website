@@ -18,7 +18,7 @@ prefersDarkScheme.addEventListener("change", (e) => {
 });
 
 // Inject Navigation
-fetch('/_includes/nav.html')
+fetch('/nav.html')
   .then(response => response.text())
   .then(data => {
     if(document.getElementById('nav-placeholder')) {
@@ -27,7 +27,7 @@ fetch('/_includes/nav.html')
   });
 
 // Inject Footer
-fetch('/_includes/footer.html')
+fetch('/footer.html')
   .then(response => response.text())
   .then(data => {
     if(document.getElementById('footer-placeholder')) {
