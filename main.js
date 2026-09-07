@@ -36,7 +36,7 @@ fetch('/footer.html')
   });
 
 // Inject Modal
-fetch('/_includes/modal.html')
+fetch('/modal.html')
   .then(response => response.text())
   .then(data => {
     if(document.getElementById('modal-placeholder')) {
