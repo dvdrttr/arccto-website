@@ -17,6 +17,29 @@ prefersDarkScheme.addEventListener("change", (e) => {
     applyTheme(e.matches ? "dark" : "light");
 });
 
+// Inject Navigation
+fetch('/_includes/nav.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('nav-placeholder').innerHTML = data;
+  });
+
+// Inject Footer
+fetch('/_includes/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+
+// Inject Modal
+fetch('/_includes/modal.html')
+  .then(response => response.text())
+  .then(data => {
+    if(document.getElementById('modal-placeholder')) {
+        document.getElementById('modal-placeholder').innerHTML = data;
+    }
+  });
+
 // ==========================================
 // MOBILE NAV TOGGLE
 // ==========================================
