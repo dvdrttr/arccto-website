@@ -7,6 +7,9 @@ User-agent: CCBot
 Disallow: /
 
 # Allow friendly AI Search Agents (like Perplexity or ChatGPT Search)
+User-agent: Google-Extended
+Allow: /llms.txt
+Allow: /
 User-agent: PerplexityBot
 Allow: /llms.txt
 Allow: /
