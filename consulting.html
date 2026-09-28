@@ -233,79 +233,79 @@
         </section>
     </main>
 
-    <!-- D.A.V.E. Agent (Plain English + Industrial Design + Red Theme) -->
-    <div id="mca-widget-container" class="z-40">
-        
-        <!-- Teaser Popup Card (Bottom Right Banner) -->
-        <div id="mca-teaser" 
-             class="teaser-exit p-5 w-80 mb-4 relative transition-all duration-500 hidden border-none overflow-hidden grunge-card" 
-             style="background: 
-                    radial-gradient(circle at 90% 10%, rgba(107, 142, 35, 0.15) 0%, transparent 60%),
-                    linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%), 
-                    var(--surface-color); 
-                    box-shadow: 8px 8px 0px #000000;
-                    border-top: 6px solid #6B8E23;">
-            
-            <!-- Faint Background Watermark -->
-            <div class="absolute -right-4 -bottom-4 font-mono font-black text-6xl uppercase tracking-tighter select-none pointer-events-none" 
-                 style="color: rgba(255, 255, 255, 0.03); transform: rotate(-3deg);">
-                D.A.V.E.//AI
-            </div>
+    <!-- D.A.V.E. Agent (Plain English + Industrial Design + Olive Drab Theme) -->
+ <div id="mca-widget-container" class="z-40">
+ 
+<!-- Teaser Popup Card (Bottom Right Banner) -->
+ <div id="mca-teaser" 
+class="teaser-exit p-5 w-80 mb-4 relative transition-all duration-500 hidden border-none overflow-hidden grunge-card" 
+style="background: 
+radial-gradient(circle at 90% 10%, rgba(107, 142, 35, 0.15) 0%, transparent 60%),
+ linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%), 
+var(--surface-color); 
+box-shadow: 8px 8px 0px #000000;
+ border-top: 6px solid #6B8E23;">
+ 
+<!-- Faint Background Watermark -->
+ <div class="absolute -right-4 -bottom-4 font-mono font-black text-6xl uppercase tracking-tighter select-none pointer-events-none" 
+style="color: rgba(255, 255, 255, 0.03); transform: rotate(-3deg);">
+ D.A.V.E.//AI
+ </div>
 
-            <!-- Dismiss Button -->
-            <button onclick="dismissTeaser()" class="absolute top-3 right-3 text-gray-400 hover:text-white transition cursor-pointer z-10">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            
-                        <!-- Red Status Bar -->
+ <!-- Dismiss Button -->
+ <button onclick="dismissTeaser()" class="absolute top-3 right-3 text-gray-400 hover:text-white transition cursor-pointer z-10">
+ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+ </button>
+ 
+<!-- Olive Drab Status Bar -->
 <div class="flex items-center gap-2 mb-3 relative z-10">
-  <div class="w-2.5 h-2.5 rounded-full status-beacon" style="background-color: #DC2626; box-shadow: 0 0 8px #DC2626;"></div>
-  <span class="font-mono text-xs font-bold tracking-widest uppercase" style="color: #DC2626;">
-    D.A.V.E. // INTAKE
-  </span>
+ <div class="w-2.5 h-2.5 rounded-full status-beacon" style="background-color: #6B8E23; box-shadow: 0 0 8px #6B8E23;"></div>
+ <span class="font-mono text-xs font-bold tracking-widest uppercase" style="color: #6B8E23;">
+ D.A.V.E. // INTAKE
+ </span>
 </div>
-<p class="text-[10px] mb-3 font-bold uppercase tracking-wide relative z-10" style="color: #DC2626;">
-  Dynamic Agent for Vetting &amp; Execution
+<p class="text-[10px] mb-3 font-bold uppercase tracking-wide relative z-10" style="color: #6B8E23;">
+ Dynamic Agent for Vetting &amp; Execution
 </p>
 <p class="text-sm mb-5 font-medium leading-relaxed relative z-10" style="color: var(--card-text-muted);">
-  Let's cut the noise. What software or system is currently breaking down or wasting your team's time?
+ Let's cut the noise. What software, vendor, or IT headache is costing you time right now?
 </p>
-<button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button border-none w-full py-2.5 text-xs font-mono font-black tracking-widest uppercase cursor-pointer transition-all hover:translate-x-0.5 hover:-translate-y-0.5 relative z-10" style="background-color: #DC2626; color: #FFFFFF; box-shadow: 4px 4px 0px #000000;">
-  Let's Go &rarr;
+<button onclick="toggleMcaChat('assessment'); dismissTeaser();" class="cta-button border-none w-full py-2.5 text-xs font-mono font-black tracking-widest uppercase cursor-pointer transition-all hover:translate-x-0.5 hover:-translate-y-0.5 relative z-10" style="background-color: #6B8E23; color: #FFFFFF; box-shadow: 4px 4px 0px #000000;">
+ Let's Go &rarr;
 </button>
-        </div>
+ </div>
 
-        <!-- Full Open Chat Terminal Window -->
-        <div id="mca-chat-window" 
-             class="border-none grunge-card overflow-hidden transition-all duration-300" 
-             style="background: rgba(15, 15, 15, 0.98);
-                    box-shadow: 12px 12px 0px #000000; 
-                    border-top: 8px solid #6B8E23;">
-            <iframe id="mca-iframe" 
-                    src="https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc" 
-                    class="w-full h-full border-none" 
-                    allow="autofocus"></iframe>
-        </div>
+ <!-- Full Open Chat Terminal Window -->
+ <div id="mca-chat-window" 
+class="border-none grunge-card overflow-hidden transition-all duration-300" 
+style="background: rgba(15, 15, 15, 0.98);
+ box-shadow: 12px 12px 0px #000000; 
+border-top: 8px solid #6B8E23;">
+ <iframe id="mca-iframe" 
+src="https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc" 
+class="w-full h-full border-none" 
+allow="autofocus"></iframe>
+ </div>
 
-        <!-- Toggle Trigger Button -->
-        <button id="mca-toggle-btn" 
-                onclick="toggleMcaChat()" 
-                class="border-none cursor-pointer transition-all duration-200 hover:scale-105 flex items-center justify-center p-3.5" 
-                style="background-color: #6B8E23; 
-                       color: #FFFFFF; 
-                       border-radius: 50% 50% 50% 5%; 
-                       transform: rotate(-45deg); 
-                       box-shadow: 4px 4px 0px #000000;">
-            <!-- Upright Speech Bubble Icon -->
-            <svg id="mca-icon-chat" viewBox="0 0 24 24" class="w-6 h-6 fill-current transition-transform duration-200 pointer-events-none" style="transform: rotate(45deg);">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-            </svg>
-            <!-- Upright Close 'X' Icon -->
-            <svg id="mca-icon-close" viewBox="0 0 24 24" class="w-6 h-6 stroke-current hidden transition-transform duration-200 pointer-events-none" style="transform: rotate(45deg); stroke-width: 3;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" fill="none"/>
-            </svg>
-        </button>
-    </div>
+ <!-- Toggle Trigger Button -->
+ <button id="mca-toggle-btn" 
+onclick="toggleMcaChat()" 
+class="border-none cursor-pointer transition-all duration-200 hover:scale-105 flex items-center justify-center p-3.5" 
+style="background-color: #6B8E23; 
+color: #FFFFFF; 
+border-radius: 50% 50% 50% 5%; 
+transform: rotate(-45deg); 
+box-shadow: 4px 4px 0px #000000;">
+ <!-- Upright Speech Bubble Icon -->
+ <svg id="mca-icon-chat" viewBox="0 0 24 24" class="w-6 h-6 fill-current transition-transform duration-200 pointer-events-none" style="transform: rotate(45deg);">
+ <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+ </svg>
+ <!-- Upright Close 'X' Icon -->
+ <svg id="mca-icon-close" viewBox="0 0 24 24" class="w-6 h-6 stroke-current hidden transition-transform duration-200 pointer-events-none" style="transform: rotate(45deg); stroke-width: 3;">
+ <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" fill="none"/>
+ </svg>
+ </button>
+ </div>
 
     <!-- Modal -->
     <div id="modal-placeholder"></div>
