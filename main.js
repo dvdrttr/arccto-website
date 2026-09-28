@@ -81,8 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById('mca-toggle-btn');
     const iframe = document.getElementById('mca-iframe');
     const teaser = document.getElementById('mca-teaser');
-    const baseUrl = "https://genai-app-arc-mca-1-1784411599583-16289276837.us-central1.run.app/?key=SRbrQXbSDX4Tr6BPvAg1N4sYSIjp96Kc";
-    let teaserDismissed = false;
+    const baseUrl = "https://chat.arccto.com";
 
     if (btn && chatWindow && iframe) {
         window.toggleMcaChat = function(intent = null) {
