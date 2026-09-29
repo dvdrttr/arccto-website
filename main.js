@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btn && chatWindow && iframe) {
         window.toggleMcaChat = function(intent = null) {
             if (intent && typeof intent === 'string') { 
-                iframe.src = `${baseUrl}&intent=${intent}`; 
+                iframe.src = `${baseUrl}?intent=${intent}`; 
             }
             if (typeof window.dismissTeaser === 'function') {
                 window.dismissTeaser();
