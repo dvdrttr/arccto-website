@@ -70,5 +70,14 @@
   <footer id="footer-placeholder"></footer>
 
   <script src="/main.js"></script>
+  <script>
+  // Keep the viewport locked to the top hero banner when the iframe loads
+  window.addEventListener('load', function() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    setTimeout(function() {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 200);
+  });
+</script>
 </body>
 </html>
