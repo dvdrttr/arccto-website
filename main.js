@@ -82,60 +82,69 @@ document.addEventListener("DOMContentLoaded", () => {
     const iframe = document.getElementById('mca-iframe');
     const teaser = document.getElementById('mca-teaser');
     const baseUrl = "https://chat.arccto.com";
+    let teaserDismissed = false;
 
-    if (btn && chatWindow && iframe) {
-        window.toggleMcaChat = function(intent = null) {
-            if (intent && typeof intent === 'string') { 
-                iframe.src = `${baseUrl}?intent=${intent}`; 
-            }
-            if (typeof window.dismissTeaser === 'function') {
-                window.dismissTeaser();
-            }
-            
-            const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
-            if (iframe.contentWindow) {
-                iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: currentTheme }, '*');
-                iframe.contentWindow.postMessage({ type: 'FOCUS_INPUT' }, '*');
-            }
-            
-            const iconChat = document.getElementById('mca-icon-chat');
-            const iconClose = document.getElementById('mca-icon-close');
+    window.toggleMcaChat = function(intent = null) {
+        // If on a page without the floating widget container, navigate straight to chat
+        if (!chatWindow || !iframe) {
+            window.location.href = baseUrl;
+            return;
+        }
 
-            if (!chatWindow.classList.contains('active')) {
-                chatWindow.classList.add('active');
-                chatWindow.classList.remove('hidden');
-                chatWindow.style.display = 'block';
-                btn.classList.add('active');
-                if (iconChat) iconChat.classList.add('hidden');
-                if (iconClose) iconClose.classList.remove('hidden');
-            } else {
-                chatWindow.classList.remove('active');
-                chatWindow.classList.add('hidden');
-                chatWindow.style.display = 'none';
-                btn.classList.remove('active');
-                if (iconChat) iconChat.classList.remove('hidden');
-                if (iconClose) iconClose.classList.add('hidden');
-            }
-        };
+        // Ensure clean query parameter with ? instead of &
+        if (intent && typeof intent === 'string') { 
+            iframe.src = `${baseUrl}?intent=${encodeURIComponent(intent)}`; 
+        } else if (!iframe.src || iframe.src.includes('run.app') || iframe.src === 'about:blank') {
+            iframe.src = baseUrl;
+        }
 
-        window.dismissTeaser = function() {
-            if (!teaser) return;
-            teaserDismissed = true;
-            teaser.classList.remove('teaser-enter');
-            teaser.classList.add('teaser-exit');
-            setTimeout(() => teaser.classList.add('hidden'), 500);
-        };
+        if (typeof window.dismissTeaser === 'function') {
+            window.dismissTeaser();
+        }
+        
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage({ type: 'THEME_UPDATE', theme: currentTheme }, '*');
+            iframe.contentWindow.postMessage({ type: 'FOCUS_INPUT' }, '*');
+        }
+        
+        const iconChat = document.getElementById('mca-icon-chat');
+        const iconClose = document.getElementById('mca-icon-close');
 
-        setTimeout(() => {
-            if (teaser && !chatWindow.classList.contains('active') && !teaserDismissed) {
-                teaser.classList.remove('hidden');
-                setTimeout(() => {
-                    teaser.classList.remove('teaser-exit');
-                    teaser.classList.add('teaser-enter');
-                }, 50);
-            }
-        }, 60000); 
-    }
+        if (!chatWindow.classList.contains('active')) {
+            chatWindow.classList.add('active');
+            chatWindow.classList.remove('hidden');
+            chatWindow.style.display = 'block';
+            if (btn) btn.classList.add('active');
+            if (iconChat) iconChat.classList.add('hidden');
+            if (iconClose) iconClose.classList.remove('hidden');
+        } else {
+            chatWindow.classList.remove('active');
+            chatWindow.classList.add('hidden');
+            chatWindow.style.display = 'none';
+            if (btn) btn.classList.remove('active');
+            if (iconChat) iconChat.classList.remove('hidden');
+            if (iconClose) iconClose.classList.add('hidden');
+        }
+    };
+
+    window.dismissTeaser = function() {
+        if (!teaser) return;
+        teaserDismissed = true;
+        teaser.classList.remove('teaser-enter');
+        teaser.classList.add('teaser-exit');
+        setTimeout(() => teaser.classList.add('hidden'), 500);
+    };
+
+    setTimeout(() => {
+        if (teaser && chatWindow && !chatWindow.classList.contains('active') && !teaserDismissed) {
+            teaser.classList.remove('hidden');
+            setTimeout(() => {
+                teaser.classList.remove('teaser-exit');
+                teaser.classList.add('teaser-enter');
+            }, 50);
+        }
+    }, 60000);
 });
 
 // ==========================================
